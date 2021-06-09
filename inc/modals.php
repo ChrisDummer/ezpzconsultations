@@ -4,13 +4,13 @@
  * Uses Magnific Popup library for the modal functionality.
  * @link https://dimsemenov.com/plugins/magnific-popup/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'jellypress_modal_init' ) ) :
+if ( ! function_exists( 'ezpzconsultations_modal_init' ) ) :
   /**
    * Function used to initialize MagnificPop on a selector
    * @link https://dimsemenov.com/plugins/magnific-popup/documentation.html#content-types
@@ -22,7 +22,7 @@ if ( ! function_exists( 'jellypress_modal_init' ) ) :
    * @param string $close_button_inside -> Whether the close button should be inside the modal or outside.
    * @return void
    */
-  function jellypress_modal_init($modal_selector, $delegate = null, $is_gallery = true, $modal_type = 'image', $close_button_inside = 'false') {
+  function ezpzconsultations_modal_init($modal_selector, $delegate = null, $is_gallery = true, $modal_type = 'image', $close_button_inside = 'false') {
 
     wp_enqueue_script('magnific-popup');
 

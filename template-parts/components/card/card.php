@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a simple post card
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -31,19 +31,19 @@ if($loaded == true) {
     <?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" aria-hidden="true" tabindex="-1">', '</a></h3>' ); ?>
   </header>
 
-  <?php if(jellypress_generate_excerpt()) echo '<div class="card-section entry-content">'.jellypress_generate_excerpt(200,true).'</div>'; ?>
+  <?php if(ezpzconsultations_generate_excerpt()) echo '<div class="card-section entry-content">'.ezpzconsultations_generate_excerpt(200,true).'</div>'; ?>
 
   <?php if ( 'post' === get_post_type() ) : // Show if post ?>
     <div class="card-section entry-meta">
       <?php
-      jellypress_posted_on();
-      jellypress_posted_by();
+      ezpzconsultations_posted_on();
+      ezpzconsultations_posted_by();
       ?>
     </div>
   <?php endif; ?>
 
   <footer class="card-section card-footer">
-    <a class="button small" href="<?php the_permalink();?>" rel="bookmark"><?php _e('Continue Reading <span class="screen-reader-text">'.get_the_title().'</span>', 'jellypress');?></a>
+    <a class="button small" href="<?php the_permalink();?>" rel="bookmark"><?php _e('Continue Reading <span class="screen-reader-text">'.get_the_title().'</span>', 'ezpzconsultations');?></a>
   </footer>
 
 </div>

@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -16,8 +16,8 @@ if(file_exists( get_template_directory() . '/env.php' )) {
   foreach ($vars as $key => $value) putenv("$key=$value");
 }
 
-if(!function_exists('jellypress_env')) {
-  function jellypress_env($key, $default = null)
+if(!function_exists('ezpzconsultations_env')) {
+  function ezpzconsultations_env($key, $default = null)
   {
     $value = getenv($key);
     if ($value === false) return $default;
@@ -25,11 +25,11 @@ if(!function_exists('jellypress_env')) {
   }
 }
 
-if (! defined('DEV_URL') ) define('DEV_URL', jellypress_env('DEV_URL'));
-if (! defined('STAGING_URL') ) define('STAGING_URL', jellypress_env('STAGING_URL'));
-if (! defined('PROD_URL') ) define('PROD_URL', jellypress_env('PROD_URL'));
+if (! defined('DEV_URL') ) define('DEV_URL', ezpzconsultations_env('DEV_URL'));
+if (! defined('STAGING_URL') ) define('STAGING_URL', ezpzconsultations_env('STAGING_URL'));
+if (! defined('PROD_URL') ) define('PROD_URL', ezpzconsultations_env('PROD_URL'));
 
-$jellypress_includes = array(
+$ezpzconsultations_includes = array(
   'inc/tgm-plugin-activation.php',   // Third party script to allow required/recommended plugins
   'inc/plugins.php',                 // Require and recommend plugins for this theme
   'inc/helpers.php',                 // Useful helper functions
@@ -62,7 +62,7 @@ $jellypress_includes = array(
   //'inc/user_caps/client-admin.php',  // Example for how to restrict user capabilities for a specific role
 );
 
-foreach ( $jellypress_includes as $file ) {
+foreach ( $ezpzconsultations_includes as $file ) {
   $filepath = get_template_directory() . '/' . $file;
   if(file_exists($filepath)) require_once $filepath;
 }

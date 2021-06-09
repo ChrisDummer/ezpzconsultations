@@ -3,7 +3,7 @@
  * Template part for displaying a basic post card
  * Called from Blocks/Cards
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -39,7 +39,7 @@ switch ($block_bg_color) {
   <?php endif; ?>
 
   <div class="card-section">
-    <?php echo jellypress_content($card['card_text']); ?>
+    <?php echo ezpzconsultations_content($card['card_text']); ?>
   </div>
 
   <?php if($card_link) : ?>

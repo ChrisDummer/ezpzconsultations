@@ -7,9 +7,9 @@ defined( 'ABSPATH' ) || exit;
  * Remove support for WP Editor if you are using ACF exclusively for content
  */
 
-//add_action('init', 'jellypress_post_type_supports_page');
-if (! function_exists('jellypress_post_type_supports_page') ) :
-  function jellypress_post_type_supports_page() {
+//add_action('init', 'ezpzconsultations_post_type_supports_page');
+if (! function_exists('ezpzconsultations_post_type_supports_page') ) :
+  function ezpzconsultations_post_type_supports_page() {
     remove_post_type_support( 'page', 'editor' );
     add_post_type_support( 'page', 'excerpt' );
   }
@@ -18,27 +18,27 @@ endif;
 /**
  * Register a custom taxonomy
  */
-if ( ! function_exists( 'jellypress_create_page_taxonomies' ) ) :
+if ( ! function_exists( 'ezpzconsultations_create_page_taxonomies' ) ) :
 
   // Register Taxonomy Page Type
-  function jellypress_create_page_taxonomies() {
+  function ezpzconsultations_create_page_taxonomies() {
 
     $labels = array(
-      'name'              => _x( 'Page Type', 'taxonomy general name', 'jellypress' ),
-      'singular_name'     => _x( 'Page Type', 'taxonomy singular name', 'jellypress' ),
-      'search_items'      => __( 'Search Page Types', 'jellypress' ),
-      'all_items'         => __( 'All Page Types', 'jellypress' ),
-      'parent_item'       => __( 'Parent Page Type', 'jellypress' ),
-      'parent_item_colon' => __( 'Parent Page Type:', 'jellypress' ),
-      'edit_item'         => __( 'Edit Page Type', 'jellypress' ),
-      'update_item'       => __( 'Update Page Type', 'jellypress' ),
-      'add_new_item'      => __( 'Add New Page Type', 'jellypress' ),
-      'new_item_name'     => __( 'New Page Type Name', 'jellypress' ),
-      'menu_name'         => __( 'Page Types', 'jellypress' ),
+      'name'              => _x( 'Page Type', 'taxonomy general name', 'ezpzconsultations' ),
+      'singular_name'     => _x( 'Page Type', 'taxonomy singular name', 'ezpzconsultations' ),
+      'search_items'      => __( 'Search Page Types', 'ezpzconsultations' ),
+      'all_items'         => __( 'All Page Types', 'ezpzconsultations' ),
+      'parent_item'       => __( 'Parent Page Type', 'ezpzconsultations' ),
+      'parent_item_colon' => __( 'Parent Page Type:', 'ezpzconsultations' ),
+      'edit_item'         => __( 'Edit Page Type', 'ezpzconsultations' ),
+      'update_item'       => __( 'Update Page Type', 'ezpzconsultations' ),
+      'add_new_item'      => __( 'Add New Page Type', 'ezpzconsultations' ),
+      'new_item_name'     => __( 'New Page Type Name', 'ezpzconsultations' ),
+      'menu_name'         => __( 'Page Types', 'ezpzconsultations' ),
     );
     $args = array(
       'labels' => $labels,
-      'description' => __( 'Page Types for easy categorisation in the CMS', 'jellypress' ),
+      'description' => __( 'Page Types for easy categorisation in the CMS', 'ezpzconsultations' ),
       'hierarchical' => false, // Whether the taxonomy is hierarchical. Default false.
       'public' => true, // Whether a taxonomy is intended for use publicly either via the admin interface or by front-end users.
       'publicly_queryable' => false, // Whether the taxonomy is publicly queryable.
@@ -78,5 +78,5 @@ if ( ! function_exists( 'jellypress_create_page_taxonomies' ) ) :
 
   }
 endif;
-add_action( 'init', 'jellypress_create_page_taxonomies', 0 );
+add_action( 'init', 'ezpzconsultations_create_page_taxonomies', 0 );
 

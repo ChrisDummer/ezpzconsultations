@@ -3,7 +3,7 @@
  * Template part to display a statistic card using data from ACF.
  * This card is called by blocks/number-counter
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -47,9 +47,9 @@ switch ($block_bg_color) {
 <div class="card card-statistic no-border">
   <div class="card-section">
     <?php echo '<div class="count-to number '.$statistic_font_size.'" '.$data_attribs.'>'.$initial_value.'</div>'; ?>
-    <h3><?php echo jellypress_content($statistic_title); ?></h3>
+    <h3><?php echo ezpzconsultations_content($statistic_title); ?></h3>
     <?php if($statistic_description) {
-      echo '<div class="hide-below-md">'.jellypress_content($statistic_description).'</div>';
+      echo '<div class="hide-below-md">'.ezpzconsultations_content($statistic_description).'</div>';
      } ?>
   </div>
   <?php if($button = $statistic['statistic_button']):

@@ -25,8 +25,8 @@ jQuery(function($){
 	function checkForAjaxPosts() {
 		var data = {
 			'action': 'loadmore',
-			'query': jellypress_loadmore_params.posts,
-			'page' : jellypress_loadmore_params.current_page
+			'query': ezpzconsultations_loadmore_params.posts,
+			'page' : ezpzconsultations_loadmore_params.current_page
       },
       containerPosFromTop = ajaxContainer.offset().top,
       containerHeight = ajaxContainer.height(),
@@ -35,7 +35,7 @@ jQuery(function($){
 
 		if( ((windowHeight+windowScrollTop)>(containerPosFromTop+containerHeight)) && canBeLoaded == true ){
 			$.ajax({
-				url : jellypress_loadmore_params.ajaxurl,
+				url : ezpzconsultations_loadmore_params.ajaxurl,
 				data:data,
         type:'POST',
 				beforeSend: function( xhr ){
@@ -45,14 +45,14 @@ jQuery(function($){
           ajaxLoading.text('Loading...');
 				},
 				success:function(data){
-					if( jellypress_loadmore_params.current_page <= jellypress_loadmore_params.max_page && data ) {
+					if( ezpzconsultations_loadmore_params.current_page <= ezpzconsultations_loadmore_params.max_page && data ) {
 						// IMPORTANT! This next line determines where to load the data to. Any changes to the template structure must be reflected here.
             ajaxContainer.find('article:last-of-type').after( data );
 						canBeLoaded = true; // the ajax is completed, now we can run it again
-            jellypress_loadmore_params.current_page++;
+            ezpzconsultations_loadmore_params.current_page++;
             ajaxLoading.text('');
           }
-          if(jellypress_loadmore_params.current_page == jellypress_loadmore_params.max_page) {
+          if(ezpzconsultations_loadmore_params.current_page == ezpzconsultations_loadmore_params.max_page) {
             ajaxLoading.remove();
           }
 				}

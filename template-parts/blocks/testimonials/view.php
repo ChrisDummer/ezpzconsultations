@@ -5,7 +5,7 @@
  * and optional citation, image and link.
  *
  * TODO: Add option for more than one in a row.
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -45,7 +45,7 @@ $show_progress_bar = false; // Progress Bar is an option in php rather than the 
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -53,7 +53,7 @@ $show_progress_bar = false; // Progress Bar is an option in php rather than the 
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -115,7 +115,7 @@ endif; ?>
 <?php
 if($$number_of_testimonials > 1) {
   add_action('wp_footer',
-  jellypress_splide_init('#'.$slider_id, 1, 1, 1, 1, $display_arrows, $display_pagination, $slider_speed),
+  ezpzconsultations_splide_init('#'.$slider_id, 1, 1, 1, 1, $display_arrows, $display_pagination, $slider_speed),
   30);
 }
 ?>

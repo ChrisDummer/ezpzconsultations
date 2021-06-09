@@ -4,18 +4,18 @@
  * Miscellaneous functions that reduce repetition in the theme code.
  * E.g. querying and printing the same fields from ACF
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'jellypress_display_cta_buttons' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_cta_buttons' ) ) :
   /**
    * Loops through an array and displays buttons if the array is not empty
    * Uses data from ACF repeater field
    */
-  function jellypress_display_cta_buttons($buttons, $classes = null) {
+  function ezpzconsultations_display_cta_buttons($buttons, $classes = null) {
     if ( $buttons ) :
       if(isset($classes)) echo '<div class="button-list '.$classes.'">';
       else echo '<div class="button-list">';
@@ -52,11 +52,11 @@ if ( ! function_exists( 'jellypress_display_cta_buttons' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'jellypress_display_map_markers' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_map_markers' ) ) :
   /**
    * Renders Markers onto a map element using data from ACF
    */
-  function jellypress_display_map_markers($locations) {
+  function ezpzconsultations_display_map_markers($locations) {
     if($locations):
 
       wp_enqueue_script('googlemaps');
@@ -95,7 +95,7 @@ if ( ! function_exists( 'jellypress_display_map_markers' ) ) :
         if($location_tooltip_text || $display_address == 1) :
           echo '<div class="marker" data-lat="'.$location_marker['lat'].'" data-lng="'.$location_marker['lng'].'" '.$data_icon.'>';
             if($location_tooltip_text)
-              echo jellypress_content($location_tooltip_text);
+              echo ezpzconsultations_content($location_tooltip_text);
             if($display_address == 1) {
               echo $address;
             }
@@ -110,57 +110,57 @@ if ( ! function_exists( 'jellypress_display_map_markers' ) ) :
     }
 endif;
 
-if ( ! function_exists( 'jellypress_display_socials' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_socials' ) ) :
   /**
    * Loop through ACF repeater in the options page to display
    * the organisation's social media channels in an icon list
    *
    * @return string Formatted HTML list of icons with anchor links
    */
-  function jellypress_display_socials() {
+  function ezpzconsultations_display_socials() {
     if ( have_rows( 'social_channels', 'option' ) ) :
       $social_links_formatted = '<ul class="social-channels">';
       while ( have_rows( 'social_channels', 'option' ) ) : the_row();
         $socialNetwork = get_sub_field( 'network' );
         $socialUrl = get_sub_field( 'url' );
-        $social_links_formatted.= '<li class="social-icon"><a href="'.$socialUrl.'" rel="noopener">'.jellypress_icon($socialNetwork).'</a></li>';
+        $social_links_formatted.= '<li class="social-icon"><a href="'.$socialUrl.'" rel="noopener">'.ezpzconsultations_icon($socialNetwork).'</a></li>';
       endwhile;
       $social_links_formatted .= '</ul>';
       return $social_links_formatted;
     endif;
   }
-  add_shortcode('jellypress-socials', 'jellypress_display_socials');
+  add_shortcode('ezpzconsultations-socials', 'ezpzconsultations_display_socials');
 endif;
 
-if ( ! function_exists( 'jellypress_display_email' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_email' ) ) :
   /**
    * Use a shortcode to display an email address in a robot-obscuring way
-   * If using php it's recommend to instead use jellypress_hide_email() as this
+   * If using php it's recommend to instead use ezpzconsultations_hide_email() as this
    * function simply acts as a wrapper.
    *
    * @param array $atts An array of shortcode attributes (valid: show_icon boolean, email string)
    * @param boolean $icon Whether to show an icon or not
    * @return string The Formatted Email Address
    */
-  function jellypress_display_email($atts = null, $icon = true) {
+  function ezpzconsultations_display_email($atts = null, $icon = true) {
     $args = shortcode_atts( array(
       'show_icon' => $icon,
       'email' => get_global_option('email_address') // Defaults to the email address saved in the options page
-    ), $atts, 'jellypress-email' );
+    ), $atts, 'ezpzconsultations-email' );
     $args['show_icon'] = filter_var( $args['show_icon'], FILTER_VALIDATE_BOOLEAN );
 
     $show_icon = $args['show_icon'];
     $email_address = $args['email'];
 
-    $show_icon == true ? $return = jellypress_hide_email($email_address, true) : $return = jellypress_hide_email($email_address);
+    $show_icon == true ? $return = ezpzconsultations_hide_email($email_address, true) : $return = ezpzconsultations_hide_email($email_address);
 
     if($email_address) return $return;
 
   }
-  add_shortcode('jellypress-email', 'jellypress_display_email');
+  add_shortcode('ezpzconsultations-email', 'ezpzconsultations_display_email');
 endif;
 
-if ( ! function_exists( 'jellypress_display_address' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_address' ) ) :
   /**
    * Display postal address information from ACF options page
    * with the option to display an icon
@@ -169,15 +169,15 @@ if ( ! function_exists( 'jellypress_display_address' ) ) :
    * @param boolean $icon Whether to display a preceding icon (useful if calling this function from php directly)
    * @return string Formatted HTML address
    */
-  function jellypress_display_address($atts = null, $icon = false) {
+  function ezpzconsultations_display_address($atts = null, $icon = false) {
     $args = shortcode_atts( array(
       'show_icon' => $icon
-    ), $atts, 'jellypress-address' );
+    ), $atts, 'ezpzconsultations-address' );
     $args['show_icon'] = filter_var( $args['show_icon'], FILTER_VALIDATE_BOOLEAN );
     $show_icon = $args['show_icon'];
 
     // If show icon is true, define the icons to return else make them empty strings
-    $icon = $show_icon == true ? jellypress_icon('location') : '';
+    $icon = $show_icon == true ? ezpzconsultations_icon('location') : '';
 
     if($address_street = get_global_option( 'address_street')) $address = '<span>'.$address_street.'</span>';
     if($address_locality = get_global_option( 'address_locality')) $address .= '<span>'.$address_locality.'</span>';
@@ -186,12 +186,12 @@ if ( ! function_exists( 'jellypress_display_address' ) ) :
     if($address_postal = get_global_option( 'address_postal')) $address .= '<span>'.$address_postal.'</span>';
 
     if(isset($address)) {
-      $address = '<div class="postal-address">'.$icon.'<div><span class="screen-reader-text" itemprop="name">'.get_bloginfo('name').__(' Postal Address','jellypress').'</span>' . $address . '</div></div>';
+      $address = '<div class="postal-address">'.$icon.'<div><span class="screen-reader-text" itemprop="name">'.get_bloginfo('name').__(' Postal Address','ezpzconsultations').'</span>' . $address . '</div></div>';
       return $address;
     }
 
   }
-  add_shortcode('jellypress-address', 'jellypress_display_address');
+  add_shortcode('ezpzconsultations-address', 'ezpzconsultations_display_address');
 endif;
 
 /**
@@ -201,8 +201,8 @@ endif;
  * @param string $country_code
  * @return string Formatted Number
  */
-if ( ! function_exists( 'jellypress_append_country_dialing_code' ) ) :
-  function jellypress_append_country_dialing_code($telephone_number, $country_code = null) {
+if ( ! function_exists( 'ezpzconsultations_append_country_dialing_code' ) ) :
+  function ezpzconsultations_append_country_dialing_code($telephone_number, $country_code = null) {
 
     $cleansed_number = esc_attr(preg_replace("/[^0-9 ]/", "", $telephone_number )); // Strip all unwanted characters
 
@@ -219,7 +219,7 @@ if ( ! function_exists( 'jellypress_append_country_dialing_code' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'jellypress_display_phone_number' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_phone_number' ) ) :
   /**
    * Displays the organisations phone number, taken from the ACF options page
    *
@@ -227,25 +227,25 @@ if ( ! function_exists( 'jellypress_display_phone_number' ) ) :
    * @param boolean $icon Whether or not to show the icon. Useful if invoking this function from php directly.
    * @return string Formatted telephone number with UK +44 prefix in the anchor link
    */
-  function jellypress_display_phone_number($atts = null, $icon = false) {
+  function ezpzconsultations_display_phone_number($atts = null, $icon = false) {
       $args = shortcode_atts( array(
         'show_icon' => $icon
-      ), $atts, 'jellypress-phone' );
+      ), $atts, 'ezpzconsultations-phone' );
       $args['show_icon'] = filter_var( $args['show_icon'], FILTER_VALIDATE_BOOLEAN );
       $show_icon = $args['show_icon'];
 
     // If show icon is true, define the icons to return else make them empty strings
-    $icon = $show_icon == true ? jellypress_icon('phone') : '';
+    $icon = $show_icon == true ? ezpzconsultations_icon('phone') : '';
 
     $phone_number = get_global_option( 'primary_phone_number');
-    $link_number = jellypress_append_country_dialing_code($phone_number, get_global_option( 'dialing_code'));
+    $link_number = ezpzconsultations_append_country_dialing_code($phone_number, get_global_option( 'dialing_code'));
 
-    if($phone_number) return '<span class="telephone-number"><span class="bold">'.$icon.__('Telephone:','jellypress').'</span> <a href="tel:'.$link_number.'" rel="nofollow">'.$phone_number.'</a></span>';
+    if($phone_number) return '<span class="telephone-number"><span class="bold">'.$icon.__('Telephone:','ezpzconsultations').'</span> <a href="tel:'.$link_number.'" rel="nofollow">'.$phone_number.'</a></span>';
   }
-  add_shortcode('jellypress-phone', 'jellypress_display_phone_number');
+  add_shortcode('ezpzconsultations-phone', 'ezpzconsultations_display_phone_number');
 endif;
 
-if ( ! function_exists( 'jellypress_display_opening_hours' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_opening_hours' ) ) :
   /**
    * Displays the organisations opening hours, by looping through a repeater on the ACF options page
    *
@@ -253,25 +253,25 @@ if ( ! function_exists( 'jellypress_display_opening_hours' ) ) :
    * @param boolean $icon Whether to show an icon. Useful if invoking this function from php
    * @return string Formatted HTML table of opening hours.
    */
-  function jellypress_display_opening_hours($atts = null, $icon = false) {
+  function ezpzconsultations_display_opening_hours($atts = null, $icon = false) {
     $args = shortcode_atts( array(
       'show_icons' => $icon
-    ), $atts, 'jellypress-opening' );
+    ), $atts, 'ezpzconsultations-opening' );
     $args['show_icons'] = filter_var( $args['show_icons'], FILTER_VALIDATE_BOOLEAN );
     $show_icons = $args['show_icons'];
 
     // If show icon is true, define the icons to return else make them empty strings
-    $days_icon = $show_icons == true ? jellypress_icon('calendar') : '';
-    $times_icon = $show_icons == true ? jellypress_icon('clock') : '';
+    $days_icon = $show_icons == true ? ezpzconsultations_icon('calendar') : '';
+    $times_icon = $show_icons == true ? ezpzconsultations_icon('clock') : '';
 
     if ( have_rows( 'opening_hours', 'option' ) ) :
-      $opening_hours_formatted = '<table class="opening-hours"><thead><tr><th>'.$days_icon.__('Day(s)','jellypress').'</th><th>'.$times_icon.__('Opening Hours','jellypress').'</th></tr></thead><tbody>';
+      $opening_hours_formatted = '<table class="opening-hours"><thead><tr><th>'.$days_icon.__('Day(s)','ezpzconsultations').'</th><th>'.$times_icon.__('Opening Hours','ezpzconsultations').'</th></tr></thead><tbody>';
       while ( have_rows( 'opening_hours', 'option' ) ) : the_row();
         $closed = get_sub_field('closed');
         $from   = get_sub_field('from');
         $to     = get_sub_field('to');
         if($closed) {
-          $opening_hours = __('Closed', 'jellypress');
+          $opening_hours = __('Closed', 'ezpzconsultations');
         }
         else {
           $opening_hours = $from.' - '.$to;
@@ -284,10 +284,10 @@ if ( ! function_exists( 'jellypress_display_opening_hours' ) ) :
       return $opening_hours_formatted;
     endif;
   }
-  add_shortcode('jellypress-opening', 'jellypress_display_opening_hours');
+  add_shortcode('ezpzconsultations-opening', 'ezpzconsultations_display_opening_hours');
 endif;
 
-if ( ! function_exists( 'jellypress_display_departments' ) ) :
+if ( ! function_exists( 'ezpzconsultations_display_departments' ) ) :
   /**
    * Displays an organisation's additional contact information based on data
    * from an ACF options page.
@@ -296,32 +296,32 @@ if ( ! function_exists( 'jellypress_display_departments' ) ) :
    * @param boolean $icon Whether to show the icons or not. Useful if invoking from php.
    * @return string Formatted HTML table
    */
-  function jellypress_display_departments($atts = null, $icon = false) {
+  function ezpzconsultations_display_departments($atts = null, $icon = false) {
     $args = shortcode_atts( array(
       'show_icons' => $icon
-    ), $atts, 'jellypress-departments' );
+    ), $atts, 'ezpzconsultations-departments' );
     $args['show_icons'] = filter_var( $args['show_icons'], FILTER_VALIDATE_BOOLEAN );
     $show_icons = $args['show_icons'];
 
     // If show icon is true, define the icons to return else make them empty strings
-    $depts_icon = $show_icons == true ? jellypress_icon('department') : '';
-    $phone_icon = $show_icons == true ? jellypress_icon('phone') : '';
-    $email_icon = $show_icons == true ? jellypress_icon('email') : '';
+    $depts_icon = $show_icons == true ? ezpzconsultations_icon('department') : '';
+    $phone_icon = $show_icons == true ? ezpzconsultations_icon('phone') : '';
+    $email_icon = $show_icons == true ? ezpzconsultations_icon('email') : '';
 
     if ( have_rows( 'departments', 'option' ) ) :
-      $phone_numbers_formatted = '<table class="department-contacts"><thead><tr><th>'.$depts_icon.__('Department','jellypress').'</th><th>'.$phone_icon.__('Phone Number','jellypress').'</th><th>'.$email_icon.__('Email Address','jellypress').'</th></tr></thead><tbody>';
+      $phone_numbers_formatted = '<table class="department-contacts"><thead><tr><th>'.$depts_icon.__('Department','ezpzconsultations').'</th><th>'.$phone_icon.__('Phone Number','ezpzconsultations').'</th><th>'.$email_icon.__('Email Address','ezpzconsultations').'</th></tr></thead><tbody>';
       while ( have_rows( 'departments', 'option' ) ) : the_row();
         $department = get_sub_field('department');
         $phone_number   = get_sub_field('phone_number');
         $email_address     = get_sub_field('email_address');
 
-        $link_number = jellypress_append_country_dialing_code($phone_number, get_sub_field( 'dialing_code'));
+        $link_number = ezpzconsultations_append_country_dialing_code($phone_number, get_sub_field( 'dialing_code'));
 
-        $phone_numbers_formatted .= '<tr><td class="bold">'.$department.'</td><td><a href="tel:'.$link_number.'" rel="nofollow">'.$phone_number.'</a></td><td>'.jellypress_hide_email($email_address).'</td></tr>';
+        $phone_numbers_formatted .= '<tr><td class="bold">'.$department.'</td><td><a href="tel:'.$link_number.'" rel="nofollow">'.$phone_number.'</a></td><td>'.ezpzconsultations_hide_email($email_address).'</td></tr>';
       endwhile;
       $phone_numbers_formatted .= '</tbody></table>';
       return $phone_numbers_formatted;
     endif;
   }
-  add_shortcode('jellypress-departments', 'jellypress_display_departments');
+  add_shortcode('ezpzconsultations-departments', 'ezpzconsultations_display_departments');
 endif;

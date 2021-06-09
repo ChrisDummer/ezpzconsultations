@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -18,13 +18,13 @@ defined( 'ABSPATH' ) || exit;
       <div class="col">
         <header class="page-header">
           <?php
-          jellypress_post_thumbnail('medium', 'alignright');
+          ezpzconsultations_post_thumbnail('medium', 'alignright');
           the_title( '<h1 class="page-title">', '</h1>' );
           if ( 'post' === get_post_type() ) : ?>
             <div class="entry-meta">
               <?php
-              jellypress_posted_on();
-              jellypress_posted_by();
+              ezpzconsultations_posted_on();
+              ezpzconsultations_posted_by();
               ?>
             </div>
           <?php endif; ?>

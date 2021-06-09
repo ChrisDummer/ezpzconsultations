@@ -3,7 +3,7 @@
  * Functions that work with charts.js
  * @link https://www.chartjs.org/docs
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -14,16 +14,16 @@ defined( 'ABSPATH' ) || exit;
  *
  * @param string $chart_id HTML ID of the chart element
  * @param string $chart_type eg. 'bar', 'pie'
- * @param array $chart_data constructed by jellypress_build_chart_data()
- * @param array $chart_options constructed by jellypress_build_chart_data()
+ * @param array $chart_data constructed by ezpzconsultations_build_chart_data()
+ * @param array $chart_options constructed by ezpzconsultations_build_chart_data()
  * @return string Javascript to initialize a chart.
  */
-if (!function_exists('jellypress_chart_init')):
-  function jellypress_chart_init($chart_id, $chart_type, $chart_data, $chart_options = null ) {
+if (!function_exists('ezpzconsultations_chart_init')):
+  function ezpzconsultations_chart_init($chart_id, $chart_type, $chart_data, $chart_options = null ) {
     // Convert to JSON
     $chart_data_json = json_encode($chart_data);
     // Strip the quotation marks to. Uses a pattern that's highly unlikely to be input by the user.
-    // This is added in jellypress_build_chart_data() in the php array as it can't hold variables
+    // This is added in ezpzconsultations_build_chart_data() in the php array as it can't hold variables
     $chart_data_json = str_replace('"#!--!# ','',$chart_data_json);
     $chart_data_json = str_replace(' #!--!#"','',$chart_data_json);
 
@@ -53,10 +53,10 @@ endif;
  *
  * @param array $chart_data_array An Array of data; this function expects it to be structured in a certain way from ACF
  * @param string $chart_type eg. 'bar', 'pie'
- * @return json encoded data for passing to jellypress_chart_init()
+ * @return json encoded data for passing to ezpzconsultations_chart_init()
  */
-if (!function_exists('jellypress_build_chart_data')):
-  function jellypress_build_chart_data($chart_data_array, $chart_type, $allow_multiple = false) {
+if (!function_exists('ezpzconsultations_build_chart_data')):
+  function ezpzconsultations_build_chart_data($chart_data_array, $chart_type, $allow_multiple = false) {
 
     $chart_datasets = [];
     $chart_axes = [];
@@ -130,8 +130,8 @@ endif;
  * @param string $chart_title Optional Chart Title
  * @return void
  */
-if (!function_exists('jellypress_build_chart_options')):
-  function jellypress_build_chart_options($chart_type, $chart_title = null) {
+if (!function_exists('ezpzconsultations_build_chart_options')):
+  function ezpzconsultations_build_chart_options($chart_type, $chart_title = null) {
 
     $chart_options = null; // So we can return null if nothing gets added
 

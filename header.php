@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -30,7 +30,7 @@ defined( 'ABSPATH' ) || exit;
 
 <?php if ( !is_page_template( 'page-simple.php' ) ) : ?>
 
-  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jellypress' ); ?></a>
+  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ezpzconsultations' ); ?></a>
 
     <header id="masthead" class="site-header">
       <nav id="site-navigation" class="navbar main-navigation">
@@ -40,14 +40,14 @@ defined( 'ABSPATH' ) || exit;
             <span class="site-title navbar-item" style="display:block">
               <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
               <?php
-                $jellypress_description = get_bloginfo( 'description', 'display' );
-                if ( $jellypress_description || is_customize_preview() ) : ?>
-                <br/><span class="site-description"><?php echo $jellypress_description; ?></span>
+                $ezpzconsultations_description = get_bloginfo( 'description', 'display' );
+                if ( $ezpzconsultations_description || is_customize_preview() ) : ?>
+                <br/><span class="site-description"><?php echo $ezpzconsultations_description; ?></span>
               <?php endif; ?>
             </span>
             <!-- EXAMPLE OF EMBEDDING CLIENT LOGO -->
             <!--<a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <?php _e('<img src="'.get_stylesheet_directory_uri().'/dist/img/client-logo.svg'.'" alt="'.get_bloginfo( 'description', 'display' ).'">', 'jellypress'); ?>
+              <?php _e('<img src="'.get_stylesheet_directory_uri().'/dist/img/client-logo.svg'.'" alt="'.get_bloginfo( 'description', 'display' ).'">', 'ezpzconsultations'); ?>
             </a>-->
 
             <button class="hamburger" type="button" aria-label="Menu" aria-controls="navbar-menu" aria-expanded="false">
@@ -69,7 +69,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
             <div class="navbar-end">
               <a href="#" class="button secondary">Example Button</a>
-              <?php if ( class_exists( 'woocommerce' ) ) jellypress_woocommerce_header_cart(); ?>
+              <?php if ( class_exists( 'woocommerce' ) ) ezpzconsultations_woocommerce_header_cart(); ?>
             </div>
           </div>
         </div>

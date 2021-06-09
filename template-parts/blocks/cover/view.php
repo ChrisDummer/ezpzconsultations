@@ -3,7 +3,7 @@
  * Flexible layout: Cover block
  * Renders a block containing a background image and overlaid text
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -56,17 +56,17 @@ $block_classes .= ' flex align-middle';
     <?php if ($block_title) : $title_align = $block['title_align']; ?>
       <header class="row justify-<?php echo $row_justify;?> block-title">
         <div class="col <?php echo $col_class;?>">
-          <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+          <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
         </div>
       </header>
     <?php endif; ?>
 
     <div class="row justify-<?php echo $row_justify;?> cover-text">
       <div class="col <?php echo $col_class;?>">
-        <?php echo jellypress_content($block['text']); ?>
+        <?php echo ezpzconsultations_content($block['text']); ?>
         <?php
-          if($content_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-          else jellypress_display_cta_buttons($block['buttons']);
+          if($content_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+          else ezpzconsultations_display_cta_buttons($block['buttons']);
           ?>
       </div>
     </div>

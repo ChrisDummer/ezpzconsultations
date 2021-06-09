@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -22,12 +22,12 @@ defined( 'ABSPATH' ) || exit;
       <div class="row">
         <div class="site-info col" id="colophon">
           <p class="small">
-            <?php echo jellypress_copyright();?>
+            <?php echo ezpzconsultations_copyright();?>
             <span class="sep"> | </span>
             <span class="eplsdesign">
             <?php
             /* translators: 1: Theme author and link to website. */
-            printf( esc_html__( 'Website design and build by %1$s', 'jellypress' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign=jellypress" rel="author">EPLS Design</a>' );
+            printf( esc_html__( 'Website design and build by %1$s', 'ezpzconsultations' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign=jellypress" rel="author">EPLS Design</a>' );
             ?>
             </span>
           </p>

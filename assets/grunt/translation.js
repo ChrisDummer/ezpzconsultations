@@ -14,7 +14,7 @@ module.exports = function (grunt) {
           'inc/tgm-plugin-activation.php',
           'inc/plugins.php',
         ],
-        potFilename: 'jellypress.pot',
+        potFilename: 'ezpzconsultations.pot',
         potHeaders: {
           poedit: true,
           'x-poedit-keywordslist': true,

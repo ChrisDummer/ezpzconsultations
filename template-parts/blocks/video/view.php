@@ -3,7 +3,7 @@
  * Flexible layout: Video block
  * Renders a video block
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -29,7 +29,7 @@ elseif($block_width == 'full') $block_classes .= ' is-full-width';
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row block-title">
       <div class="col">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -40,7 +40,7 @@ elseif($block_width == 'full') $block_classes .= ' is-full-width';
       <div class="col">
         <?php
         if ( $block_width === 'full' ){ echo '<div class="vw-100">'; }
-          jellypress_embed_video($block['video'], $block['aspect_ratio']);
+          ezpzconsultations_embed_video($block['video'], $block['aspect_ratio']);
         if ( $block_width === 'full' ){ echo '</div>'; }?>
       </div>
     </div>

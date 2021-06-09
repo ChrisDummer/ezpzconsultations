@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a simple slide
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -38,8 +38,8 @@ $slide_link = $slide['slide_link'];
     </div>
     <div class="col sm-12 md-8 lg-6 slide-text">
       <?php
-      if($slide_title = $slide['slide_title']) echo '<h3>'.jellypress_bracket_tag_replace($slide_title).'</h3>';
-      echo jellypress_content($slide['slide_text']);
+      if($slide_title = $slide['slide_title']) echo '<h3>'.ezpzconsultations_bracket_tag_replace($slide_title).'</h3>';
+      echo ezpzconsultations_content($slide['slide_text']);
       if($slide_link) echo '<a class="button'.$button_color.'" href="'.$slide_link['url'].'" title="'.$slide_link['title'].'" target="'.$slide_link['target'].'">'.$slide_link['title'].'</a>';
       ?>
     </div>

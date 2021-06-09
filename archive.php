@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -49,7 +49,7 @@ get_header();
           endwhile;
           if ( $loading_type == 'scroll' ) echo '</div><div class="row"><div class="col xs-12"><div id="archive-loading"></div></div>';
           if ( $wp_query->max_num_pages > 1 && $loading_type == 'button' ) {
-            echo '</div><div class="row"><div class="col xs-12"><button class="button outline button-loadmore">' . __( 'Load More...', 'jellypress' ) . '</button></div>';
+            echo '</div><div class="row"><div class="col xs-12"><button class="button outline button-loadmore">' . __( 'Load More...', 'ezpzconsultations' ) . '</button></div>';
           };
         echo '</div>';
 
@@ -58,7 +58,7 @@ get_header();
       endif;
 
       echo '</div>';
-      jellypress_sidebar();
+      ezpzconsultations_sidebar();
       echo '</div>
             </div>
             </section>';
@@ -66,6 +66,6 @@ get_header();
   </main>
 </div>
 <?php
-jellypress_initialize_ajax_posts(null, $loading_type); // Initialise on $wp_query
+ezpzconsultations_initialize_ajax_posts(null, $loading_type); // Initialise on $wp_query
 get_footer();
 ?>

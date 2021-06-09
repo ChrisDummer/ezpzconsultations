@@ -3,14 +3,14 @@
  * Functions that work with TwentyTwenty Image Comparison by Zurb
  * @link https://zurb.com/playground/twentytwenty
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if (!function_exists('jellypress_compare_init')):
-  function jellypress_compare_init($compare_id, $orientation = 'horizontal', $before_label = '', $after_label = '' ) {
+if (!function_exists('ezpzconsultations_compare_init')):
+  function ezpzconsultations_compare_init($compare_id, $orientation = 'horizontal', $before_label = '', $after_label = '' ) {
     $output =
       "<script type='text/javascript'>
       jQuery(function ($) {

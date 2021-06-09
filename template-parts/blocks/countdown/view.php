@@ -3,7 +3,7 @@
  * Flexible layout: Countdown
  * Allows the editor to add a countdown to a specified date/time
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -26,7 +26,7 @@ $complete_text = $block['complete_text'];
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -34,7 +34,7 @@ $complete_text = $block['complete_text'];
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -50,21 +50,21 @@ $complete_text = $block['complete_text'];
         <div id="<?php echo $countdown_id;?>" class="countdown<?php if($complete_text) echo ' has-complete-text';?>">
           <div class="partial">
             <div class="value days">00</div>
-            <div class="small"><?php _e('Days', 'jellypress');?></div>
+            <div class="small"><?php _e('Days', 'ezpzconsultations');?></div>
           </div>
           <div class="partial">
             <div class="value hours">00</div>
-            <div class="small"><?php _e('Hours', 'jellypress');?></div>
+            <div class="small"><?php _e('Hours', 'ezpzconsultations');?></div>
           </div>
           <div class="partial">
             <div class="value minutes">00</div>
-            <div class="small"><?php _e('Minutes', 'jellypress');?></div>
+            <div class="small"><?php _e('Minutes', 'ezpzconsultations');?></div>
           </div>
           <div class="partial">
             <div class="value seconds">00</div>
-            <div class="small"><?php _e('Seconds', 'jellypress');?></div>
+            <div class="small"><?php _e('Seconds', 'ezpzconsultations');?></div>
           </div>
-          <?php if($complete_text) echo '<div class="partial complete-text">'.jellypress_content($complete_text).'</div>'; ?>
+          <?php if($complete_text) echo '<div class="partial complete-text">'.ezpzconsultations_content($complete_text).'</div>'; ?>
         </div>
       </div>
     </div>
@@ -74,9 +74,9 @@ $complete_text = $block['complete_text'];
     <div class="row justify-center">
       <div class="col md-10 lg-8 text-center">
         <?php
-        if($title_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-        elseif($title_align == 'right') jellypress_display_cta_buttons($block['buttons'], 'justify-end');
-        else jellypress_display_cta_buttons($block['buttons']);
+        if($title_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+        elseif($title_align == 'right') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-end');
+        else ezpzconsultations_display_cta_buttons($block['buttons']);
         ?>
       </div>
     </div>
@@ -87,6 +87,6 @@ $complete_text = $block['complete_text'];
 
 <?php if($countdown) {
   add_action('wp_footer',
-  jellypress_countdown_init($countdown_id, $countdown),
+  ezpzconsultations_countdown_init($countdown_id, $countdown),
   30); // 30 priority ensures it is placed below the enqueued scripts (priority 20)
 } ?>

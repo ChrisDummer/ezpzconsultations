@@ -7,7 +7,7 @@
  * FAQs get added to website schema as well for super-friendly SEO.
  * Uses a11y_accordions for ARIA accessible accordions https://github.com/scottaohara/a11y_accordions
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -36,7 +36,7 @@ $block_preamble = $block['preamble'];
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -44,7 +44,7 @@ $block_preamble = $block['preamble'];
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -83,7 +83,7 @@ $block_preamble = $block['preamble'];
           }
 
           echo '<h4 class="faq-question" data-aria-accordion-heading>'.$faq['faq_question'].'</h4>';
-          echo '<div class="faq-answer" data-aria-accordion-panel>'.jellypress_content($faq['faq_answer']).'</div>';
+          echo '<div class="faq-answer" data-aria-accordion-panel>'.ezpzconsultations_content($faq['faq_answer']).'</div>';
         endforeach; ?>
       </section>
     </div>
@@ -95,9 +95,9 @@ $block_preamble = $block['preamble'];
     <div class="row justify-center">
       <div class="col md-10 lg-8 text-center">
         <?php
-        if($title_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-        elseif($title_align == 'right') jellypress_display_cta_buttons($block['buttons'], 'justify-end');
-        else jellypress_display_cta_buttons($block['buttons']);
+        if($title_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+        elseif($title_align == 'right') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-end');
+        else ezpzconsultations_display_cta_buttons($block['buttons']);
         ?>
       </div>
     </div>

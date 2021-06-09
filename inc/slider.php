@@ -3,16 +3,16 @@
  * Functions which support Splide slider
  * @link https://splidejs.com/category/users-guide/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if (!function_exists('jellypress_splide_init')):
+if (!function_exists('ezpzconsultations_splide_init')):
   // Note: Breakpoints are below(val) rather than above, that is why perPage starts at items_lg
   // Note: If you change the breakpoint settings in the SCSS you should change them here too.
-  function jellypress_splide_init(
+  function ezpzconsultations_splide_init(
     $slider_id,
     $items_xs = 1,
     $items_sm = 1,

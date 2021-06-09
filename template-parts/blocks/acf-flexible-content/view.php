@@ -4,7 +4,7 @@
  * using a dynamic while loop to fetch the correct layout partial from /template-layouts
  * Partials in that folder should be named with the same convention as in ACF.
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.

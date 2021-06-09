@@ -5,7 +5,7 @@
  * The editor can add multiple markers and customise
  * the tooltip and marker icon
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -32,7 +32,7 @@ elseif($block_width == 'full') $block_classes .= ' is-full-width';
     <?php if ($block_title) : $title_align = $block['title_align']; ?>
       <header class="row justify-center block-title">
         <div class="col md-10 lg-8">
-          <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+          <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
         </div>
       </header>
     <?php endif; ?>
@@ -40,7 +40,7 @@ elseif($block_width == 'full') $block_classes .= ' is-full-width';
     <?php if ($block_preamble) : ?>
       <div class="row justify-center block-preamble">
         <div class="col md-10 lg-8">
-          <?php echo jellypress_content($block_preamble); ?>
+          <?php echo ezpzconsultations_content($block_preamble); ?>
         </div>
       </div>
     <?php endif; ?>
@@ -52,13 +52,13 @@ elseif($block_width == 'full') $block_classes .= ' is-full-width';
       <div class="col">
         <?php if ( $block_width === 'full' ){ echo '<div class="vw-100">'; }
             if (get_global_option('google_maps_api_key') && ($map_locations = $block['locations'])) :
-              jellypress_display_map_markers($map_locations);
+              ezpzconsultations_display_map_markers($map_locations);
             elseif(current_user_can( 'publish_posts' )):
               // Show a warning for the admin to add an API key
               echo '<div class="callout error">' .
               sprintf(
                 /* translators: %s link to theme options page. */
-                __( 'You need to <a href="%s" class="callout-link">add a Google Maps API key</a> in order to display a map on your website.', 'jellypress' ),
+                __( 'You need to <a href="%s" class="callout-link">add a Google Maps API key</a> in order to display a map on your website.', 'ezpzconsultations' ),
                 esc_url( get_admin_url(null, 'admin.php?page=apis' ) )
               )
               . '</div>';

@@ -2,30 +2,30 @@
 /**
  * Basic theme setup including menus etc
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if (! function_exists('jellypress_content_width') ) :
+if (! function_exists('ezpzconsultations_content_width') ) :
     /**
      * Set the content width in pixels, based on the theme's design and stylesheet.
      * Priority 0 to make it available to lower priority callbacks.
      *
      * @global int $content_width
      */
-    function jellypress_content_width()
+    function ezpzconsultations_content_width()
     {
         // This variable is intended to be overruled from themes.
         // @link https://pineco.de/why-we-should-set-the-content_width-variable-in-wordpress-themes/#:~:text=The%20%24content_width%20global%20variable%20was,for%20images%2C%20videos%20and%20embeds.
-        $GLOBALS['content_width'] = apply_filters('jellypress_content_width', 640);
+        $GLOBALS['content_width'] = apply_filters('ezpzconsultations_content_width', 640);
     }
 endif;
-add_action('after_setup_theme', 'jellypress_content_width', 0);
+add_action('after_setup_theme', 'ezpzconsultations_content_width', 0);
 
-add_action('after_setup_theme', 'jellypress_setup');
-if (! function_exists('jellypress_setup') ) :
+add_action('after_setup_theme', 'ezpzconsultations_setup');
+if (! function_exists('ezpzconsultations_setup') ) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -33,13 +33,13 @@ if (! function_exists('jellypress_setup') ) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function jellypress_setup()
+    function ezpzconsultations_setup()
     {
         /*
         * Make theme available for translation.
         * Translations can be filed in the /languages/ directory.
         */
-        load_theme_textdomain('jellypress', get_template_directory() . '/languages');
+        load_theme_textdomain('ezpzconsultations', get_template_directory() . '/languages');
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
@@ -63,7 +63,7 @@ if (! function_exists('jellypress_setup') ) :
          */
         register_nav_menus(
             array(
-            'menu-primary' => esc_html__('Primary', 'jellypress'),
+            'menu-primary' => esc_html__('Primary', 'ezpzconsultations'),
             )
         );
 
@@ -112,15 +112,15 @@ if (! function_exists('jellypress_setup') ) :
     }
 endif;
 
-add_filter('walker_nav_menu_start_el', 'jellypress_replace_menu_hash', 999);
+add_filter('walker_nav_menu_start_el', 'ezpzconsultations_replace_menu_hash', 999);
 /**
  * Hooks into Wordpress Menu to replace hashtag # with javascript:void(0)
  * Useful when you want to have a drop down parent without a corresponding page
  * @param string $menu_item item HTML
  * @return string item HTML
  */
-if (! function_exists('jellypress_replace_menu_hash') ) :
-  function jellypress_replace_menu_hash($menu_item) {
+if (! function_exists('ezpzconsultations_replace_menu_hash') ) :
+  function ezpzconsultations_replace_menu_hash($menu_item) {
       if (strpos($menu_item, 'href="#"') !== false) {
           $menu_item = str_replace('href="#"', 'href="javascript:void(0);"', $menu_item);
       }
@@ -133,22 +133,22 @@ endif;
  *
  * @return void
  */
-if ( ! function_exists( 'jellypress_show_dev_flag' ) ) :
-  function jellypress_show_dev_flag() {
+if ( ! function_exists( 'ezpzconsultations_show_dev_flag' ) ) :
+  function ezpzconsultations_show_dev_flag() {
     $dev_url = DEV_URL ? parse_url(DEV_URL) : null;
     $staging_url = STAGING_URL ? parse_url(STAGING_URL) : null;
-    $current_url = parse_url(jellypress_get_full_url());
+    $current_url = parse_url(ezpzconsultations_get_full_url());
     if ($dev_url['host'] == $current_url['host']){
-      echo '<div class="dev-flag dev">' . __('Development Site', 'jellypress') . '</div>';
+      echo '<div class="dev-flag dev">' . __('Development Site', 'ezpzconsultations') . '</div>';
     }
     elseif ($staging_url['host'] == $current_url['host']){
-      echo '<div class="dev-flag staging">' . __('Staging Site', 'jellypress') . '</div>';
+      echo '<div class="dev-flag staging">' . __('Staging Site', 'ezpzconsultations') . '</div>';
     }
   }
 endif;
 // Hook into footer and admin footer
-add_action('wp_footer', 'jellypress_show_dev_flag');
-add_action('admin_footer', 'jellypress_show_dev_flag');
+add_action('wp_footer', 'ezpzconsultations_show_dev_flag');
+add_action('admin_footer', 'ezpzconsultations_show_dev_flag');
 
 /**
  * Function which pulls data from ACF Options Page and displays this as structured JSON schema in the website header.
@@ -201,7 +201,7 @@ add_action('wp_head', function() {
 
     // PHONE
     if (isset($schema_config['primary_phone_number'])) {
-      $link_number = jellypress_append_country_dialing_code($schema_config['primary_phone_number'], get_global_option( 'dialing_code'));
+      $link_number = ezpzconsultations_append_country_dialing_code($schema_config['primary_phone_number'], get_global_option( 'dialing_code'));
       $schema['telephone'] = $link_number;
     }
 
@@ -214,7 +214,7 @@ add_action('wp_head', function() {
     if (!empty($schema_config['departments'])) {
       $schema['contactPoint'] = array();
       foreach($schema_config['departments'] as $contactPoint):
-          $telephone = jellypress_append_country_dialing_code($contactPoint['phone_number'], $contactPoint['dialing_code']);
+          $telephone = ezpzconsultations_append_country_dialing_code($contactPoint['phone_number'], $contactPoint['dialing_code']);
 
           $contact = array(
               '@type'       => 'ContactPoint',

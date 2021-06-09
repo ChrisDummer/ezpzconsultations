@@ -7,7 +7,7 @@
  * random or latest. If random or latest they can select post type
  * and quantity to display.
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -31,7 +31,7 @@ $posts_array = array(); // Create an empty array to store posts ready for the lo
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -39,7 +39,7 @@ $posts_array = array(); // Create an empty array to store posts ready for the lo
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -93,7 +93,7 @@ $posts_array = array(); // Create an empty array to store posts ready for the lo
         endforeach;
         wp_reset_postdata();
     else:
-      echo '<div class="col md-10 lg-8"><div class="callout error" role="alert">'.__('No posts matched your criteria.', 'jellypress').'</div></div>';
+      echo '<div class="col md-10 lg-8"><div class="callout error" role="alert">'.__('No posts matched your criteria.', 'ezpzconsultations').'</div></div>';
     endif;
   echo '</div>';
 
@@ -102,7 +102,7 @@ $posts_array = array(); // Create an empty array to store posts ready for the lo
   <?php if ( !empty($block['buttons']) ) : ?>
     <div class="row justify-center">
       <div class="col md-10 lg-8 text-center">
-        <?php jellypress_display_cta_buttons($block['buttons'], 'justify-center'); ?>
+        <?php ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center'); ?>
       </div>
     </div>
   <?php endif; ?>

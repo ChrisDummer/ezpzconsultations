@@ -18,13 +18,13 @@
  */
 
 
-add_action( 'tgmpa_register', 'jellypress_register_required_plugins' );
+add_action( 'tgmpa_register', 'ezpzconsultations_register_required_plugins' );
 
 /**
  * Register the required plugins for this theme.
  * This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10.
  */
-function jellypress_register_required_plugins() {
+function ezpzconsultations_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -116,25 +116,25 @@ function jellypress_register_required_plugins() {
 	 * Array of configuration settings.
 	 */
 	$config = array(
-		'id'           => 'jellypress',
+		'id'           => 'ezpzconsultations',
 		'parent_slug'  => 'plugins.php',
 		'capability'   => 'edit_plugins',
 		'dismissable'  => false,
 		'is_automatic' => false,
 		'strings'      => array(
-			'page_title'                      => __( 'Install Required Theme Plugins', 'jellypress' ),
-			'menu_title'                      => __( 'Theme Plugins', 'jellypress' ),
+			'page_title'                      => __( 'Install Required Theme Plugins', 'ezpzconsultations' ),
+			'menu_title'                      => __( 'Theme Plugins', 'ezpzconsultations' ),
 			'notice_can_install_required'     => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'This theme requires the following plugin to operate correctly: %1$s.',
 				'This theme requires the following plugins to operate correctly: %1$s.',
-				'jellypress'
+				'ezpzconsultations'
 			),
 			'notice_can_install_recommended'  => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'This theme recommends the following plugin to add additional functionality: %1$s.',
 				'This theme recommends the following plugins to add additional functionality: %1$s.',
-				'jellypress'
+				'ezpzconsultations'
 			),
 		),
 	);

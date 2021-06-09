@@ -2,11 +2,11 @@
 /**
  * Flexible layout: Post Archive
  * Allows the editor to select a post type and loading method
- * (scroll/button) and uses the jellypress_initialize_ajax_posts()
+ * (scroll/button) and uses the ezpzconsultations_initialize_ajax_posts()
  * and related functions to provide a lazyloaded archive of posts
  * sorted by date.
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -42,7 +42,7 @@ switch ($block_bg_color) {
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -50,7 +50,7 @@ switch ($block_bg_color) {
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -76,11 +76,11 @@ switch ($block_bg_color) {
         }
         if ( $loading_type == 'scroll' ) echo '</div><div class="row"><div class="col xs-12"><div id="archive-loading"></div></div>';
         if ( $archive_query->max_num_pages > 1 && $loading_type == 'button' ) {
-          echo '</div><div class="row"><div class="col xs-12"><button class="button outline button-loadmore'.$button_loadmore_color.'">' . __( 'Load More...', 'jellypress' ) . '</button></div>';
+          echo '</div><div class="row"><div class="col xs-12"><button class="button outline button-loadmore'.$button_loadmore_color.'">' . __( 'Load More...', 'ezpzconsultations' ) . '</button></div>';
         };
 
       } else {
-        echo '<div class="col md-10 lg-8 offset-md-1 offset-lg-2"><div class="callout error" role="alert">'.__('No posts matched your criteria.', 'jellypress').'</div></div>';
+        echo '<div class="col md-10 lg-8 offset-md-1 offset-lg-2"><div class="callout error" role="alert">'.__('No posts matched your criteria.', 'ezpzconsultations').'</div></div>';
       }
     echo '</div>';
     wp_reset_postdata();
@@ -90,15 +90,15 @@ switch ($block_bg_color) {
     <div class="row justify-center">
       <div class="col md-10 lg-8 text-center">
       <?php
-        if($title_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-        elseif($title_align == 'right') jellypress_display_cta_buttons($block['buttons'], 'justify-end');
-        else jellypress_display_cta_buttons($block['buttons']);
+        if($title_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+        elseif($title_align == 'right') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-end');
+        else ezpzconsultations_display_cta_buttons($block['buttons']);
         ?>
       </div>
     </div>
   <?php endif; ?>
 
-  <?php jellypress_initialize_ajax_posts($archive_query, $loading_type); ?>
+  <?php ezpzconsultations_initialize_ajax_posts($archive_query, $loading_type); ?>
 
 </div>
 </section>

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -25,7 +25,7 @@ if ( get_the_content() && '' != get_post()->post_content ):
           <?php
           the_content();
           wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Sections:', 'jellypress' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Sections:', 'ezpzconsultations' ),
             'after'  => '</div>',
           ));
           ?>

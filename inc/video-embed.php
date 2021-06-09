@@ -2,20 +2,20 @@
 /**
  * Functions to help with embedding videos
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( !function_exists( 'jellypress_get_video_platform' )) :
+if ( !function_exists( 'ezpzconsultations_get_video_platform' )) :
   /**
    * Determines the platform of a video by analysing the URL
    *
    * @param string $video The URL that should be embedded.
    *
    */
-  function jellypress_get_video_platform( $video ) {
+  function ezpzconsultations_get_video_platform( $video ) {
     $platform = false;
     if ( strpos( $video, 'vimeo.com' ) !== false ) {
         $platform = 'vimeo';
@@ -29,21 +29,21 @@ if ( !function_exists( 'jellypress_get_video_platform' )) :
   }
 endif;
 
-if ( !function_exists( 'jellypress_embed_video' )) :
+if ( !function_exists( 'ezpzconsultations_embed_video' )) :
   /**
    * Prepares and displays an oembed video with play button
    *
    * @param string $video The URL that should be embedded.
    *
    */
-  function jellypress_embed_video ( $video, $aspect_ratio = '16x9' ) {
+  function ezpzconsultations_embed_video ( $video, $aspect_ratio = '16x9' ) {
 
       $oembed = wp_oembed_get( $video ); // Full oEmbed Code
       $oembed = explode( ' src="', $oembed ); // Explode to put the URL and options into [1]
       if ( isset( $oembed[1] )) {
         $oembed[1] = explode( '" ', $oembed[1] ); // Put's the URL into [1]
         $oembed_url = $oembed[1][0]; // Get the URL from the array
-        $platform = jellypress_get_video_platform( $oembed_url ); // Finds the platform from the URL
+        $platform = ezpzconsultations_get_video_platform( $oembed_url ); // Finds the platform from the URL
 
         if ( $platform === 'vimeo' ) {
 
@@ -92,7 +92,7 @@ if ( !function_exists( 'jellypress_embed_video' )) :
       if ( $platform ) { ?>
         <div class="video-wrapper">
           <div class="video-overlay has-bg-img" style="background-image:url('<?php echo $video_thumbnail_lq;?>')" data-bg-img="<?php echo $video_thumbnail_hq;?>" >
-            <button class="play platform-<?php esc_attr_e( $platform ); ?>" data-src="<?php echo esc_url( $oembed_url ); ?>" title="<?php _e('Play Video','jellypress');?>"><?php echo jellypress_icon( 'play' ); ?></button>
+            <button class="play platform-<?php esc_attr_e( $platform ); ?>" data-src="<?php echo esc_url( $oembed_url ); ?>" title="<?php _e('Play Video','ezpzconsultations');?>"><?php echo ezpzconsultations_icon( 'play' ); ?></button>
           </div>
           <div class="embed-container ratio-<?php echo $aspect_ratio;?>">
             <iframe width="640" height="390" type="text/html" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

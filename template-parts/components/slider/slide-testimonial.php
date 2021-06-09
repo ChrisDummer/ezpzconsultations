@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a testimonial slide
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -27,7 +27,7 @@ $testimonial_citation = $testimonial['testimonial_citation'];
       <blockquote class="testimonial">
         <?php
         if($testimonial_image) echo wp_get_attachment_image( $testimonial_image, 'thumbnail', '',  array( "class" => "testimonial-image alignright" ) );
-        echo jellypress_content($testimonial['testimonial_text']);
+        echo ezpzconsultations_content($testimonial['testimonial_text']);
         if($testimonial_citation) echo '<cite>'.$testimonial_citation.'</cite>';
         ?>
       </blockquote>

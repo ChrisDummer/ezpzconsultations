@@ -2,7 +2,7 @@
 /**
  * Completely removes support for comments from the Wordpress installation.
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.

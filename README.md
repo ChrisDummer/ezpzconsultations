@@ -88,11 +88,11 @@ rm -rf .git && rm .gitignore
 
 6. Duplicate the `.env_example.php` to `.env` and modify the settings to fit your project
 
-7. Search for: `'jellypress'` (inside single quotations) and replace with your theme slug e.g. `'myawesometheme'` to capture the text domain. Search for: `@package jellypress` and replace with your theme slug e.g. `@package myawesometheme` to capture text domains in file headers.
+7. Search for: `'ezpzconsultations'` (inside single quotations) and replace with your theme slug e.g. `'myawesometheme'` to capture the text domain. Search for: `@package ezpzconsultations` and replace with your theme slug e.g. `@package myawesometheme` to capture text domains in file headers.
 
-8. Search for: `jellypress_` and replace with your theme slug e.g. `myawesometheme_` to capture all the php function names.
+8. Search for: `ezpzconsultations_` and replace with your theme slug e.g. `myawesometheme_` to capture all the php function names.
 
-9. Search for: `jellypress-` and replace with your theme slug e.g. `myawesometheme-` to capture prefixed handles.
+9. Search for: `ezpzconsultations-` and replace with your theme slug e.g. `myawesometheme-` to capture prefixed handles.
 
 10. Rename `languages/jellypress.pot` to your theme slug e.g. `languages/myawesometheme.pot`. In `assets/grunt/translation.js` update `potFilename: 'jellypress.pot'` to match e.g. `potFilename: 'myawesometheme.pot'`
 

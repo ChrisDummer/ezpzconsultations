@@ -3,7 +3,7 @@
  * Flexible layout: Text Columns
  * Renders a block containing between two and four columns of WYSIWIG text
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -24,7 +24,7 @@ $block_title = $block['title'];
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
   <header class="row block-title">
     <div class="col">
-      <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+      <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
     </div>
   </header>
   <?php endif; ?>
@@ -33,7 +33,7 @@ $block_title = $block['title'];
     <div class="row">
       <?php foreach ($text_columns as $text_column): ?>
         <div class="col xs-12 md-0">
-          <?php echo jellypress_content($text_column['editor']); ?>
+          <?php echo ezpzconsultations_content($text_column['editor']); ?>
         </div>
       <?php endforeach; ?>
     </div>
@@ -43,9 +43,9 @@ $block_title = $block['title'];
     <div class="row">
       <div class="col text-center">
         <?php
-        if($title_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-        elseif($title_align == 'right') jellypress_display_cta_buttons($block['buttons'], 'justify-end');
-        else jellypress_display_cta_buttons($block['buttons']);
+        if($title_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+        elseif($title_align == 'right') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-end');
+        else ezpzconsultations_display_cta_buttons($block['buttons']);
         ?>
       </div>
     </div>

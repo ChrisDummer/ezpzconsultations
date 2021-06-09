@@ -3,7 +3,7 @@
  * Flexible layout: Image block
  * Renders an image block
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.

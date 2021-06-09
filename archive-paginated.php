@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -45,14 +45,14 @@ get_header();
       endwhile;
       echo '</div>';
 
-      jellypress_numeric_pagination(); // Paginate if there are older posts
+      ezpzconsultations_numeric_pagination(); // Paginate if there are older posts
 
       else :
         get_template_part( 'template-parts/layout/content/content', 'none' );
       endif;
 
       echo '</div>';
-      jellypress_sidebar();
+      ezpzconsultations_sidebar();
       echo '</div>
             </div>
             </section>';

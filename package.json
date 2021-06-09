@@ -1,6 +1,6 @@
 {
-  "name": "jellypress-wordpress-theme",
-  "friendly_name": "JellyPress",
+  "name": "ezpzconsultations-wordpress-theme",
+  "friendly_name": "Consultations",
   "version": "1.0.0",
   "author": {
     "name": "EPLS Design",
@@ -8,7 +8,7 @@
     "url": "https://epls.design"
   },
   "description": "Jellypress is a Wordpress starter theme based on the Jellyfish CSS framework and Automattic's Underscores(_S) theme.",
-  "homepage": "https://github.com/epls-design/ezpz-jellypress",
+  "homepage": "http://consultations.local",
   "main": "Gruntfile.js",
   "scripts": {
     "build": "grunt build",

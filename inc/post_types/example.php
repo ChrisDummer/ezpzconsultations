@@ -10,45 +10,45 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'jellypress_create_campaign_cpt' ) ) :
+if ( ! function_exists( 'ezpzconsultations_create_campaign_cpt' ) ) :
 
   /**
    * Register a CPT Campaign
    */
-  function jellypress_create_campaign_cpt() {
+  function ezpzconsultations_create_campaign_cpt() {
 
     $labels = array(
-      'name' => _x( 'Campaigns', 'Post Type General Name', 'jellypress' ),
-      'singular_name' => _x( 'Campaign', 'Post Type Singular Name', 'jellypress' ),
-      'menu_name' => _x( 'Campaigns', 'Admin Menu text', 'jellypress' ),
-      'name_admin_bar' => _x( 'Campaign', 'Add New on Toolbar', 'jellypress' ),
-      'archives' => __( 'Campaign Archives', 'jellypress' ),
-      'attributes' => __( 'Campaign Attributes', 'jellypress' ),
-      'parent_item_colon' => __( 'Parent Campaign:', 'jellypress' ),
-      'all_items' => __( 'All Campaigns', 'jellypress' ),
-      'add_new_item' => __( 'Add New Campaign', 'jellypress' ),
-      'add_new' => __( 'Add New', 'jellypress' ),
-      'new_item' => __( 'New Campaign', 'jellypress' ),
-      'edit_item' => __( 'Edit Campaign', 'jellypress' ),
-      'update_item' => __( 'Update Campaign', 'jellypress' ),
-      'view_item' => __( 'View Campaign', 'jellypress' ),
-      'view_items' => __( 'View Campaigns', 'jellypress' ),
-      'search_items' => __( 'Search Campaign', 'jellypress' ),
-      'not_found' => __( 'Not found', 'jellypress' ),
-      'not_found_in_trash' => __( 'Not found in Trash', 'jellypress' ),
-      'featured_image' => __( 'Featured Image', 'jellypress' ),
-      'set_featured_image' => __( 'Set featured image', 'jellypress' ),
-      'remove_featured_image' => __( 'Remove featured image', 'jellypress' ),
-      'use_featured_image' => __( 'Use as featured image', 'jellypress' ),
-      'insert_into_item' => __( 'Insert into Campaign', 'jellypress' ),
-      'uploaded_to_this_item' => __( 'Uploaded to this Campaign', 'jellypress' ),
-      'items_list' => __( 'Campaigns list', 'jellypress' ),
-      'items_list_navigation' => __( 'Campaigns list navigation', 'jellypress' ),
-      'filter_items_list' => __( 'Filter Campaigns list', 'jellypress' ),
+      'name' => _x( 'Campaigns', 'Post Type General Name', 'ezpzconsultations' ),
+      'singular_name' => _x( 'Campaign', 'Post Type Singular Name', 'ezpzconsultations' ),
+      'menu_name' => _x( 'Campaigns', 'Admin Menu text', 'ezpzconsultations' ),
+      'name_admin_bar' => _x( 'Campaign', 'Add New on Toolbar', 'ezpzconsultations' ),
+      'archives' => __( 'Campaign Archives', 'ezpzconsultations' ),
+      'attributes' => __( 'Campaign Attributes', 'ezpzconsultations' ),
+      'parent_item_colon' => __( 'Parent Campaign:', 'ezpzconsultations' ),
+      'all_items' => __( 'All Campaigns', 'ezpzconsultations' ),
+      'add_new_item' => __( 'Add New Campaign', 'ezpzconsultations' ),
+      'add_new' => __( 'Add New', 'ezpzconsultations' ),
+      'new_item' => __( 'New Campaign', 'ezpzconsultations' ),
+      'edit_item' => __( 'Edit Campaign', 'ezpzconsultations' ),
+      'update_item' => __( 'Update Campaign', 'ezpzconsultations' ),
+      'view_item' => __( 'View Campaign', 'ezpzconsultations' ),
+      'view_items' => __( 'View Campaigns', 'ezpzconsultations' ),
+      'search_items' => __( 'Search Campaign', 'ezpzconsultations' ),
+      'not_found' => __( 'Not found', 'ezpzconsultations' ),
+      'not_found_in_trash' => __( 'Not found in Trash', 'ezpzconsultations' ),
+      'featured_image' => __( 'Featured Image', 'ezpzconsultations' ),
+      'set_featured_image' => __( 'Set featured image', 'ezpzconsultations' ),
+      'remove_featured_image' => __( 'Remove featured image', 'ezpzconsultations' ),
+      'use_featured_image' => __( 'Use as featured image', 'ezpzconsultations' ),
+      'insert_into_item' => __( 'Insert into Campaign', 'ezpzconsultations' ),
+      'uploaded_to_this_item' => __( 'Uploaded to this Campaign', 'ezpzconsultations' ),
+      'items_list' => __( 'Campaigns list', 'ezpzconsultations' ),
+      'items_list_navigation' => __( 'Campaigns list navigation', 'ezpzconsultations' ),
+      'filter_items_list' => __( 'Filter Campaigns list', 'ezpzconsultations' ),
     );
     $args = array(
-      'label' => __( 'Campaign', 'jellypress' ),
-      'description' => __( 'This is an example file which can be edited or duplicated to quickly create a CPT. Do not forget to include it in functions.php', 'jellypress' ),
+      'label' => __( 'Campaign', 'ezpzconsultations' ),
+      'description' => __( 'This is an example file which can be edited or duplicated to quickly create a CPT. Do not forget to include it in functions.php', 'ezpzconsultations' ),
       'labels' => $labels,
       'menu_icon' => 'dashicons-heart',
       'supports' => array(
@@ -84,28 +84,28 @@ if ( ! function_exists( 'jellypress_create_campaign_cpt' ) ) :
   }
 endif;
 
-add_action( 'init', 'jellypress_create_campaign_cpt', 0 );
+add_action( 'init', 'ezpzconsultations_create_campaign_cpt', 0 );
 
 /**
  * Register a custom taxonomy
  */
-if ( ! function_exists( 'jellypress_create_campaign_cpt_taxonomies' ) ) :
+if ( ! function_exists( 'ezpzconsultations_create_campaign_cpt_taxonomies' ) ) :
 
   // Register Taxonomy Campaign Tag
-  function jellypress_create_campaign_cpt_taxonomies() {
+  function ezpzconsultations_create_campaign_cpt_taxonomies() {
 
     $labels = array(
-      'name'              => _x( 'Campaign Tags', 'taxonomy general name', 'jellypress' ),
-      'singular_name'     => _x( 'Campaign Tag', 'taxonomy singular name', 'jellypress' ),
-      'search_items'      => __( 'Search Campaign Tags', 'jellypress' ),
-      'all_items'         => __( 'All Campaign Tags', 'jellypress' ),
-      'parent_item'       => __( 'Parent Campaign Tag', 'jellypress' ),
-      'parent_item_colon' => __( 'Parent Campaign Tag:', 'jellypress' ),
-      'edit_item'         => __( 'Edit Campaign Tag', 'jellypress' ),
-      'update_item'       => __( 'Update Campaign Tag', 'jellypress' ),
-      'add_new_item'      => __( 'Add New Campaign Tag', 'jellypress' ),
-      'new_item_name'     => __( 'New Campaign Tag Name', 'jellypress' ),
-      'menu_name'         => __( 'Campaign Tags', 'jellypress' ),
+      'name'              => _x( 'Campaign Tags', 'taxonomy general name', 'ezpzconsultations' ),
+      'singular_name'     => _x( 'Campaign Tag', 'taxonomy singular name', 'ezpzconsultations' ),
+      'search_items'      => __( 'Search Campaign Tags', 'ezpzconsultations' ),
+      'all_items'         => __( 'All Campaign Tags', 'ezpzconsultations' ),
+      'parent_item'       => __( 'Parent Campaign Tag', 'ezpzconsultations' ),
+      'parent_item_colon' => __( 'Parent Campaign Tag:', 'ezpzconsultations' ),
+      'edit_item'         => __( 'Edit Campaign Tag', 'ezpzconsultations' ),
+      'update_item'       => __( 'Update Campaign Tag', 'ezpzconsultations' ),
+      'add_new_item'      => __( 'Add New Campaign Tag', 'ezpzconsultations' ),
+      'new_item_name'     => __( 'New Campaign Tag Name', 'ezpzconsultations' ),
+      'menu_name'         => __( 'Campaign Tags', 'ezpzconsultations' ),
     );
     // Example of how to rewrite the default slug - eg. to make the URL more SEO-friendly.
     // Just remove 'rewrite' to disable this
@@ -116,7 +116,7 @@ if ( ! function_exists( 'jellypress_create_campaign_cpt_taxonomies' ) ) :
     );
     $args = array(
       'labels' => $labels,
-      'description' => __( 'Register an example taxonomy for a CPT', 'jellypress' ),
+      'description' => __( 'Register an example taxonomy for a CPT', 'ezpzconsultations' ),
       'hierarchical' => false, // Whether the taxonomy is hierarchical. Default false.
       'public' => true, // Whether a taxonomy is intended for use publicly either via the admin interface or by front-end users.
       'publicly_queryable' => true, // Whether the taxonomy is publicly queryable.
@@ -135,18 +135,18 @@ if ( ! function_exists( 'jellypress_create_campaign_cpt_taxonomies' ) ) :
   }
 endif;
 
-add_action( 'init', 'jellypress_create_campaign_cpt_taxonomies', 0 );
+add_action( 'init', 'ezpzconsultations_create_campaign_cpt_taxonomies', 0 );
 
 /**
  * Creates notice for post edit screen to explain what this CPT is for
  */
-if ( ! function_exists( 'jellypress_campaign_cpt_notice' ) ) :
-  function jellypress_campaign_cpt_notice() {
+if ( ! function_exists( 'ezpzconsultations_campaign_cpt_notice' ) ) :
+  function ezpzconsultations_campaign_cpt_notice() {
     global $pagenow;
     if (( $pagenow == 'edit.php' ) && ($_GET['post_type'] == 'campaign')) {
-        echo '<div class="notice custom-notice"><p>'.__('Please add all of your campaigns here. A campaign is determined as activity focused around a particular community or location. You may have an associated event or other activity however there is not a specific monetary ask.','jellypress').'</p></div>';
+        echo '<div class="notice custom-notice"><p>'.__('Please add all of your campaigns here. A campaign is determined as activity focused around a particular community or location. You may have an associated event or other activity however there is not a specific monetary ask.','ezpzconsultations').'</p></div>';
     }
   }
 endif;
 
-add_action('admin_notices', 'jellypress_campaign_cpt_notice');
+add_action('admin_notices', 'ezpzconsultations_campaign_cpt_notice');

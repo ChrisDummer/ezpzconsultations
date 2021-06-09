@@ -4,7 +4,7 @@
  * Replaces the need to download/sync lots of media content from a live to
  * local environment
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -12,16 +12,16 @@ defined( 'ABSPATH' ) || exit;
 
 if(DEV_URL && PROD_URL) :
   $url1 = parse_url(DEV_URL);
-  $url2 = parse_url(jellypress_get_full_url());
+  $url2 = parse_url(ezpzconsultations_get_full_url());
   if ($url1['host'] == $url2['host']){
-    add_filter( 'wp_get_attachment_image_src', 'jellypress_wp_get_attachment_image_src' );
-    add_filter( 'wp_calculate_image_srcset', 'jellypress_wp_calculate_image_srcset' );
-    add_filter( 'wp_get_attachment_url', 'jellypress_wp_get_attachment_url' );
+    add_filter( 'wp_get_attachment_image_src', 'ezpzconsultations_wp_get_attachment_image_src' );
+    add_filter( 'wp_calculate_image_srcset', 'ezpzconsultations_wp_calculate_image_srcset' );
+    add_filter( 'wp_get_attachment_url', 'ezpzconsultations_wp_get_attachment_url' );
   }
 endif;
 
-if ( ! function_exists( 'jellypress_wp_get_attachment_image_src' ) ) :
-  function jellypress_wp_get_attachment_image_src($image = array()) {
+if ( ! function_exists( 'ezpzconsultations_wp_get_attachment_image_src' ) ) :
+  function ezpzconsultations_wp_get_attachment_image_src($image = array()) {
     if ( ! is_array( $image ) || empty( $image ) ) {
       return $image;
     }
@@ -39,8 +39,8 @@ if ( ! function_exists( 'jellypress_wp_get_attachment_image_src' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'jellypress_wp_calculate_image_srcset' ) ) :
-  function jellypress_wp_calculate_image_srcset($src = array()) {
+if ( ! function_exists( 'ezpzconsultations_wp_calculate_image_srcset' ) ) :
+  function ezpzconsultations_wp_calculate_image_srcset($src = array()) {
     if ( is_array( $src ) && ! is_admin() ) {
       $wp_upload_dir = wp_upload_dir();
       $base_dir      = $wp_upload_dir['basedir'];
@@ -59,8 +59,8 @@ if ( ! function_exists( 'jellypress_wp_calculate_image_srcset' ) ) :
   }
 endif;
 
-if ( ! function_exists( 'jellypress_wp_get_attachment_url' ) ) :
-  function jellypress_wp_get_attachment_url($url = '') {
+if ( ! function_exists( 'ezpzconsultations_wp_get_attachment_url' ) ) :
+  function ezpzconsultations_wp_get_attachment_url($url = '') {
     if ( is_admin() ) {
       return $url;
     }

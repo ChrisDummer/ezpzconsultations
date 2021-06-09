@@ -4,7 +4,7 @@
  * A block that allows the user to compare two images eg. before/after.
  * Users TwentyTwenty by Zurb @link https://www.npmjs.com/package/zurb-twentytwenty
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -27,10 +27,10 @@ if($block_width == 'wide') $container_class .= ' is-wide';
 elseif($block_width == 'full') $block_classes .= ' is-full-width';
 
 if($block['before_label']) $before_label = $block['before_label'];
-else $before_label = __('Before', 'jellypress');
+else $before_label = __('Before', 'ezpzconsultations');
 
 if($block['after_label']) $after_label = $block['after_label'];
-else $after_label = __('After', 'jellypress');
+else $after_label = __('After', 'ezpzconsultations');
 
 ?>
 
@@ -40,7 +40,7 @@ else $after_label = __('After', 'jellypress');
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -48,7 +48,7 @@ else $after_label = __('After', 'jellypress');
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -74,6 +74,6 @@ else $after_label = __('After', 'jellypress');
 
 <?php
   add_action('wp_footer',
-  jellypress_compare_init($compare_id, $block['orientation'], $before_label, $after_label),
+  ezpzconsultations_compare_init($compare_id, $block['orientation'], $before_label, $after_label),
   30); // 30 priority ensures it is placed below the enqueued scripts (priority 20)
 ?>

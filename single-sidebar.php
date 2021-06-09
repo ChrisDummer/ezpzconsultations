@@ -10,7 +10,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -28,17 +28,17 @@ get_header();
           the_post();
           get_template_part( 'template-parts/layout/hero/hero', get_post_type() );
           get_template_part( 'template-parts/layout/content/content', get_post_type() );
-          jellypress_show_password_form();
-          jellypress_entry_footer(); // Call function from template-tags
+          ezpzconsultations_show_password_form();
+          ezpzconsultations_entry_footer(); // Call function from template-tags
           ?>
           </article>
           <?php
-          jellypress_post_navigation();
-          jellypress_get_comments();
+          ezpzconsultations_post_navigation();
+          ezpzconsultations_get_comments();
         endwhile; // End of the loop. ?>
       </main>
     </div>
-    <?php jellypress_sidebar(); ?>
+    <?php ezpzconsultations_sidebar(); ?>
   </div>
 </div>
 

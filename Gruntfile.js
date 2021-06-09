@@ -16,8 +16,8 @@ module.exports = function (grunt) {
     opts: {
       build_dir: "assets",
       dist_dir: "dist",
-      dev_url: "https://jellypress.local",
-      text_domain: "jellypress", // Used for translation
+      dev_url: "http://consultations.local",
+      text_domain: "consultations", // Used for translation
       banner:
         "/* Jellypress Wordpress Theme <%= pkg.version %>\n" +
         ' * © <%= grunt.template.today("yyyy-mm") %> <%= pkg.author.name %> - <%= pkg.author.url %> */\n',

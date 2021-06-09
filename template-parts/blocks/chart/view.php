@@ -3,7 +3,7 @@
  * Flexible layout: Chart
  * Renders a chart using Charts.js
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -29,14 +29,14 @@ $chart_data_concat['chart_data'] = $block['chart_data'];
 $chart_data_concat['dataset_label'] = $block['dataset_label'];
 $chart_data_concat['additional_dataset_labels'] = $block['additional_dataset_labels'];
 
-$chart_data = jellypress_build_chart_data($chart_data_concat, $chart_type, $allow_multiple_datasets);
-$chart_options = jellypress_build_chart_options($chart_type, $block['chart_title']);
+$chart_data = ezpzconsultations_build_chart_data($chart_data_concat, $chart_type, $allow_multiple_datasets);
+$chart_options = ezpzconsultations_build_chart_options($chart_type, $block['chart_title']);
 
 if($chart_title = $block['chart_title']) $chart_aria_title = $chart_title;
 elseif($block_title) $chart_aria_title = $block_title;
-else $chart_aria_title = __('A data chart', 'jellypress');
+else $chart_aria_title = __('A data chart', 'ezpzconsultations');
 
-// Reset ChartType for these, because the strings are not real types of chart - we only use to determine chart opts in jellypress_build_chart_options()
+// Reset ChartType for these, because the strings are not real types of chart - we only use to determine chart opts in ezpzconsultations_build_chart_options()
 if($chart_type === 'doughnut-half') $chart_type = 'doughnut';
 elseif($chart_type === 'pie-half') $chart_type = 'pie';
 elseif($chart_type === 'stackedBar') $chart_type = 'bar';
@@ -50,7 +50,7 @@ elseif($chart_type === 'stackedHorizontalBar') $chart_type = 'horizontalBar';
   <?php if ($block_title) : $title_align = $block['title_align']; ?>
     <header class="row justify-center block-title">
       <div class="col md-10 lg-8">
-        <h2 class="text-<?php echo $title_align;?>"><?php echo jellypress_bracket_tag_replace($block_title); ?></h2>
+        <h2 class="text-<?php echo $title_align;?>"><?php echo ezpzconsultations_bracket_tag_replace($block_title); ?></h2>
       </div>
     </header>
   <?php endif; ?>
@@ -58,7 +58,7 @@ elseif($chart_type === 'stackedHorizontalBar') $chart_type = 'horizontalBar';
   <?php if ($block_preamble) : ?>
     <div class="row justify-center block-preamble">
       <div class="col md-10 lg-8">
-        <?php echo jellypress_content($block_preamble); ?>
+        <?php echo ezpzconsultations_content($block_preamble); ?>
       </div>
     </div>
   <?php endif; ?>
@@ -122,9 +122,9 @@ elseif($chart_type === 'stackedHorizontalBar') $chart_type = 'horizontalBar';
     <div class="row justify-center">
       <div class="col md-10 lg-8 text-center">
       <?php
-        if($title_align == 'center') jellypress_display_cta_buttons($block['buttons'], 'justify-center');
-        elseif($title_align == 'right') jellypress_display_cta_buttons($block['buttons'], 'justify-end');
-        else jellypress_display_cta_buttons($block['buttons']);
+        if($title_align == 'center') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-center');
+        elseif($title_align == 'right') ezpzconsultations_display_cta_buttons($block['buttons'], 'justify-end');
+        else ezpzconsultations_display_cta_buttons($block['buttons']);
         ?>
       </div>
     </div>
@@ -135,7 +135,7 @@ elseif($chart_type === 'stackedHorizontalBar') $chart_type = 'horizontalBar';
 <?php
 if($chart_type != 'table') {
   add_action('wp_footer',
-  jellypress_chart_init($chart_id, $chart_type, $chart_data, $chart_options),
+  ezpzconsultations_chart_init($chart_id, $chart_type, $chart_data, $chart_options),
   30); // 30 priority ensures it is placed below the enqueued scripts (priority 20)
 }
 ?>

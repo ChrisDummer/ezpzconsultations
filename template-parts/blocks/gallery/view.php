@@ -4,7 +4,7 @@
  * Renders a simple image gallery block with the option to enable
  * a MagnificPopup lightbox gallery
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -51,7 +51,7 @@ if ($gallery_images ) : ?>
 
 <?php if($add_lightbox) :
     // Initialize modal
-    $func = jellypress_modal_init('#gallery-'.$block_id, 'a');
-    //$func = jellypress_modal_init('.gallery-group-'.$block_id);
+    $func = ezpzconsultations_modal_init('#gallery-'.$block_id, 'a');
+    //$func = ezpzconsultations_modal_init('.gallery-group-'.$block_id);
     add_action('wp_footer', $func, 30); // 30 priority ensures it is placed below the enqueued scripts (priority 20)
 endif; ?>

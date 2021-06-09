@@ -4,7 +4,7 @@
  * Allows the editor to add a slider to the post with slides containing
  * an image, text, optional heading and link.
  *
- * @package jellypress
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
@@ -85,7 +85,7 @@ endif; ?>
 <?php
 if($number_of_slides > 1) {
   add_action('wp_footer',
-  jellypress_splide_init('#'.$slider_id, 1, 1, 1, 1, $display_arrows, $display_pagination, $slider_speed),
+  ezpzconsultations_splide_init('#'.$slider_id, 1, 1, 1, 1, $display_arrows, $display_pagination, $slider_speed),
   30);
 }
 ?>
