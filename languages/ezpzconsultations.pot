@@ -2,9 +2,9 @@
 # This file is distributed under the UNLICENSED.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: JellyPress 1.0.0\n"
+"Project-Id-Version: Consultations 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/epls-design/ezpz-jellypress/issues\n"
-"POT-Creation-Date: 2021-05-22 10:44:46+00:00\n"
+"POT-Creation-Date: 2021-06-09 15:52:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -555,11 +555,11 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "JellyPress"
+msgid "Consultations"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://github.com/epls-design/ezpz-jellypress"
+msgid "http://consultations.local"
 msgstr ""
 
 #. Description of the plugin/theme
