@@ -257,6 +257,27 @@
 .bg-black {
   background-color: #000; }
 
+.bg-primary_colour {
+  background-color: var(--primary_colour); }
+
+.bg-primary_colour_dark {
+  background-color: var(--primary_colour_dark); }
+
+.bg-primary_colour_light {
+  background-color: var(--primary_colour_light); }
+
+.bg-secondary_colour {
+  background-color: var(--secondary_colour); }
+
+.bg-secondary_colour_dark {
+  background-color: var(--secondary_colour_dark); }
+
+.bg-secondary_colour_light {
+  background-color: var(--secondary_colour_light); }
+
+.bg-text_colour {
+  background-color: var(--text_colour); }
+
 .bg-gray {
   background-color: #6e7c8c; }
 

@@ -82,7 +82,15 @@ $theme-colors: (
 // Keys added to the map will have the following classes created for them: .bg-*
 $background-colors: (
   "white": #fff,
-  "black": #000
+  "black": #000,
+  "primary_colour": var(--primary_colour),
+  "primary_colour_dark": var(--primary_colour_dark),
+  "primary_colour_light": var(--primary_colour_light),
+  "secondary_colour": var(--secondary_colour),
+  "secondary_colour_dark": var(--secondary_colour_dark),
+  "secondary_colour_light": var(--secondary_colour_light),
+  "text_colour": var(--text_colour),
+
 );
 
 // $color-text: get-color(neutral, 900);

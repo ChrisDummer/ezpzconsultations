@@ -21,8 +21,44 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="profile" href="https://gmpg.org/xfn/11">
-  <?php wp_head(); ?>
+
+  <!-- For the theme colours -->
+ <?php $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+  $colour_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+
+  //For the logo
+  $field_group_json = 'group_60c20bdd95608.json'; // Replace with the name of your field group JSON.
+  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+  $logo_data = get_all_custom_field_meta( 'option', $field_group_array );
+
+  $logo_image = $logo_data['main_logo'];
+
+  ?>
+  <style>
+    :root {
+  --primary_colour: <?php echo $colour_options_data['primary_colour']; ?>;
+  --primary_colour_dark: <?php echo $colour_options_data['primary_colour_dark']; ?>;
+  --primary_colour_light: <?php echo $colour_options_data['primary_colour_light']; ?>;
+  --secondary_colour: <?php echo $colour_options_data['secondary_colour']; ?>;
+  --secondary_colour_dark: <?php echo $colour_options_data['secondary_colour_dark']; ?>;
+  --secondary_colour_light: <?php echo $colour_options_data['secondary_colour_light']; ?>;
+  --text_colour: <?php echo $colour_options_data['text_colour']; ?>;
+  
+  --light: #ffffff;
+  --dark: #000000;
+}
+
+  </style>
+
+  <?php
+
+   wp_head(); ?>
 </head>
+
+<?php var_dump($colour_options_data); ?>
+
+<?php var_dump($logo_data); ?>
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
@@ -36,19 +72,12 @@ defined( 'ABSPATH' ) || exit;
       <nav id="site-navigation" class="navbar main-navigation">
         <div class="container">
           <div class="navbar-brand site-branding">
-
-            <span class="site-title navbar-item" style="display:block">
-              <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-              <?php
-                $ezpzconsultations_description = get_bloginfo( 'description', 'display' );
-                if ( $ezpzconsultations_description || is_customize_preview() ) : ?>
-                <br/><span class="site-description"><?php echo $ezpzconsultations_description; ?></span>
-              <?php endif; ?>
+     
             </span>
             <!-- EXAMPLE OF EMBEDDING CLIENT LOGO -->
-            <!--<a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <?php _e('<img src="'.get_stylesheet_directory_uri().'/dist/img/client-logo.svg'.'" alt="'.get_bloginfo( 'description', 'display' ).'">', 'ezpzconsultations'); ?>
-            </a>-->
+            <a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+              <?php echo wp_get_attachment_image( $logo_image, 'thumbnail' ); ?>
+            </a>
 
             <button class="hamburger" type="button" aria-label="Menu" aria-controls="navbar-menu" aria-expanded="false">
               <span class="hamburger-label">Menu</span>
@@ -56,8 +85,8 @@ defined( 'ABSPATH' ) || exit;
                 <span class="hamburger-inner"></span>
               </span>
             </button>
-          </div>
-          <div id="navbar-menu" class="navbar-menu">
+
+            <div id="navbar-menu" class="navbar-menu">
             <div class="navbar-start">
               <?php
                 wp_nav_menu( array(
@@ -68,10 +97,11 @@ defined( 'ABSPATH' ) || exit;
               ?>
             </div>
             <div class="navbar-end">
-              <a href="#" class="button secondary">Example Button</a>
-              <?php if ( class_exists( 'woocommerce' ) ) ezpzconsultations_woocommerce_header_cart(); ?>
+              
             </div>
           </div>
+          </div>
+          
         </div>
       </nav>
     </header>

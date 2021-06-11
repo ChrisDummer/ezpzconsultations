@@ -1048,6 +1048,48 @@ p.has-background {
 .block.bg-black:not(.is-full-width) + .block.bg-black.is-full-width .block-title, .block.bg-black:not(.is-full-width) + .block.bg-black.is-full-width .block-preamble {
   padding-top: 0; }
 
+.block.bg-primary_colour:not(.is-full-width) + .block.bg-primary_colour:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-primary_colour:not(.is-full-width) + .block.bg-primary_colour.is-full-width .block-title, .block.bg-primary_colour:not(.is-full-width) + .block.bg-primary_colour.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-primary_colour_dark:not(.is-full-width) + .block.bg-primary_colour_dark:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-primary_colour_dark:not(.is-full-width) + .block.bg-primary_colour_dark.is-full-width .block-title, .block.bg-primary_colour_dark:not(.is-full-width) + .block.bg-primary_colour_dark.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-primary_colour_light:not(.is-full-width) + .block.bg-primary_colour_light:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-primary_colour_light:not(.is-full-width) + .block.bg-primary_colour_light.is-full-width .block-title, .block.bg-primary_colour_light:not(.is-full-width) + .block.bg-primary_colour_light.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-secondary_colour:not(.is-full-width) + .block.bg-secondary_colour:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-secondary_colour:not(.is-full-width) + .block.bg-secondary_colour.is-full-width .block-title, .block.bg-secondary_colour:not(.is-full-width) + .block.bg-secondary_colour.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-secondary_colour_dark:not(.is-full-width) + .block.bg-secondary_colour_dark:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-secondary_colour_dark:not(.is-full-width) + .block.bg-secondary_colour_dark.is-full-width .block-title, .block.bg-secondary_colour_dark:not(.is-full-width) + .block.bg-secondary_colour_dark.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-secondary_colour_light:not(.is-full-width) + .block.bg-secondary_colour_light:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-secondary_colour_light:not(.is-full-width) + .block.bg-secondary_colour_light.is-full-width .block-title, .block.bg-secondary_colour_light:not(.is-full-width) + .block.bg-secondary_colour_light.is-full-width .block-preamble {
+  padding-top: 0; }
+
+.block.bg-text_colour:not(.is-full-width) + .block.bg-text_colour:not(.is-full-width) {
+  padding-top: 0; }
+
+.block.bg-text_colour:not(.is-full-width) + .block.bg-text_colour.is-full-width .block-title, .block.bg-text_colour:not(.is-full-width) + .block.bg-text_colour.is-full-width .block-preamble {
+  padding-top: 0; }
+
 .block-title {
   margin-bottom: 48px; }
   .block-title h2 {
@@ -1172,6 +1214,27 @@ p.has-background {
 
 .overlay-black::before {
   background-color: #000; }
+
+.overlay-primary_colour::before {
+  background-color: var(--primary_colour); }
+
+.overlay-primary_colour_dark::before {
+  background-color: var(--primary_colour_dark); }
+
+.overlay-primary_colour_light::before {
+  background-color: var(--primary_colour_light); }
+
+.overlay-secondary_colour::before {
+  background-color: var(--secondary_colour); }
+
+.overlay-secondary_colour_dark::before {
+  background-color: var(--secondary_colour_dark); }
+
+.overlay-secondary_colour_light::before {
+  background-color: var(--secondary_colour_light); }
+
+.overlay-text_colour::before {
+  background-color: var(--text_colour); }
 
 .overlay-opacity-10::before {
   opacity: 0.1; }
@@ -1653,39 +1716,183 @@ blockquote.testimonial {
 
 .bg-white {
   background-color: #fff;
-  color: #1f2933; }
-  .bg-white h1, .bg-white h2, .bg-white h3, .bg-white h4, .bg-white h5, .bg-white p.wp-block-subhead, .bg-white h6 {
-    color: #33404d; }
-  .bg-white a {
-    color: #c32c78; }
-  .bg-white a:visited {
-    color: #9c1c5c; }
-  .bg-white a:hover, .bg-white a:focus {
-    color: #da4991; }
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
 
 .bg-dark {
   background-color: #1f2933;
-  color: white; }
-  .bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4, .bg-dark h5, .bg-dark p.wp-block-subhead, .bg-dark h6 {
-    color: white; }
-  .bg-dark a {
-    color: #bcbfc2; }
-  .bg-dark a:visited {
-    color: #bcbfc2; }
-  .bg-dark a:hover, .bg-dark a:focus {
-    color: white; }
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
 
 .bg-black {
   background-color: #000;
-  color: white; }
-  .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black p.wp-block-subhead, .bg-black h6 {
-    color: white; }
-  .bg-black a {
-    color: #b3b3b3; }
-  .bg-black a:visited {
-    color: #b3b3b3; }
-  .bg-black a:hover, .bg-black a:focus {
-    color: white; }
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-primary_colour {
+  background-color: var(--primary_colour);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-primary_colour_dark {
+  background-color: var(--primary_colour_dark);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-primary_colour_light {
+  background-color: var(--primary_colour_light);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-secondary_colour {
+  background-color: var(--secondary_colour);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-secondary_colour_dark {
+  background-color: var(--secondary_colour_dark);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-secondary_colour_light {
+  background-color: var(--secondary_colour_light);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
+
+.bg-text_colour {
+  background-color: var(--text_colour);
+  /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
+    h1,h2,h3,h4,h5,h6 {
+      color: choose-contrast-color($color, get-color(neutral,000), $color-headings-preferred);
+    }
+    a {
+      & {
+        color: choose-contrast-color($color, $link-color, tint($color,30%));
+      }
+      &:visited {
+        color: choose-contrast-color($color, $link-visited, tint($color,30%));
+      }
+      &:hover, &:focus {
+        color: choose-contrast-color($color, $link-active, get-color(neutral,000));
+      }
+    } */ }
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
