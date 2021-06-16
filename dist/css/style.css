@@ -1060,8 +1060,7 @@ p.has-background {
   text-transform: uppercase;
   text-align: center;
   font-weight: 300;
-  transition: font-size 0.2s ease;
-  color: white; }
+  transition: font-size 0.2s ease; }
 
 @media (min-width: 56.25em) {
   .hero .bg-image {

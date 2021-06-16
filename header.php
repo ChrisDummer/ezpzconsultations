@@ -18,27 +18,39 @@ defined( 'ABSPATH' ) || exit;
 
 
 <head>
-  <meta charset="<?php bloginfo( 'charset' ); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <link rel="profile" href="https://gmpg.org/xfn/11">
 
-  <!-- For the theme colours -->
- <?php $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-  $colour_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+<?php 
 
   //For the logo
   $field_group_json = 'group_60c20bdd95608.json'; // Replace with the name of your field group JSON.
   $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
   $logo_data = get_all_custom_field_meta( 'option', $field_group_array );
 
-  $logo_image = $logo_data['main_logo'];
+  ?>
 
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="icon" href="<?php $favicon = wp_get_attachment_image_src( $logo_data['favicon'], $size  = 'Thumbnail'); echo $favicon[0];?> "/>
+
+  <!-- For the theme colours -->
+ <?php $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+  $colour_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+
+
+
+  $logo_image = $logo_data['main_logo'];
+  
+
+  
   
 
 
   ?>
+
+
 
   <?php
 

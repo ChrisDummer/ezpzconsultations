@@ -74,41 +74,77 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
   --dark: #000000;
   }
 
-  .bg-primary{
+  .bg-primary-colour{
     color: <?php echo getContrastColor($colour_options_data['primary_colour'], '#eded97'); ?>;
     
-  } 
+  }
+
+  .bg-primary-colour h1, h2, h3, h4, h5,h6, p, span{
+    color: <?php echo getContrastColor($colour_options_data['primary_colour'], '#eded97'); ?>;
+  }
 
   .bg-primary-dark{
     color: <?php echo getContrastColor($colour_options_data['primary_colour_dark'], '#eded97'); ?>;
     
-  } 
+  }
+
+  .bg-primary-dark h1, h2, h3, h4, h5,h6, span{
+    color: <?php echo getContrastColor($colour_options_data['primary_colour_dark'], '#eded97'); ?>;
+  }
 
   .bg-primary-light{
-    color: <?php echo getContrastColor($colour_options_data['primary_colour_light'], '#eded97'); ?>;
-    
+
+    color: <?php echo getContrastColor($colour_options_data['primary_colour_light']); ?>;
   } 
 
-  .bg-secondary{
+  .bg-primary-light h1, h2, h3, h4, h5,h6, p, span{
+    color: <?php echo getContrastColor($colour_options_data['primary_colour_light']); ?>;
+  }
+
+  .bg-secondary-colour{
     color: <?php echo getContrastColor($colour_options_data['secondary_colour_dark'], '#eded97'); ?>;
     
-  } 
+  }
+
+  .bg-secondary-colour h1, h2, h3, h4, h5,h6, p, span{
+    color: <?php echo getContrastColor($colour_options_data['secondary_colour_dark'], '#eded97'); ?>;
+  }
 
   .bg-secondary-dark{
     color: <?php echo getContrastColor($colour_options_data['secondary_colour_dark'], '#eded97'); ?>;
     
-  } 
+  }
+
+  .bg-secondary-dark h1, h2, h3, h4, h5,h6, p, span{
+    color: <?php echo getContrastColor($colour_options_data['secondary_colour_dark'], '#eded97'); ?>;
+  }
 
   .bg-secondary-light{
     color: <?php echo getContrastColor($colour_options_data['secondary_colour_light'], '#eded97'); ?>;
     
+  }
+
+  .bg-secondary-light h1, h2, h3, h4, h5,h6, p, span{
+    color: <?php echo getContrastColor($colour_options_data['secondary_colour_light'], '#eded97'); ?>;
+  }
+
+  .bg-white{
+    color: black;
+    
   } 
 
-  
+  .bg-white h1, h2, h3, h4, h5,h6, p, span{
+    color: black;
+  }
 
+  .bg-black{
+    color: white;
+    
+  } 
 
-  
-  
+  .bg-black h1, h2, h3, h4, h5,h6, p, span{
+    color: white;
+  }
   
   </style>
   <?php

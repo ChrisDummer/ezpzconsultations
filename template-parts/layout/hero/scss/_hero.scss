@@ -2,9 +2,7 @@
   &.block {
     padding: 0;
   }
-  .hero-main {
-  //  padding: $block-padding + get-size(4) 0 $block-padding 0;
-  }
+  
     @include above(md) {
     &__large {
       .hero-main {
@@ -44,7 +42,7 @@
     @include above(sm) {
      //max-width: 90%
     }
-    color: get-color(neutral,000);
+    
   }
   .bg-image {
     @include above(md){

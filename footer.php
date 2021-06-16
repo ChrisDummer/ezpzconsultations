@@ -49,9 +49,7 @@ $navigation = $footer_options_data['navigation'];
   <?php
   var_dump($footer_options_data);
   
-  
 
-echo $navigation;
   $post = $navigation; // Set $post global variable to the current post object
   setup_postdata( $post ); // Set up "environment" for template tags
   
