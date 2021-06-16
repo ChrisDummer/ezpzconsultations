@@ -257,25 +257,25 @@
 .bg-black {
   background-color: #000; }
 
-.bg-primary_colour {
+.bg-primary-colour {
   background-color: var(--primary_colour); }
 
-.bg-primary_colour_dark {
+.bg-primary-dark {
   background-color: var(--primary_colour_dark); }
 
-.bg-primary_colour_light {
+.bg-primary-light {
   background-color: var(--primary_colour_light); }
 
-.bg-secondary_colour {
+.bg-secondary-colour {
   background-color: var(--secondary_colour); }
 
-.bg-secondary_colour_dark {
+.bg-secondary-dark {
   background-color: var(--secondary_colour_dark); }
 
-.bg-secondary_colour_light {
+.bg-secondary-light {
   background-color: var(--secondary_colour_light); }
 
-.bg-text_colour {
+.bg-text-colour {
   background-color: var(--text_colour); }
 
 .bg-gray {

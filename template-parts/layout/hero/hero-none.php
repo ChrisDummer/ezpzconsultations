@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package ezpzconsultations
+ * @package dunhamco
  */
 
 // Exit if accessed directly.
@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
       <div class="col">
         <header class="page-header">
-          <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'ezpzconsultations' ); ?></h1>
+          <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dunhamco' ); ?></h1>
         </header>
       </div>
     </div>

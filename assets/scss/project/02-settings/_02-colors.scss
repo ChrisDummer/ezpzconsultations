@@ -1,6 +1,7 @@
 $colors: (
   // Base color is always set at 500, tints and shades should also be set where possible
-//  primary: (
+//
+ // primary: (
 //    900: hsl(330, 79%, 20%),
 //    800: hsl(331, 74%, 27%),
 //    700: hsl(330, 70%, 36%),
@@ -83,13 +84,13 @@ $theme-colors: (
 $background-colors: (
   "white": #fff,
   "black": #000,
-  "primary_colour": var(--primary_colour),
-  "primary_colour_dark": var(--primary_colour_dark),
-  "primary_colour_light": var(--primary_colour_light),
-  "secondary_colour": var(--secondary_colour),
-  "secondary_colour_dark": var(--secondary_colour_dark),
-  "secondary_colour_light": var(--secondary_colour_light),
-  "text_colour": var(--text_colour),
+  "primary-colour": var(--primary_colour),
+  "primary-dark": var(--primary_colour_dark),
+  "primary-light": var(--primary_colour_light),
+  "secondary-colour": var(--secondary_colour),
+  "secondary-dark": var(--secondary_colour_dark),
+  "secondary-light": var(--secondary_colour_light),
+  "text-colour": var(--text_colour),
 
 );
 

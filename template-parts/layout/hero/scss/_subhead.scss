@@ -1,0 +1,22 @@
+.hero-subhead {
+  padding-top: get-size(2);
+  padding-bottom: get-size(2);
+  p {
+    margin-bottom: 0;
+    color: get-color(neutral,300);
+    font-family: $font-secondary;
+    @include smooth(font-size);
+    font-size: font-size(2);
+    @include above(lg) {
+      font-size: font-size(3)
+    }
+  }
+  .text-accent {
+    color: get-color(neutral,000);
+    //font-weight: inherit;
+    font-style: normal;
+    @include above(sm){
+      display: block;
+    }
+  }
+}

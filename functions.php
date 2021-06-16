@@ -53,11 +53,12 @@ $ezpzconsultations_includes = array(
   'inc/countdown.php',               // Initialize countdowns
   'inc/charts.php',                  // Functions which work with charts.js library
   'inc/compare.php',                 // Functions which work with TwentyTwenty Image Comparison
+  'inc/theme_settings.php',                 // Functions for theme settings
 
   //~~~~~ CUSTOM POST TYPES
   'inc/post_types/post.php',
   'inc/post_types/page.php',
-
+  'inc/post_types/stack.php',
   //~~~~~ USER CAPABILITIES
   //'inc/user_caps/client-admin.php',  // Example for how to restrict user capabilities for a specific role
 );

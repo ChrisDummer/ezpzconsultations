@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
+
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,22 +35,10 @@ defined( 'ABSPATH' ) || exit;
 
   $logo_image = $logo_data['main_logo'];
 
-  ?>
-  <style>
-    :root {
-  --primary_colour: <?php echo $colour_options_data['primary_colour']; ?>;
-  --primary_colour_dark: <?php echo $colour_options_data['primary_colour_dark']; ?>;
-  --primary_colour_light: <?php echo $colour_options_data['primary_colour_light']; ?>;
-  --secondary_colour: <?php echo $colour_options_data['secondary_colour']; ?>;
-  --secondary_colour_dark: <?php echo $colour_options_data['secondary_colour_dark']; ?>;
-  --secondary_colour_light: <?php echo $colour_options_data['secondary_colour_light']; ?>;
-  --text_colour: <?php echo $colour_options_data['text_colour']; ?>;
   
-  --light: #ffffff;
-  --dark: #000000;
-}
 
-  </style>
+
+  ?>
 
   <?php
 

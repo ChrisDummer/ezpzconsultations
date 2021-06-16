@@ -156,6 +156,18 @@ if(function_exists('acf_add_options_page') ) {
     )
   );
 
+  acf_add_options_sub_page(
+    array(
+    'page_title'     => __('Footer', 'ezpzconsultations'),
+    'menu_title'    => __('Footer', 'ezpzconsultations'),
+    'menu_slug'     => 'Footer',
+    'parent_slug' => 'theme-options',
+    'capability'    => 'edit_posts',
+    'autoload' => true, // Speeds up load times
+    'updated_message' => __("Successfully updated Theme Settings", 'ezpzconsultations'),
+    )
+  );
+
 }
 
 if (! function_exists('ezpzconsultations_hide_acf_admin') ) {

@@ -80,6 +80,8 @@ if( !post_password_required()):
       $block_bg_color = $block['background_color'];
       $next_bg_color = $next_block['background_color'];
 
+      echo $block_bg_color;
+
       if ($block_bg_color) {
         $block_classes.= ' bg-'.strtolower($block_bg_color);
       }

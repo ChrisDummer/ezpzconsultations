@@ -133,3 +133,17 @@ if ( ! function_exists( 'ezpzconsultations_calculate_reading_time' ) ) :
     return $reading_time;
   }
 endif;
+
+if ( ! function_exists( 'dunhamco_bracket_tag_replace' ) ) {
+  function dunhamco_bracket_tag_replace($text) {
+    if (preg_match("~\[\[(.*?)\]\]~",$text,$m)) {
+      $find = ['(\[\[)', '(\]\])'];
+      $replace = ['<span class="text-accent">', '</span>'];
+      return preg_replace($find, $replace,  $text);
+    }
+    else {
+      return $text;
+    }
+  }
+}
+
