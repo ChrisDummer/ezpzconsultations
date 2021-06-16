@@ -37,7 +37,7 @@ $navigation = $footer_options_data['navigation'];
             <span class="eplsdesign">
             <?php
             /* translators: 1: Theme author and link to website. */
-            printf( esc_html__( 'Website design and build by %1$s', 'ezpzconsultations' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign=jellypress" rel="author">EPLS Design</a>' );
+            printf( esc_html__( 'Website design and build by %1$s', 'ezpzconsultations' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign='.sanitize_title(get_bloginfo('name')).'" rel="author">EPLS Design</a>' );
             ?>
             </span>
           </p>
@@ -48,13 +48,13 @@ $navigation = $footer_options_data['navigation'];
 
   <?php
   var_dump($footer_options_data);
-  
-  
+
+
 
 echo $navigation;
   $post = $navigation; // Set $post global variable to the current post object
   setup_postdata( $post ); // Set up "environment" for template tags
-  
+
       get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
 wp_reset_postdata();
 

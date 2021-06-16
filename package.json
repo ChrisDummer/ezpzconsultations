@@ -1,13 +1,14 @@
 {
   "name": "ezpzconsultations-wordpress-theme",
-  "friendly_name": "Consultations",
+  "friendly_name": "EPLS Consultations",
+  "text_domain": "ezpzconsultations",
   "version": "1.0.0",
   "author": {
     "name": "EPLS Design",
     "email": "theteam@epls.design",
     "url": "https://epls.design"
   },
-  "description": "Jellypress is a Wordpress starter theme based on the Jellyfish CSS framework and Automattic's Underscores(_S) theme.",
+  "description": "Theme boilerplate for Consultation websites",
   "homepage": "http://consultations.local",
   "main": "Gruntfile.js",
   "scripts": {
@@ -16,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/epls-design/ezpz-jellypress.git"
+    "url": "https://github.com/ChrisDummer/ezpzconsultations/ezpzconsultations.git"
   },
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/epls-design/ezpz-jellypress/issues"
+    "url": "https://github.com/ChrisDummer/ezpzconsultations/ezpzconsultations/issues"
   },
   "private": true,
   "keywords": [
