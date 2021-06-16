@@ -3019,6 +3019,22 @@ a:hover .icon__snapchat, a:focus .icon__snapchat, a:active .icon__snapchat {
   .icon-list .icon {
     margin-right: 0.5em; }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+  STICKY NAV
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#masthead {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  position: fixed;
+  transition: transform 0.2s ease; }
+  #masthead.visible {
+    box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.5); }
+
+body.admin-bar #masthead {
+  margin-top: 32px !important; }
+
 .pagination {
   list-style-type: none;
   margin: 24px 0;

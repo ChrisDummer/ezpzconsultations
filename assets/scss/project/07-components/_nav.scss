@@ -1,0 +1,22 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+  STICKY NAV
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#masthead {
+  // STICKY POSITION
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  position: fixed;
+  &.visible {
+    box-shadow: 1px 2px 9px rgba(0,0,0,.5);
+  }
+  @include smooth(transform);
+}
+
+body.admin-bar {
+  #masthead {
+    margin-top: 32px !important
+  }
+ }

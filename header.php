@@ -23,10 +23,7 @@ defined( 'ABSPATH' ) || exit;
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="profile" href="https://gmpg.org/xfn/11">
 
-  <!-- For the theme colours -->
- <?php $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-  $colour_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+ <?php
 
   //For the logo
   $field_group_json = 'group_60c20bdd95608.json'; // Replace with the name of your field group JSON.
@@ -34,20 +31,11 @@ defined( 'ABSPATH' ) || exit;
   $logo_data = get_all_custom_field_meta( 'option', $field_group_array );
 
   $logo_image = $logo_data['main_logo'];
-
-  
-
-
   ?>
 
   <?php
-
    wp_head(); ?>
 </head>
-
-<?php var_dump($colour_options_data); ?>
-
-<?php var_dump($logo_data); ?>
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
@@ -61,8 +49,8 @@ defined( 'ABSPATH' ) || exit;
       <nav id="site-navigation" class="navbar main-navigation">
         <div class="container">
           <div class="navbar-brand site-branding">
-     
-            </span>
+
+
             <!-- EXAMPLE OF EMBEDDING CLIENT LOGO -->
             <a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php echo wp_get_attachment_image( $logo_image, 'thumbnail' ); ?>
@@ -75,23 +63,21 @@ defined( 'ABSPATH' ) || exit;
               </span>
             </button>
 
+            </div>
+
             <div id="navbar-menu" class="navbar-menu">
-            <div class="navbar-start">
-              <?php
-                wp_nav_menu( array(
-                  'theme_location' => 'menu-primary',
-                  'menu_id'        => 'primary-menu',
-                  'container'      => false,
-                ) );
-              ?>
-            </div>
-            <div class="navbar-end">
-              
+
+              <div class="navbar-end">
+                <?php
+                  wp_nav_menu( array(
+                    'theme_location' => 'menu-primary',
+                    'menu_id'        => 'primary-menu',
+                    'container'      => false,
+                  ) );
+                ?>
+              </div>
             </div>
           </div>
-          </div>
-          
-        </div>
       </nav>
     </header>
 <?php endif; ?>

@@ -47,7 +47,6 @@ $navigation = $footer_options_data['navigation'];
   </footer>
 
   <?php
-  var_dump($footer_options_data);
 
 
 
