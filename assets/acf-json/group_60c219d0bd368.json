@@ -717,7 +717,7 @@
             "key": "field_60cb5123141be",
             "label": "Custom CSS",
             "name": "custom_css",
-            "type": "wysiwyg",
+            "type": "textarea",
             "instructions": "Write your own css in here and it will be displayed in the header",
             "required": 0,
             "conditional_logic": 0,
@@ -727,10 +727,10 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_60cb6f4e5f913",
@@ -832,6 +832,41 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_60d1b7cbbdee1",
+            "label": "Font Links",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60d1b799f6fb9",
+            "label": "Font Links",
+            "name": "font_links",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -851,5 +886,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624011932
+    "modified": 1624356840
 }

@@ -111,7 +111,7 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_nav_sublink_colour = $colour_options_data['nav_sublink_colour'];
     $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'];
     $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'];
-    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'], gewtuyw;
+    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'];
 
     //Button Elements
     $theme_button_border_width = $colour_options_data['button_border_width'];

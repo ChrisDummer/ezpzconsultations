@@ -37,8 +37,9 @@ defined( 'ABSPATH' ) || exit;
 
 
   $logo_image = $theme_options['main_logo'];
-
   $custom_css = $theme_options['custom_css'];
+
+  $font_links = $theme_options['font_links'];
   ?>
   <style>
     <?php
@@ -46,8 +47,9 @@ defined( 'ABSPATH' ) || exit;
     ?>
   </style>
 
-
   <?php
+  echo $font_links;
+
    wp_head(); ?>
 </head>
 
