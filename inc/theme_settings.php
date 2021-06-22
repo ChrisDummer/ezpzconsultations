@@ -94,33 +94,33 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
 
 
     //Fonts
-    $theme_body_font = $colour_options_data['body_font'];
-    $theme_h1_font = $colour_options_data['h1_font'];
-    $theme_h2_font = $colour_options_data['h2_font'];
-    $theme_h3_font = $colour_options_data['h3_font'];
-    $theme_h4_font = $colour_options_data['h4_font'];
-    $theme_h5_font = $colour_options_data['h5_font'];
-    $theme_h6_font = $colour_options_data['h6_font'];
+    $theme_body_font = $colour_options_data['body_font'] ? $colour_options_data['body_font'] : 'arial';
+    $theme_h1_font = $colour_options_data['h1_font'] ? $colour_options_data['h1_font'] : 'arial';
+    $theme_h2_font = $colour_options_data['h2_font'] ? $colour_options_data['h2_font'] : 'arial';
+    $theme_h3_font = $colour_options_data['h3_font'] ? $colour_options_data['h3_font'] : 'arial';
+    $theme_h4_font = $colour_options_data['h4_font'] ? $colour_options_data['h4_font'] : 'arial';
+    $theme_h5_font = $colour_options_data['h5_font'] ? $colour_options_data['h5_font'] : 'arial';
+    $theme_h6_font = $colour_options_data['h6_font'] ? $colour_options_data['h6_font'] : 'arial';
 
     // Navigation Elements
-    $theme_nav_background_colour = $colour_options_data['nav_background_colour'];
-    $theme_nav_font = $colour_options_data['nav_font'];
-    $theme_nav_link_colour = $colour_options_data['nav_link_colour'];
-    $theme_nav_link_hover_colour = $colour_options_data['nav_link_hover_colour'];
-    $theme_nav_link_hover_background_color = $colour_options_data['nav_link_hover_background_color'];
-    $theme_nav_sublink_colour = $colour_options_data['nav_sublink_colour'];
-    $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'];
-    $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'];
-    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'];
+    $theme_nav_background_colour = $colour_options_data['nav_background_colour'] ? $colour_options_data['nav_background_colour'] : '#fffffa';
+    $theme_nav_font = $colour_options_data['nav_font'] ? $colour_options_data['nav_font'] : 'arial';
+    $theme_nav_link_colour = $colour_options_data['nav_link_colour'] ? $colour_options_data['nav_link_colour'] : '#fffffa';
+    $theme_nav_link_hover_colour = $colour_options_data['nav_link_hover_colour'] ? $colour_options_data['nav_link_hover_colour'] : '#fffffa';
+    $theme_nav_link_hover_background_color = $colour_options_data['nav_link_hover_background_color'] ? $colour_options_data['nav_link_hover_background_color'] : '#fffffa';
+    $theme_nav_sublink_colour = $colour_options_data['nav_sublink_colour'] ? $colour_options_data['nav_sublink_colour'] : '#fffffa';
+    $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'] ? $colour_options_data['nav_sublink_hover_colour'] : '#fffffa';
+    $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#fffffa';
+    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#fffffa';
 
     //Button Elements
-    $theme_button_border_width = $colour_options_data['button_border_width'];
-    $theme_button_border_radius = $colour_options_data['button_border_radius'];
-    $theme_button_font_family = $colour_options_data['button_font_family'];
+    $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2px';
+    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10px';
+    $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : 'arial';
 
     //Card Elements
-    $theme_card_border_radius = $colour_options_data['card_border_radius'];
-    $theme_card_border_width = $colour_options_data['card_border_width'];
+    $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '2px';
+    $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '10px';
 
 
     $theme_bg_colors = array(
