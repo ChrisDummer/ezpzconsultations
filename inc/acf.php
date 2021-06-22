@@ -119,48 +119,12 @@ if(function_exists('acf_add_options_page') ) {
     )
   );
 
-  acf_add_options_sub_page(
-    array(
-    'page_title'     => __('Logos', 'ezpzconsultations'),
-    'menu_title'    => __('Logos', 'ezpzconsultations'),
-    'menu_slug'     => 'logo',
-    'parent_slug' => 'theme-options',
-    'capability'    => 'edit_posts',
-    'autoload' => true, // Speeds up load times
-    'updated_message' => __("Successfully updated Theme Settings", 'ezpzconsultations'),
-    )
-  );
-
 
   acf_add_options_sub_page(
     array(
-    'page_title'     => __('Header Setup', 'ezpzconsultations'),
-    'menu_title'    => __('Header Setup', 'ezpzconsultations'),
-    'menu_slug'     => 'Header Setup',
-    'parent_slug' => 'theme-options',
-    'capability'    => 'edit_posts',
-    'autoload' => true, // Speeds up load times
-    'updated_message' => __("Successfully updated Theme Settings", 'ezpzconsultations'),
-    )
-  );
-
-  acf_add_options_sub_page(
-    array(
-    'page_title'     => __('Theme Colours', 'ezpzconsultations'),
-    'menu_title'    => __('Theme Colours', 'ezpzconsultations'),
+    'page_title'     => __('Theme Options', 'ezpzconsultations'),
+    'menu_title'    => __('Theme Options', 'ezpzconsultations'),
     'menu_slug'     => 'Theme Colours',
-    'parent_slug' => 'theme-options',
-    'capability'    => 'edit_posts',
-    'autoload' => true, // Speeds up load times
-    'updated_message' => __("Successfully updated Theme Settings", 'ezpzconsultations'),
-    )
-  );
-
-  acf_add_options_sub_page(
-    array(
-    'page_title'     => __('Footer', 'ezpzconsultations'),
-    'menu_title'    => __('Footer', 'ezpzconsultations'),
-    'menu_slug'     => 'Footer',
     'parent_slug' => 'theme-options',
     'capability'    => 'edit_posts',
     'autoload' => true, // Speeds up load times

@@ -1,4 +1,4 @@
-/* Jellypress Wordpress Theme 1.0.0
+/* EPLS Consultations Wordpress Theme 1.0.0
  * © 2021-06 EPLS Design - https://epls.design */
 
 /**
@@ -1234,10 +1234,10 @@ p.has-background {
 .block.bg-black:not(.is-full-width) + .block.bg-black.is-full-width .block-title, .block.bg-black:not(.is-full-width) + .block.bg-black.is-full-width .block-preamble {
   padding-top: 0; }
 
-.block.bg-primary-colour:not(.is-full-width) + .block.bg-primary-colour:not(.is-full-width) {
+.block.bg-primary:not(.is-full-width) + .block.bg-primary:not(.is-full-width) {
   padding-top: 0; }
 
-.block.bg-primary-colour:not(.is-full-width) + .block.bg-primary-colour.is-full-width .block-title, .block.bg-primary-colour:not(.is-full-width) + .block.bg-primary-colour.is-full-width .block-preamble {
+.block.bg-primary:not(.is-full-width) + .block.bg-primary.is-full-width .block-title, .block.bg-primary:not(.is-full-width) + .block.bg-primary.is-full-width .block-preamble {
   padding-top: 0; }
 
 .block.bg-primary-dark:not(.is-full-width) + .block.bg-primary-dark:not(.is-full-width) {
@@ -1252,10 +1252,10 @@ p.has-background {
 .block.bg-primary-light:not(.is-full-width) + .block.bg-primary-light.is-full-width .block-title, .block.bg-primary-light:not(.is-full-width) + .block.bg-primary-light.is-full-width .block-preamble {
   padding-top: 0; }
 
-.block.bg-secondary-colour:not(.is-full-width) + .block.bg-secondary-colour:not(.is-full-width) {
+.block.bg-secondary:not(.is-full-width) + .block.bg-secondary:not(.is-full-width) {
   padding-top: 0; }
 
-.block.bg-secondary-colour:not(.is-full-width) + .block.bg-secondary-colour.is-full-width .block-title, .block.bg-secondary-colour:not(.is-full-width) + .block.bg-secondary-colour.is-full-width .block-preamble {
+.block.bg-secondary:not(.is-full-width) + .block.bg-secondary.is-full-width .block-title, .block.bg-secondary:not(.is-full-width) + .block.bg-secondary.is-full-width .block-preamble {
   padding-top: 0; }
 
 .block.bg-secondary-dark:not(.is-full-width) + .block.bg-secondary-dark:not(.is-full-width) {
@@ -1401,7 +1401,7 @@ p.has-background {
 .overlay-black::before {
   background-color: #000; }
 
-.overlay-primary-colour::before {
+.overlay-primary::before {
   background-color: var(--primary_colour); }
 
 .overlay-primary-dark::before {
@@ -1410,7 +1410,7 @@ p.has-background {
 .overlay-primary-light::before {
   background-color: var(--primary_colour_light); }
 
-.overlay-secondary-colour::before {
+.overlay-secondary::before {
   background-color: var(--secondary_colour); }
 
 .overlay-secondary-dark::before {
@@ -2085,7 +2085,7 @@ blockquote.testimonial {
       }
     } */ }
 
-.bg-primary-colour {
+.bg-primary {
   background-color: var(--primary_colour);
   /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
     h1,h2,h3,h4,h5,h6 {
@@ -2139,7 +2139,7 @@ blockquote.testimonial {
       }
     } */ }
 
-.bg-secondary-colour {
+.bg-secondary {
   background-color: var(--secondary_colour);
   /* color: choose-contrast-color($color,$color-text, get-color(neutral,000));
     h1,h2,h3,h4,h5,h6 {
@@ -3017,6 +3017,22 @@ a:hover .icon__snapchat, a:focus .icon__snapchat, a:active .icon__snapchat {
   margin-left: 1em; }
   .icon-list .icon {
     margin-right: 0.5em; }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+  STICKY NAV
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+#masthead {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  position: fixed;
+  transition: transform 0.2s ease; }
+  #masthead.visible {
+    box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.5); }
+
+body.admin-bar #masthead {
+  margin-top: 32px !important; }
 
 .pagination {
   list-style-type: none;

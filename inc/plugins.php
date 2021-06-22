@@ -61,7 +61,7 @@ function ezpzconsultations_register_required_plugins() {
 			'slug'         => 'ezpz-optimise',
 			'source'       => 'https://github.com/epls-design/ezpz-cleanup/archive/master.zip',
       'required'     => true,
-      //'force_activation'  => true, // TODO:  Comment this in before site launch. There is a conflict between TGMPA activation and DISALLOW_FILE_EDIT. If DISALLOW_FILE_EDIT is set, TGMPA can not seem to activate plugins.
+      //'force_activation'  => true, 
 			'external_url' => 'https://github.com/epls-design/ezpz-cleanup',
     ),
 

@@ -2,9 +2,10 @@
 # This file is distributed under the UNLICENSED.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Consultations 1.0.0\n"
-"Report-Msgid-Bugs-To: https://github.com/epls-design/ezpz-jellypress/issues\n"
-"POT-Creation-Date: 2021-06-15 08:10:00+00:00\n"
+"Project-Id-Version: EPLS Consultations 1.0.0\n"
+"Report-Msgid-Bugs-To: "
+"https://github.com/ChrisDummer/ezpzconsultations/ezpzconsultations/issues\n"
+"POT-Creation-Date: 2021-06-16 08:59:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,7 +38,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:30
+#: footer.php:40
 #. translators: 1: Theme author and link to website.
 msgid "Website design and build by %1$s"
 msgstr ""
@@ -95,6 +96,7 @@ msgid "Theme Settings"
 msgstr ""
 
 #: inc/acf.php:118 inc/acf.php:130 inc/acf.php:143 inc/acf.php:155
+#: inc/acf.php:167
 msgid "Successfully updated Theme Settings"
 msgstr ""
 
@@ -108,6 +110,10 @@ msgstr ""
 
 #: inc/acf.php:149 inc/acf.php:150
 msgid "Theme Colours"
+msgstr ""
+
+#: inc/acf.php:161 inc/acf.php:162
+msgid "Footer"
 msgstr ""
 
 #: inc/dry.php:189
@@ -167,6 +173,7 @@ msgid "Add New Campaign"
 msgstr ""
 
 #: inc/post_types/example.php:30 inc/post_types/post.php:21
+#: inc/post_types/stack.php:30
 msgid "Add New"
 msgstr ""
 
@@ -195,26 +202,32 @@ msgid "Search Campaign"
 msgstr ""
 
 #: inc/post_types/example.php:37 inc/post_types/post.php:28
+#: inc/post_types/stack.php:37
 msgid "Not found"
 msgstr ""
 
 #: inc/post_types/example.php:38 inc/post_types/post.php:29
+#: inc/post_types/stack.php:38
 msgid "Not found in Trash"
 msgstr ""
 
 #: inc/post_types/example.php:39 inc/post_types/post.php:30
+#: inc/post_types/stack.php:39
 msgid "Featured Image"
 msgstr ""
 
 #: inc/post_types/example.php:40 inc/post_types/post.php:31
+#: inc/post_types/stack.php:40
 msgid "Set featured image"
 msgstr ""
 
 #: inc/post_types/example.php:41 inc/post_types/post.php:32
+#: inc/post_types/stack.php:41
 msgid "Remove featured image"
 msgstr ""
 
 #: inc/post_types/example.php:42 inc/post_types/post.php:33
+#: inc/post_types/stack.php:42
 msgid "Use as featured image"
 msgstr ""
 
@@ -242,7 +255,7 @@ msgstr ""
 msgid "Campaign"
 msgstr ""
 
-#: inc/post_types/example.php:51
+#: inc/post_types/example.php:51 inc/post_types/stack.php:51
 msgid ""
 "This is an example file which can be edited or duplicated to quickly create "
 "a CPT. Do not forget to include it in functions.php"
@@ -284,11 +297,11 @@ msgstr ""
 msgid "Campaign Tags"
 msgstr ""
 
-#: inc/post_types/example.php:119
+#: inc/post_types/example.php:119 inc/post_types/stack.php:119
 msgid "Register an example taxonomy for a CPT"
 msgstr ""
 
-#: inc/post_types/example.php:147
+#: inc/post_types/example.php:147 inc/post_types/stack.php:147
 msgid ""
 "Please add all of your campaigns here. A campaign is determined as activity "
 "focused around a particular community or location. You may have an "
@@ -394,6 +407,110 @@ msgstr ""
 
 #: inc/post_types/post.php:38
 msgid "Filter News list"
+msgstr ""
+
+#: inc/post_types/stack.php:25
+msgid "Stack Archives"
+msgstr ""
+
+#: inc/post_types/stack.php:26
+msgid "Stack Attributes"
+msgstr ""
+
+#: inc/post_types/stack.php:27
+msgid "Parent Stack:"
+msgstr ""
+
+#: inc/post_types/stack.php:28
+msgid "All Stacks"
+msgstr ""
+
+#: inc/post_types/stack.php:29
+msgid "Add New Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:31
+msgid "New Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:32
+msgid "Edit Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:33
+msgid "Update Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:34
+msgid "View Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:35
+msgid "View Stacks"
+msgstr ""
+
+#: inc/post_types/stack.php:36
+msgid "Search Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:43
+msgid "Insert into Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:44
+msgid "Uploaded to this Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:45
+msgid "Stacks list"
+msgstr ""
+
+#: inc/post_types/stack.php:46
+msgid "Stacks list navigation"
+msgstr ""
+
+#: inc/post_types/stack.php:47
+msgid "Filter Stacks list"
+msgstr ""
+
+#: inc/post_types/stack.php:50
+msgid "Stack"
+msgstr ""
+
+#: inc/post_types/stack.php:100
+msgid "Search Stack Tags"
+msgstr ""
+
+#: inc/post_types/stack.php:101
+msgid "All Stack Tags"
+msgstr ""
+
+#: inc/post_types/stack.php:102
+msgid "Parent Stack Tag"
+msgstr ""
+
+#: inc/post_types/stack.php:103
+msgid "Parent Stack Tag:"
+msgstr ""
+
+#: inc/post_types/stack.php:104
+msgid "Edit Stack Tag"
+msgstr ""
+
+#: inc/post_types/stack.php:105
+msgid "Update Stack Tag"
+msgstr ""
+
+#: inc/post_types/stack.php:106
+msgid "Add New Stack Tag"
+msgstr ""
+
+#: inc/post_types/stack.php:107
+msgid "New Stack Tag Name"
+msgstr ""
+
+#: inc/post_types/stack.php:108
+msgid "Stack Tags"
 msgstr ""
 
 #: inc/template-functions.php:97
@@ -583,7 +700,7 @@ msgid " read"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "Consultations"
+msgid "EPLS Consultations"
 msgstr ""
 
 #. Theme URI of the plugin/theme
@@ -591,9 +708,7 @@ msgid "http://consultations.local"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Jellypress is a Wordpress starter theme based on the Jellyfish CSS "
-"framework and Automattic's Underscores(_S) theme."
+msgid "Theme boilerplate for Consultation websites"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -621,6 +736,11 @@ msgctxt "Post Type General Name"
 msgid "Campaigns"
 msgstr ""
 
+#: inc/post_types/stack.php:21
+msgctxt "Post Type General Name"
+msgid "Stacks"
+msgstr ""
+
 #: inc/post_types/example.php:22
 msgctxt "Post Type Singular Name"
 msgid "Campaign"
@@ -629,6 +749,11 @@ msgstr ""
 #: inc/post_types/post.php:13
 msgctxt "Post Type Singular Name"
 msgid "News"
+msgstr ""
+
+#: inc/post_types/stack.php:22
+msgctxt "Post Type Singular Name"
+msgid "Stack"
 msgstr ""
 
 #: inc/post_types/example.php:23
@@ -641,6 +766,11 @@ msgctxt "Admin Menu text"
 msgid "News"
 msgstr ""
 
+#: inc/post_types/stack.php:23
+msgctxt "Admin Menu text"
+msgid "Stacks"
+msgstr ""
+
 #: inc/post_types/example.php:24
 msgctxt "Add New on Toolbar"
 msgid "Campaign"
@@ -649,6 +779,11 @@ msgstr ""
 #: inc/post_types/post.php:15
 msgctxt "Add New on Toolbar"
 msgid "News Article"
+msgstr ""
+
+#: inc/post_types/stack.php:24
+msgctxt "Add New on Toolbar"
+msgid "Stack"
 msgstr ""
 
 #: inc/post_types/example.php:98
@@ -661,6 +796,11 @@ msgctxt "taxonomy general name"
 msgid "Page Type"
 msgstr ""
 
+#: inc/post_types/stack.php:98
+msgctxt "taxonomy general name"
+msgid "Stack Tags"
+msgstr ""
+
 #: inc/post_types/example.php:99
 msgctxt "taxonomy singular name"
 msgid "Campaign Tag"
@@ -669,6 +809,11 @@ msgstr ""
 #: inc/post_types/page.php:28
 msgctxt "taxonomy singular name"
 msgid "Page Type"
+msgstr ""
+
+#: inc/post_types/stack.php:99
+msgctxt "taxonomy singular name"
+msgid "Stack Tag"
 msgstr ""
 
 #: inc/template-tags.php:32

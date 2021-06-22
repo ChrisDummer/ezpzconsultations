@@ -72,7 +72,7 @@ elseif ($date_now >= $date_unixtime)
 
 
 
-if($count % 2 == 0){
+if($count % 2 == 0  ){
 ?>    <div class="<?php echo $time_class;?> left"> <?php
 }
 else{
@@ -80,7 +80,7 @@ else{
 }
 
 
-  
+
 ?>
 
   <div class="content">

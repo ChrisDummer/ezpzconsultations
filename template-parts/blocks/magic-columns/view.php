@@ -41,7 +41,7 @@ $row_class = 'align-'.$block['row_vertical_align'];
 
     <div class="row <?php echo $row_class;?>">
       <?php foreach($block['columns'] as $column):
-        //var_dump($column);
+        var_dump($column);
         $col_class = 'col';
         $col_class .= ' '.$column['width_xs'].' '.$column['width_sm'].' '.$column['width_md'].' '.$column['width_lg'];
         $column_type = $column['column_type'];
@@ -53,6 +53,7 @@ $row_class = 'align-'.$block['row_vertical_align'];
             echo ezpzconsultations_content($column['text']);
             if($column['buttons']) ezpzconsultations_display_cta_buttons($column['buttons']);
           }
+          // elseif column ty;pe is images and text - do that stuff. need to loop through foreach text or image and ghen output
           elseif ($column_type == 'image'){
             echo '<figure>';
             if($image_link = $column['image_link']) echo '<a href="'.$image_link['url'].'" title="'.$image_link['title'].'" target="'.$image_link['target'].'">';

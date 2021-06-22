@@ -12,15 +12,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
- $field_group_json = 'group_60c8bf6f8920a.json'; // Replace with the name of your field group JSON.
-$field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-$footer_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+$field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+      $footer_options_data = get_all_custom_field_meta( 'option', $field_group_array );
 
-$background_colour = $footer_options_data['background_colour'];
-$email = $footer_options_data['email'];
-$number =  $footer_options_data['number'];
-$padding = $footer_options_data['padding'];
-$navigation = $footer_options_data['navigation'];
+$footer_selecter = $footer_options_data['footer_selecter'];
 
 ?>
   </div><?php //#content .site-content ?>
@@ -37,7 +33,7 @@ $navigation = $footer_options_data['navigation'];
             <span class="eplsdesign">
             <?php
             /* translators: 1: Theme author and link to website. */
-            printf( esc_html__( 'Website design and build by %1$s', 'ezpzconsultations' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign=jellypress" rel="author">EPLS Design</a>' );
+            printf( esc_html__( 'Website design and build by %1$s', 'ezpzconsultations' ), '<a href="https://epls.design/?utm_source=client&utm_medium=website&utm_campaign='.sanitize_title(get_bloginfo('name')).'" rel="author">EPLS Design</a>' );
             ?>
             </span>
           </p>
@@ -47,12 +43,10 @@ $navigation = $footer_options_data['navigation'];
   </footer>
 
   <?php
-  var_dump($footer_options_data);
-  
 
-  $post = $navigation; // Set $post global variable to the current post object
+  $post = $footer_selecter; // Set $post global variable to the current post object
   setup_postdata( $post ); // Set up "environment" for template tags
-  
+
       get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
 wp_reset_postdata();
 

@@ -1,6 +1,6 @@
 // BUTTONS
 // $buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]'); // Stack of elements to target
-// $button-border-width: 1px;
+ $button-border-width: var(--iii);
 // $button-border-radius: 3px;
 // $button-font-family: $font-secondary;
 // $button-padding-xsmall: 0.5em 0.75em;

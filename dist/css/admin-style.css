@@ -1,4 +1,4 @@
-/* Jellypress Wordpress Theme 1.0.0
+/* EPLS Consultations Wordpress Theme 1.0.0
  * © 2021-06 EPLS Design - https://epls.design */
 
 /**
@@ -257,7 +257,7 @@
 .bg-black {
   background-color: #000; }
 
-.bg-primary-colour {
+.bg-primary {
   background-color: var(--primary_colour); }
 
 .bg-primary-dark {
@@ -266,7 +266,7 @@
 .bg-primary-light {
   background-color: var(--primary_colour_light); }
 
-.bg-secondary-colour {
+.bg-secondary {
   background-color: var(--secondary_colour); }
 
 .bg-secondary-dark {
@@ -277,15 +277,6 @@
 
 .bg-text-colour {
   background-color: var(--text_colour); }
-
-.bg-gray {
-  background-color: #6e7c8c; }
-
-.bg-primary {
-  background-color: #c32c78; }
-
-.bg-secondary {
-  background-color: #1cd4d4; }
 
 .dev-flag {
   position: fixed;

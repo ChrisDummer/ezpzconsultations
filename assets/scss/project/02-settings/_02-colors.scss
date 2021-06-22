@@ -84,10 +84,10 @@ $theme-colors: (
 $background-colors: (
   "white": #fff,
   "black": #000,
-  "primary-colour": var(--primary_colour),
+  "primary": var(--primary_colour),
   "primary-dark": var(--primary_colour_dark),
   "primary-light": var(--primary_colour_light),
-  "secondary-colour": var(--secondary_colour),
+  "secondary": var(--secondary_colour),
   "secondary-dark": var(--secondary_colour_dark),
   "secondary-light": var(--secondary_colour_light),
   "text-colour": var(--text_colour),

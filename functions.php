@@ -11,8 +11,9 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if(file_exists( get_template_directory() . '/env.php' )) {
-  $vars = include get_template_directory() . '/env.php' ;
+if(file_exists( get_template_directory() . '/env.json' )) {
+  $vars = file_get_contents(get_template_directory() . '/env.json');
+  $vars = json_decode($vars, true);
   foreach ($vars as $key => $value) putenv("$key=$value");
 }
 
@@ -73,3 +74,36 @@ if ( class_exists( 'woocommerce' ) ) {
   $woo_support = get_template_directory() . '/inc/woocommerce.php';
   if(file_exists($woo_support)) require_once $woo_support;
 };
+
+if(!function_exists('ezpzconsultations_fav')) {
+  function ezpzconsultations_fav($key, $default = null)
+  {
+    $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+    $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+    $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+
+    ?>
+    <link rel="shortcut icon" type="image/jpg" href="<?php echo $theme_options['favicon']; ?>"/>
+
+    <?php
+  }
+}
+
+
+if (! function_exists('ezpzconsultations_add_favicon') ) {
+  // Add favicon to admin areas
+  function ezpzconsultations_add_favicon()
+  {
+    $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+    $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+    $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+    // TODO; IF FWVICON EXISTS - get url of it
+
+    $favicon = wp_get_attachment_image_src( $theme_options['favicon'], $size  = 'Thumbnail');  $favicon[0];
+      echo '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '" />';
+
+  }
+}
+add_action('login_head', 'ezpzconsultations_add_favicon');
+add_action('admin_head', 'ezpzconsultations_add_favicon');
+add_action('wp_head', 'ezpzconsultations_add_favicon');
