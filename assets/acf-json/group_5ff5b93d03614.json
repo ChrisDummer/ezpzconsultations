@@ -124,14 +124,10 @@
                 "id": ""
             },
             "choices": {
-                "white": "<span class=\"swatch bg-white\"><\/span>",
-                "black": "<span class=\"swatch bg-black\"><\/span>",
                 "primary": "<span class=\"swatch bg-primary\"><\/span>",
                 "secondary": "<span class=\"swatch bg-secondary\"><\/span>",
-                "primary-colour": "<span class=\"swatch bg-primary-colour                                \"><\/span>",
                 "primary-dark": "<span class=\"swatch bg-primary-dark\"><\/span>",
                 "primary-light": "<span class=\"swatch bg-primary-light\"><\/span>",
-                "secondary-colour": "<span class=\"swatch bg-secondary-colour\"><\/span>",
                 "secondary-dark": "<span class=\"swatch bg-secondary-dark\"><\/span>",
                 "secondary-light": "<span class=\"swatch bg-secondary-light\"><\/span>",
                 "text-colour": "<span class=\"swatch bg-text-colour\"><\/span>"
@@ -342,5 +338,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623767197
+    "modified": 1624373390
 }

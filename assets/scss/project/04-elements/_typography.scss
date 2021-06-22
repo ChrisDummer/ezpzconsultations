@@ -40,6 +40,8 @@ h2 {
       }
     }
   }
+  color: var(--h2_colour);
+  font-family: var(--h2_font);;
 }
 
 h3 {
@@ -55,6 +57,8 @@ h3 {
       }
     }
   }
+  color: var(--h3_colour);
+  font-family: var(--h3_font);;
 }
 
 h4 {
@@ -70,6 +74,8 @@ h4 {
       }
     }
   }
+  color: var(--h4_colour);
+  font-family: var(--h4_font);;
 }
 
 h5 {
@@ -85,6 +91,8 @@ h5 {
       }
     }
   }
+  color: var(--h5_colour);
+  font-family: var(--h5_font);;
 }
 
 h6 {
@@ -100,6 +108,8 @@ h6 {
       }
     }
   }
+  color: var(--h6_colour);
+  font-family: var(--h6_font);;
 }
 
 p, li, h1, h2, h3, h4, h5, h6 {
