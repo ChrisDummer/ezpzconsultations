@@ -41,7 +41,7 @@ $row_class = 'align-'.$block['row_vertical_align'];
 
     <div class="row <?php echo $row_class;?>">
       <?php foreach($block['columns'] as $column):
-        var_dump($column);
+        //var_dump($column);
         $col_class = 'col';
         $col_class .= ' '.$column['width_xs'].' '.$column['width_sm'].' '.$column['width_md'].' '.$column['width_lg'];
         $column_type = $column['column_type'];
@@ -54,6 +54,54 @@ $row_class = 'align-'.$block['row_vertical_align'];
             if($column['buttons']) ezpzconsultations_display_cta_buttons($column['buttons']);
           }
           // elseif column ty;pe is images and text - do that stuff. need to loop through foreach text or image and ghen output
+
+          elseif ($column_type == 'text_and_image'){
+            foreach ($column['text_and_images'] as $row):
+
+              if ($row['text']) echo ezpzconsultations_content($row['text']);
+              if ($row['image']) echo wp_get_attachment_image( $row['image'], 'medium', '',  array( "class" => "w-100" ) );
+
+            endforeach;
+
+          }
+
+          elseif ($column_type == 'time_lines'){
+            $magic = 'yes';
+            ?>
+  <div class="timeline">
+
+  <?php
+
+  $i = 0;
+
+  foreach ($column['time_lines'] as $time_line):
+
+      $date = $time_line['date'];
+      $time_title = $time_line['time_title'];
+      $time_text = $time_line['time_text'];
+
+      $time_params = array(
+        'slide' => $slide,
+        'block_id' => $block_id,
+        'count' => $i,
+        'slide_class' => $slide_class,
+        'time_title' => $time_title,
+        'time_text' => $time_text,
+        'date' => $date,
+        'magic_columns' => $magic,
+
+      );
+      get_template_part( 'template-parts/components/time-line/time', 'basic', $time_params );
+
+      $i++;
+    endforeach;
+    ?>
+    </div>
+  </div>
+  <?php
+
+}
+
           elseif ($column_type == 'image'){
             echo '<figure>';
             if($image_link = $column['image_link']) echo '<a href="'.$image_link['url'].'" title="'.$image_link['title'].'" target="'.$image_link['target'].'">';

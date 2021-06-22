@@ -90,7 +90,7 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_h6_colour = $colour_options_data['h6'] ? $colour_options_data['h6'] : '#fffffa';
     $theme_link_colour = $colour_options_data['link_colour'] ? $colour_options_data['link_colour'] : '#fffffa';
     $theme_link_active_colour = $colour_options_data['link_active_colour'] ? $colour_options_data['link_active_colour'] : '#fffffa';
-    $theme_link_visited_colour = $colour_options_data['link_visited_colour'] ? $colour_options_data['link_collink_visited_colourour'] : '#fffffa';
+    $theme_link_visited_colour = $colour_options_data['link_visited_colour'] ? $colour_options_data['link_visited_colour'] : '#fffffa';
 
 
     //Fonts

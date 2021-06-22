@@ -279,12 +279,12 @@ a {
   transition: color 0.2s ease;
   text-decoration: underline; }
   a, a:link {
-    color: #c32c78; }
+    color: var(--link_colour); }
   a:visited {
-    color: #9c1c5c;
+    color: var(--link_visited_colour);
     text-decoration: none; }
   a:hover, a:focus {
-    color: #da4991; }
+    color: var(--link_active_colour); }
 
 p,
 table {
@@ -2258,7 +2258,7 @@ button.font-size, button.toggle-contrast {
   line-height: 1; }
   button.font-size:hover, button.toggle-contrast:hover, button.font-size:focus, button.toggle-contrast:focus {
     background: transparent;
-    color: #da4991; }
+    color: var(--link_active_colour); }
   button.font-size:focus, button.toggle-contrast:focus {
     box-shadow: none; }
 
@@ -2297,10 +2297,10 @@ button.toggle-contrast svg {
   text-align: center;
   font-size: 1em;
   font-weight: 700;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  border-width: 1px;
+  font-family: var(--button_font_family);
+  border-width: var(--button_border_width);
   border-style: solid;
-  border-radius: 3px;
+  border-radius: var(--button_border_radius);
   line-height: 1.3;
   padding: 0.75em 1.25em;
   margin: 0 0 24px 0;
@@ -2352,7 +2352,7 @@ button.toggle-contrast svg {
   display: inline-flex;
   margin-bottom: 24px; }
   .button-group .button, .button-group a.button {
-    margin: 0 0 0 -1px; }
+    margin: 0 0 0 -var(--button_border_width); }
     .button-group .button:not(:first-child), .button-group a.button:not(:first-child) {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0; }
@@ -2384,7 +2384,8 @@ button.toggle-contrast svg {
   flex-direction: column;
   flex-grow: 1;
   overflow: hidden;
-  border: 1px solid #cad1d8;
+  border-radius: var(--card_border_radius);
+  border: var(--card_border_width) solid #cad1d8;
   margin-bottom: 24px; }
   .card > :last-child {
     margin-bottom: 0; }
@@ -2412,8 +2413,8 @@ button.toggle-contrast svg {
   margin-right: 8px; }
 
 .form-row {
-  margin-left: -4px;
-  margin-right: -4px;
+  margin-left: -var(--button_border_width);
+  margin-right: -var(--button_border_width);
   display: flex;
   flex-wrap: wrap; }
   .form-row .col {
@@ -2586,7 +2587,7 @@ input:checked + .checkbox__control {
     .tag-list .tag:not(:last-child), .tag-list .tag-group:not(:last-child) {
       margin-right: 8px; }
   .tag-list:last-child {
-    margin-bottom: -8px; }
+    margin-bottom: -var(--button_border_width); }
   .tag-list .tag-group .tag {
     margin: 0; }
   h1 .tag-list, h2 .tag-list, h3 .tag-list, h4 .tag-list, h5 .tag-list, p.wp-block-subhead .tag-list, h6 .tag-list, p .tag-list {
@@ -2613,8 +2614,8 @@ input:checked + .checkbox__control {
 
 .navbar {
   position: relative;
-  background: #c32c78;
-  color: white; }
+  background: var(--nav_background_colour);
+  color: var(--nav_link_colour); }
   @media (max-width: 56.1875em) {
     .navbar .container {
       width: 100%;
@@ -2625,11 +2626,11 @@ input:checked + .checkbox__control {
   text-transform: none;
   transition: all 0.2s ease; }
   .navbar-menu li a, .navbar-menu li a:visited {
-    color: white;
-    background-color: #c32c78; }
+    color: var(--nav_link_colour);
+    background-color: var(--nav_background_colour); }
   .navbar-menu li a:hover, .navbar-menu li a:focus {
-    color: white;
-    background-color: #ab2166;
+    color: var(--nav_link_hover_colour);
+    background-color: var(--nav_link_hover_background_color);
     font-weight: 700; }
 
 .navbar-menu {
@@ -2644,7 +2645,7 @@ input:checked + .checkbox__control {
     position: relative;
     margin: 0; }
     .navbar-menu li a {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-family: var(--nav_font);
       font-size: 1em;
       font-weight: 700;
       display: block;
@@ -2669,7 +2670,7 @@ input:checked + .checkbox__control {
       pointer-events: none;
       height: 12px;
       width: 12px;
-      border: 3px solid rgba(255, 255, 255, 0.6);
+      border: 3px solid rgba(var(--nav_link_colour), 0.6);
       border-left: 0;
       border-top: 0;
       top: 50%;
@@ -2678,11 +2679,11 @@ input:checked + .checkbox__control {
       transform-origin: top center;
       transition: opacity 0.2s ease, border-color 0.2s ease; }
     .navbar-menu li.has-children > a:hover::after, .navbar-menu li.menu-item-has-children > a:hover::after, .navbar-menu li.has-children > a:focus::after, .navbar-menu li.menu-item-has-children > a:focus::after {
-      border-color: rgba(255, 255, 255, 0.6); }
+      border-color: rgba(var(--nav_link_hover_colour), 0.6); }
   .navbar-menu li.drop-active > ul {
     display: block; }
   .navbar-menu li.drop-active > a::after {
-    border-color: rgba(255, 255, 255, 0.1); }
+    border-color: rgba(var(--nav_link_colour), 0.1); }
   .navbar-menu input,
   .navbar-menu .button,
   .navbar-menu a.button {
@@ -2705,25 +2706,25 @@ input:checked + .checkbox__control {
   margin: 0;
   padding: 8px 12px;
   flex: 0 1 auto;
-  color: white; }
+  color: var(--nav_link_colour); }
   .navbar-item * {
     margin: 0; }
   .navbar-item a, .navbar-item a:visited {
-    color: white;
+    color: var(--nav_link_colour);
     text-decoration: none; }
   .navbar-item a:hover, .navbar-item a:focus {
-    color: white;
+    color: var(--nav_link_hover_colour);
     font-weight: 700; }
 
 .hamburger {
   transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
   margin-left: auto;
-  background-color: #c32c78;
+  background-color: var(--nav_background_colour);
   border-radius: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  border: 1px solid #c32c78;
-  color: white;
+  border: 1px solid var(--nav_background_colour);
+  color: var(--nav_link_colour);
   display: flex;
   align-items: center; }
   @media (min-width: 56.25em) {
@@ -2735,9 +2736,9 @@ input:checked + .checkbox__control {
     outline: 0;
     box-shadow: none !important; }
   .hamburger:hover, .hamburger:focus {
-    background-color: #ab2166;
-    border: 1px solid #ab2166;
-    color: white; }
+    background-color: var(--nav_link_hover_background_color);
+    border: 1px solid var(--nav_link_hover_background_color);
+    color: var(--nav_link_colour); }
 
 .hamburger-label {
   font-weight: 700;
@@ -2746,9 +2747,9 @@ input:checked + .checkbox__control {
   margin: 0 12px 0 0; }
 
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
-  background-color: white; }
+  background-color: var(--nav_link_colour); }
   .hamburger:hover .hamburger-inner, .hamburger:focus .hamburger-inner, .hamburger:hover .hamburger-inner:after, .hamburger:focus .hamburger-inner:after, .hamburger:hover .hamburger-inner:before, .hamburger:focus .hamburger-inner:before {
-    background-color: white; }
+    background-color: var(--nav_link_colour); }
 
 @media (min-width: 56.25em) {
   .navbar .container {
@@ -2788,11 +2789,11 @@ input:checked + .checkbox__control {
         .navbar-menu li > ul a {
           border-top: 1px solid rgba(255, 255, 255, 0.1); }
           .navbar-menu li > ul a, .navbar-menu li > ul a:visited {
-            color: white;
-            background-color: #c32c78; }
+            color: var(--nav_sublink_colour);
+            background-color: var(--nav_sublink_background_colour); }
           .navbar-menu li > ul a:hover, .navbar-menu li > ul a:focus {
-            color: white;
-            background-color: #ab2166; }
+            color: var(--nav_sublink_hover_colour);
+            background-color: var(--nav_sublink_hover_background_colour); }
         .navbar-menu li > ul li.has-children a::after, .navbar-menu li > ul li.menu-item-has-children a::after {
           transform: translate(-10px, -50%) rotate(-45deg);
           transform-origin: center; }
@@ -3550,7 +3551,7 @@ button.mfp-close {
   color: #cad1d8; }
 
 .mfp-bottom-bar {
-  margin-top: -24px; }
+  margin-top: -var(--button_border_width); }
 
 .mfp-arrow-left::before {
   border-right: 0; }
@@ -5420,6 +5421,9 @@ table.is-hoverable tr:hover td {
   .container.is-wide {
     padding-left: calc((100vw-1280px)/4);
     padding-right: calc((100vw-1280px)/4); } }
+
+.w-100 {
+  width: 100%; }
 
 .text-white {
   color: #fff !important; }

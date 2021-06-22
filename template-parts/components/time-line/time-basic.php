@@ -13,6 +13,7 @@ $time_text =  $args['time_text'];
 $count =  $args['count'];
 $date_unixtime =   strtotime($args['date']);
 $date_now = time();
+$magic = $args['magic_columns'];
 
 
 
@@ -70,16 +71,37 @@ elseif ($two_week_date >= $date_unixtime)
 elseif ($date_now >= $date_unixtime)
   $time_class = $time_class . ' opacityNine';
 
+if($magic == 'yes'):
+
+  echo '<style>
+    .block__magic-columns .time-container{
+      width: 100%;
+    }
+
+    .block__magic-columns .timeline:after{
+      left: 0;
+    }
+
+    .block__magic-columns .right{
+      left: 0;
+    }
+  </style>
+
+  <div class="' . $time_class . ' right">';
 
 
-if($count % 2 == 0  ){
-?>    <div class="<?php echo $time_class;?> left"> <?php
-}
-else{
- ?>   <div class="<?php echo $time_class;?> right"> <?php
-}
+endif;
 
+if($magic != 'yes'):
 
+  if($count % 2 == 0  ){
+    echo'   <div class="' . $time_class . ' left">';
+  }
+  else{
+  echo'   <div class="' . $time_class . ' right">';
+  }
+
+endif;
 
 ?>
 

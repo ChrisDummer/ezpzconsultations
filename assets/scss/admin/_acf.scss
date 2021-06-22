@@ -292,10 +292,6 @@ $handle_color: get-color(neutral,900);
     @extend %flexible-content-description;
     content: "The iFrame block allows you to embed a website in an iFrame on your page. Note: not all websites will allow embedding within an iFrame."
   }
-  &[data-layout="image"] .acf-fc-layout-controls+.acf-fields::before {
-    @extend %flexible-content-description;
-    content: "The Image block allows you to insert an image onto the page."
-  }
   &[data-layout="image-compare"] .acf-fc-layout-controls+.acf-fields::before {
     @extend %flexible-content-description;
     content: "The Image Compare block allows you to compare a before/after of two images."
@@ -307,6 +303,10 @@ $handle_color: get-color(neutral,900);
   &[data-layout="magic-columns"] .acf-fc-layout-controls+.acf-fields::before {
     @extend %flexible-content-description;
     content: "The Magic Columns block is an incredibly powerful and flexible block that lets you create mixed rows of media such as text, images, video, posts, and more. You can also customise the column widths."
+  }
+  &[data-layout="image"] .acf-fc-layout-controls+.acf-fields::before {
+    @extend %flexible-content-description;
+    content: "The Image block allows you to insert an image onto the page."
   }
   &[data-layout="map"] .acf-fc-layout-controls+.acf-fields::before {
     @extend %flexible-content-description;
