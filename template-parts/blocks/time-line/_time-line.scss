@@ -94,43 +94,44 @@
   }
 }
 .opacityNine {
-&::before, & .content{
+ & .content{
   background: get-color(neutral, 900);
 }
+
 }
 
 .opacityEight{
-  &::before, & .content{
+  & .content{
     background: get-color(neutral, 800);
   }
 }
 
 .opacitySeven{
-  &::before, & .content{
+   & .content{
     background: get-color(neutral, 700);
   }
 }
 
 .opacitySix{
-  &::before, & .content{
+  & .content{
     background: get-color(neutral, 600);
   }
 }
 
 .opacityFive{
-  &::before, & .content{
+   & .content{
     background: get-color(neutral, 500);
   }
 }
 
 .opacityFour{
-  &::before, & .content{
+   & .content{
     background: get-color(neutral, 400);
   }
 }
 
 .opacityThree{
-  &::before, & .content{
+  & .content{
     background: get-color(neutral, 300);
   }
 }

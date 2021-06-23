@@ -89,6 +89,15 @@ if(!function_exists('ezpzconsultations_fav')) {
   }
 }
 
+if (! function_exists('ezpzconsultations_px_convert') ) {
+  // Convert PX to em
+  function ezpzconsultations_px_convert(&$px_variable, $um = 'rem'){
+    $px_variable = $px_variable /= 16;
+    $px_variable = $px_variable . $um;
+  }
+}
+
+
 
 if (! function_exists('ezpzconsultations_add_favicon') ) {
   // Add favicon to admin areas

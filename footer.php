@@ -24,6 +24,11 @@ $footer_selecter = $footer_options_data['footer_selecter'];
 <?php if ( !is_page_template( 'page-simple.php' ) ) : ?>
 
 	<footer class="site-footer">
+  <?php $post = $footer_selecter; // Set $post global variable to the current post object
+  setup_postdata( $post ); // Set up "environment" for template tags
+
+    get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
+    wp_reset_postdata();?>
     <div class="container">
       <div class="row">
         <div class="site-info col" id="colophon">
@@ -43,12 +48,6 @@ $footer_selecter = $footer_options_data['footer_selecter'];
   </footer>
 
   <?php
-
-  $post = $footer_selecter; // Set $post global variable to the current post object
-  setup_postdata( $post ); // Set up "environment" for template tags
-
-      get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
-wp_reset_postdata();
 
  endif; ?>
 

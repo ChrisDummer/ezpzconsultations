@@ -113,15 +113,24 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#fffffa';
     $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#fffffa';
     $theme_navbar_break_point = $colour_options_data['navbar_break_point'] ? $colour_options_data['navbar_break_point'] : '900';
-    $theme_navbar_break_point = $theme_navbar_break_point . 'px';
+
     //Button Elements
-    $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2px';
-    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10px';
+    $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2';
+    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10';
     $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : 'arial';
 
+
     //Card Elements
-    $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '2px';
-    $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '10px';
+    $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '10';
+    $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '2';
+
+    //Using the functions to convert to em or rem
+    ezpzconsultations_px_convert($theme_navbar_break_point, 'em');
+    ezpzconsultations_px_convert($theme_button_border_width);
+    ezpzconsultations_px_convert($theme_button_border_radius);
+    ezpzconsultations_px_convert($theme_card_border_radius);
+    ezpzconsultations_px_convert($theme_card_border_width);
+
 
 
     $theme_bg_colors = array(

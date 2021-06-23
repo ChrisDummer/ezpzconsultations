@@ -2058,25 +2058,25 @@ blockquote.testimonial {
   .content h3 {
     color: white; }
 
-.opacityNine::before, .opacityNine .content {
+.opacityNine .content {
   background: #1f2933; }
 
-.opacityEight::before, .opacityEight .content {
+.opacityEight .content {
   background: #33404d; }
 
-.opacitySeven::before, .opacitySeven .content {
+.opacitySeven .content {
   background: #3f4d5a; }
 
-.opacitySix::before, .opacitySix .content {
+.opacitySix .content {
   background: #515f6c; }
 
-.opacityFive::before, .opacityFive .content {
+.opacityFive .content {
   background: #6e7c8c; }
 
-.opacityFour::before, .opacityFour .content {
+.opacityFour .content {
   background: #9aa5b1; }
 
-.opacityThree::before, .opacityThree .content {
+.opacityThree .content {
   background: #cad1d8; }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */

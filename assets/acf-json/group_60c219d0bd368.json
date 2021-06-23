@@ -586,7 +586,7 @@
             "label": "Navbar Break point",
             "name": "navbar_break_point",
             "type": "number",
-            "instructions": "",
+            "instructions": "Enter the screen point that you would like the hamburger menu to be showing for the px value",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -623,7 +623,7 @@
             "label": "Button Border Width",
             "name": "button_border_width",
             "type": "number",
-            "instructions": "",
+            "instructions": "Please enter the border width you would like to have in px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -634,7 +634,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "px",
+            "append": "",
             "min": "",
             "max": "",
             "step": ""
@@ -644,7 +644,7 @@
             "label": "Button Border Radius",
             "name": "button_border_radius",
             "type": "number",
-            "instructions": "",
+            "instructions": "Please enter the px value you would like for the border radius",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -655,7 +655,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "px",
+            "append": "",
             "min": "",
             "max": "",
             "step": ""
@@ -700,7 +700,7 @@
             "label": "Card Border Radius",
             "name": "card_border_radius",
             "type": "number",
-            "instructions": "",
+            "instructions": "Please enter the border radius value in px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -711,7 +711,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "px",
+            "append": "",
             "min": "",
             "max": "",
             "step": ""
@@ -721,7 +721,7 @@
             "label": "Card Border Width",
             "name": "card_border_width",
             "type": "number",
-            "instructions": "",
+            "instructions": "Please enter the px value you would like for the border width",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -732,7 +732,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "px",
+            "append": "",
             "min": "",
             "max": "",
             "step": ""
@@ -891,5 +891,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624436190
+    "modified": 1624443298
 }
