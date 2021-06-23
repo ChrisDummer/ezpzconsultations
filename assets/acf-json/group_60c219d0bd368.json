@@ -279,7 +279,7 @@
             "label": "Body Font",
             "name": "body_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the body text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -298,7 +298,7 @@
             "label": "H1 Font",
             "name": "h1_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h1 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -317,7 +317,7 @@
             "label": "H2 Font",
             "name": "h2_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h2 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -336,7 +336,7 @@
             "label": "H3 Font",
             "name": "h3_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h3 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -355,7 +355,7 @@
             "label": "H4 Font",
             "name": "h4_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h4 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -374,7 +374,7 @@
             "label": "H5 Font",
             "name": "h5_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h5 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -393,7 +393,7 @@
             "label": "H6 Font",
             "name": "h6_font",
             "type": "text",
-            "instructions": "",
+            "instructions": "Please copy the font family from the website for the h6 text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -406,6 +406,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_60d1b799f6fb9",
+            "label": "Font Links",
+            "name": "font_links",
+            "type": "textarea",
+            "instructions": "Please copy and paste the adobe or the google fonts link script that you will get from the website",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_60ca16242ff06",
@@ -563,6 +582,27 @@
             "default_value": ""
         },
         {
+            "key": "field_60d2e9be55af6",
+            "label": "Navbar Break point",
+            "name": "navbar_break_point",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_60ca1a0ef479c",
             "label": "Button",
             "name": "",
@@ -594,7 +634,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": "px",
             "min": "",
             "max": "",
             "step": ""
@@ -615,7 +655,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": "px",
             "min": "",
             "max": "",
             "step": ""
@@ -671,7 +711,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": "px",
             "min": "",
             "max": "",
             "step": ""
@@ -692,7 +732,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": "px",
             "min": "",
             "max": "",
             "step": ""
@@ -832,41 +872,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_60d1b7cbbdee1",
-            "label": "Font Links",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_60d1b799f6fb9",
-            "label": "Font Links",
-            "name": "font_links",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": ""
         }
     ],
     "location": [
@@ -886,5 +891,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624356840
+    "modified": 1624436190
 }

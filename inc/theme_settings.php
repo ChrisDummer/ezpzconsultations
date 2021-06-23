@@ -112,6 +112,7 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'] ? $colour_options_data['nav_sublink_hover_colour'] : '#fffffa';
     $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#fffffa';
     $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#fffffa';
+    $theme_navbar_break_point = $colour_options_data['navbar_break_point'] ? $colour_options_data['navbar_break_point'] : '900';
 
     //Button Elements
     $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2px';
@@ -246,5 +247,12 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
 
     echo '</style>';
 
+    ?>
+
+    <script>
+      var navBarBreakPoint = <?php echo $theme_navbar_break_point ; ?>;
+    </script>
+
+  <?php
   }
 endif;

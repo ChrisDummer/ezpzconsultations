@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
     'li.has-children > a:not(".clicked"), li.menu-item-has-children > a:not(".clicked")',
     function (e) {
       // ...and the window width is smaller than the breakPoints.navBar
-      if ($(window).width() < breakPoints.navBar) {
+      if ($(window).width() < navBarBreakPoint) {
         // add .clicked class to the anchor element
         $(this).addClass("clicked");
         // prevent the link from firing
@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
     }
 
     if (
-      $(window).width() < breakPoints.navBar &&
+      $(window).width() < navBarBreakPoint &&
       $(".hamburger").attr("aria-expanded") == "true"
     ) {
       // This heavily assumes we only have one .hamburger element on the page. If you have more - this will break
@@ -98,7 +98,7 @@ jQuery(document).ready(function ($) {
       navbar.css("transform", "translateY(0px)"); // Catch for fast scrollers
     }
     lastKnownScroll = scrollPosition; // Update pos
-    $(".hero").css("padding-top", navHeight + 65); //65px == $block-padding-small
+    $(".hero").css("padding-top", navHeight); //65px == $block-padding-small
   }
   $(document).ready(function () {
     hasScrolled(); // FIXME: This isn't working on load.

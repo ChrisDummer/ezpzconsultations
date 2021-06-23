@@ -1177,7 +1177,7 @@ p.has-background {
 
 @media (min-width: 56.25em) {
   .hero__large .hero-main {
-    max-height: 85vh; }
+    min-height: 85vh; }
   .hero__medium .hero-main {
     min-height: 512px; }
   .hero__small .hero-main {
@@ -1231,9 +1231,6 @@ p.has-background {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
-  @media (min-width: 56.25em) {
-    .hero-video {
-      position: fixed; } }
 
 .hero .play-button {
   margin-top: 32px; }
@@ -1985,7 +1982,7 @@ blockquote.testimonial {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: #0084ff;
+  background-color: var(--primary_colour);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -2052,7 +2049,6 @@ blockquote.testimonial {
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: #2b2a2a;
   position: relative;
   border-radius: 6px;
   color: white; }
@@ -2060,25 +2056,25 @@ blockquote.testimonial {
     color: white; }
 
 .opacityNine::before, .opacityNine .content {
-  opacity: 0.9; }
+  background: #1f2933; }
 
 .opacityEight::before, .opacityEight .content {
-  opacity: 0.8; }
+  background: #33404d; }
 
 .opacitySeven::before, .opacitySeven .content {
-  opacity: 0.7; }
+  background: #3f4d5a; }
 
 .opacitySix::before, .opacitySix .content {
-  opacity: 0.6; }
+  background: #515f6c; }
 
 .opacityFive::before, .opacityFive .content {
-  opacity: 0.5; }
+  background: #6e7c8c; }
 
 .opacityFour::before, .opacityFour .content {
-  opacity: 0.4; }
+  background: #9aa5b1; }
 
 .opacityThree::before, .opacityThree .content {
-  opacity: 0.3; }
+  background: #cad1d8; }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {

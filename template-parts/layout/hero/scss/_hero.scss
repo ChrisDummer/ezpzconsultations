@@ -2,12 +2,12 @@
   &.block {
     padding: 0;
   }
-  
+
     @include above(md) {
     &__large {
       .hero-main {
       //  height: get-size(56);
-        max-height: 85vh;
+        min-height: 85vh;
       }
     }
     &__medium {
@@ -42,7 +42,7 @@
     @include above(sm) {
      //max-width: 90%
     }
-    
+
   }
   .bg-image {
     @include above(md){
@@ -92,7 +92,7 @@
   //}
   position: absolute;
   @include above(md) {
-    position: fixed;
+
   }
   z-index: -1;
   top: 50%;

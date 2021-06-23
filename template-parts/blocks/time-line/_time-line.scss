@@ -10,7 +10,7 @@
   content: '';
   position: absolute;
   width: 6px;
-  background-color: rgb(0, 132, 255);
+  background-color: var(--primary_colour);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -85,7 +85,6 @@
 /* The actual content */
 .content {
   padding: 20px 30px;
-  background-color: #2b2a2a;
   position: relative;
   border-radius: 6px;
   color: white;
@@ -96,43 +95,43 @@
 }
 .opacityNine {
 &::before, & .content{
-  opacity: 0.9;
+  background: get-color(neutral, 900);
 }
 }
 
 .opacityEight{
   &::before, & .content{
-    opacity: 0.8;
+    background: get-color(neutral, 800);
   }
 }
 
 .opacitySeven{
   &::before, & .content{
-    opacity: 0.7;
+    background: get-color(neutral, 700);
   }
 }
 
 .opacitySix{
   &::before, & .content{
-    opacity: 0.6;
+    background: get-color(neutral, 600);
   }
 }
 
 .opacityFive{
   &::before, & .content{
-    opacity: 0.5;
+    background: get-color(neutral, 500);
   }
 }
 
 .opacityFour{
   &::before, & .content{
-    opacity: 0.4;
+    background: get-color(neutral, 400);
   }
 }
 
 .opacityThree{
   &::before, & .content{
-    opacity: 0.3;
+    background: get-color(neutral, 300);
   }
 }
 
@@ -142,14 +141,14 @@
   .timeline::after {
   left: 31px;
   }
-  
+
   /* Full-width containers */
   .time-container {
   width: 100%;
   padding-left: 70px;
   padding-right: 25px;
   }
-  
+
   /* Make sure that all arrows are pointing leftwards */
   .time-container::before {
   left: 60px;
@@ -166,7 +165,7 @@
   .right::after{
     left: 23px;
   }
-  
+
   /* Make all right containers behave like the left ones */
   .right {
   left: 0%;
