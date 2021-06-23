@@ -1,5 +1,6 @@
 // NAVBAR
-// $nav-expands: 900px; // Point at which the nav kicks in. You'll also need to change this in the .js to produce a clickable drop down when responsive
+//nav-expands: 1000px; // Point at which the nav kicks in. You'll also need to change this in the .js to produce a clickable drop down when responsive
+//TODO you need to make this expands a css variable and also refactor the media query code
 $navbar-bg-color: var(--nav_background_colour);
 // Parent Level Links
 // $navbar-font-size: font-size(0);

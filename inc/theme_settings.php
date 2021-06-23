@@ -113,7 +113,7 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#fffffa';
     $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#fffffa';
     $theme_navbar_break_point = $colour_options_data['navbar_break_point'] ? $colour_options_data['navbar_break_point'] : '900';
-
+    $theme_navbar_break_point = $theme_navbar_break_point . 'px';
     //Button Elements
     $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2px';
     $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10px';
@@ -172,6 +172,7 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
       --nav_sublink_hover_colour: <?php echo $theme_nav_sublink_hover_colour; ?>;
       --nav_sublink_background_colour: <?php echo $theme_nav_sublink_background_colour; ?>;
       --nav_sublink_hover_background_colour: <?php echo $theme_nav_sublink_hover_background_colour; ?>;
+      --nav_navbar_break_point: <?php echo $theme_navbar_break_point; ?>;
 
       --button_border_width: <?php echo $theme_button_border_width; ?>;
       --button_border_radius: <?php echo $theme_button_border_radius; ?>;
