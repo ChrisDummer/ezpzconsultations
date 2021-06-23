@@ -125,7 +125,12 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '2';
 
     //Using the functions to convert to em or rem
-    ezpzconsultations_px_convert($theme_navbar_break_point, 'em');
+    ?>
+    <script>
+      var navBarBreakPoint = <?php echo $theme_navbar_break_point ; ?>;
+    </script>
+    <?php
+    //ezpzconsultations_px_convert($theme_navbar_break_point, 'em');
     ezpzconsultations_px_convert($theme_button_border_width);
     ezpzconsultations_px_convert($theme_button_border_radius);
     ezpzconsultations_px_convert($theme_card_border_radius);
@@ -258,10 +263,6 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     echo '</style>';
 
     ?>
-
-    <script>
-      var navBarBreakPoint = <?php echo $theme_navbar_break_point ; ?>;
-    </script>
 
   <?php
   }

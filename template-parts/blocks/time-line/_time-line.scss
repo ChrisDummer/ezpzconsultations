@@ -10,7 +10,7 @@
   content: '';
   position: absolute;
   width: 6px;
-  background-color: var(--primary_colour);
+  background-color: get-color(neutral, 500);
   top: 0;
   bottom: 0;
   left: 50%;

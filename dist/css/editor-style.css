@@ -1133,48 +1133,6 @@ p.has-background {
   100% {
     transform: scale(1); } }
 
-.hero-archive .page-title + .archive-description {
-  margin-top: 24px; }
-
-.hero .cat-link {
-  margin-right: 16px; }
-  .hero .cat-link:last-of-type {
-    margin-right: 0; }
-
-.hero .entry-meta-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.hero .entry-meta {
-  margin-top: 32px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 8px; }
-  .hero .entry-meta, .hero .entry-meta a {
-    color: white !important; }
-  .hero .entry-meta > *:last-of-type {
-    margin-right: 0; }
-
-.hero .reading-time, .hero .posted-on, .hero .byline, .hero .cat-links {
-  display: inline-block;
-  margin-bottom: 4px;
-  margin-right: 16px; }
-
-.hero .reading-time {
-  margin-right: 0; }
-
-.hero .entry-meta .icon {
-  color: #6e7c8c; }
-
-.hero.overlay-white .entry-meta {
-  border-top-color: rgba(63, 77, 90, 0.4); }
-  .hero.overlay-white .entry-meta, .hero.overlay-white .entry-meta a {
-    color: #1f2933 !important; }
-
-.hero.overlay-dark.overlay-opacity-0 .entry-meta .icon, .hero.overlay-dark.overlay-opacity-10 .entry-meta .icon, .hero.overlay-dark.overlay-opacity-20 .entry-meta .icon, .hero.overlay-dark.overlay-opacity-30 .entry-meta .icon, .hero.overlay-dark.overlay-opacity-40 .entry-meta .icon {
-  color: #e5e8eb; }
-
 .hero.block {
   padding: 0; }
 
@@ -1186,6 +1144,19 @@ p.has-background {
   .hero__small .hero-main {
     min-height: 384px; } }
 
+@media (max-width: 56.1875em) {
+  .hero__large .hero-main {
+    min-height: 384px; }
+  .hero__medium .hero-main {
+    min-height: 384px; }
+  .hero__small .hero-main {
+    min-height: 384px; } }
+
+@media (max-width: 37.4375em) {
+  .hero .bg-video {
+    height: 384px;
+    max-height: 60vh; } }
+
 @media (min-width: 37.5em) and (max-width: 56.1875em) {
   .hero .bg-video {
     height: 512px;
@@ -1194,7 +1165,6 @@ p.has-background {
 .hero h1 {
   margin: 0 auto;
   line-height: 1.1;
-  text-transform: uppercase;
   text-align: center;
   font-weight: 300;
   transition: font-size 0.2s ease; }
@@ -1985,7 +1955,7 @@ blockquote.testimonial {
   content: '';
   position: absolute;
   width: 6px;
-  background-color: var(--primary_colour);
+  background-color: #6e7c8c;
   top: 0;
   bottom: 0;
   left: 50%;
