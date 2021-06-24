@@ -63,41 +63,36 @@ $row_class = 'align-'.$block['row_vertical_align'];
           }
 
           elseif ($column_type == 'time_lines'){
-            $magic = 'yes';
+            $magic = true;
             ?>
-  <div class="timeline">
+            <div class="timeline">
 
-  <?php
+              <?php
 
-  $i = 0;
+              $i = 0;
 
-  foreach ($column['time_lines'] as $time_line):
+              foreach ($column['time_lines'] as $time_line):
 
-      $date = $time_line['date'];
-      $time_title = $time_line['time_title'];
-      $time_text = $time_line['time_text'];
+                  $date = $time_line['date'];
+                  $time_title = $time_line['time_title'];
+                  $time_text = $time_line['time_text'];
 
-      $time_params = array(
-        'slide' => $slide,
-        'block_id' => $block_id,
-        'count' => $i,
-        'slide_class' => $slide_class,
-        'time_title' => $time_title,
-        'time_text' => $time_text,
-        'date' => $date,
-        'magic_columns' => $magic,
+                  $time_params = array(
+                    'block_id' => $block_id,
+                    'count' => $i,
+                    'time_title' => $time_title,
+                    'time_text' => $time_text,
+                    'date' => $date,
+                    'magic_columns' => $magic,
 
-      );
-      get_template_part( 'template-parts/components/time-line/time', 'basic', $time_params );
+                  );
+                  get_template_part( 'template-parts/components/time-line/time', 'basic', $time_params );
 
-      $i++;
-    endforeach;
-    ?>
-    </div>
-  </div>
-  <?php
-
-}
+                  $i++;
+                endforeach;
+                ?>
+            </div>
+          <?php }
 
           elseif ($column_type == 'image'){
             echo '<figure>';
