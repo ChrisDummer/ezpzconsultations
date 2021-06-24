@@ -33,14 +33,11 @@ $i = 0;
               $time_text = $time_line['time_text'];
 
               $time_params = array(
-                'slide' => $slide,
                 'block_id' => $block_id,
                 'count' => $i,
-                'slide_class' => $slide_class,
                 'time_title' => $time_title,
                 'time_text' => $time_text,
                 'date' => $date,
-
               );
               get_template_part( 'template-parts/components/time-line/time', 'basic', $time_params );
               $i++;

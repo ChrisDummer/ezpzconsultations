@@ -94,8 +94,8 @@ endif;
 ?>
 
   <div class="content">
-    <h3><?php echo $date_formatted ?></h3>
-    <strong><?php echo $time_title ?></strong>
-    <p><?php echo $time_text ?></p>
+    <h3><?php echo $date_formatted; ?></h3>
+    <p class="bold mb-0"><?php echo $time_title; ?></p>
+    <?php if($time_text) echo ezpzconsultations_content($time_text);?>
   </div>
 </div>
