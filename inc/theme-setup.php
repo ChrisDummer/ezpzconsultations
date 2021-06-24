@@ -91,6 +91,7 @@ if (! function_exists('ezpzconsultations_setup') ) :
          */
 
         add_image_size( 'icon', 40, 40, true ); // Used by Google Maps
+        add_image_size( 'site_logo', 200, 999999, false );
         add_image_size( 'medium_landscape', 400, 300, true );
 
         /**

@@ -3,7 +3,7 @@
 //TODO you need to make this expands a css variable and also refactor the media query code
 $navbar-bg-color: var(--nav_background_colour);
 // Parent Level Links
-// $navbar-font-size: font-size(0);
+$navbar-font-size: font-size(4);
 $navbar-font-family: var(--nav_font);
 // $navbar-font-weight: $weight-bold;
 // $navbar-text-transform: none;

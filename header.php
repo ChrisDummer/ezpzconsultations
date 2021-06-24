@@ -65,19 +65,17 @@ defined( 'ABSPATH' ) || exit;
         <div class="container">
           <div class="navbar-brand site-branding">
             
-
-            <!-- EXAMPLE OF EMBEDDING CLIENT LOGO -->
+          <?php if($logo_image): ?>
             <a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-              <?php echo wp_get_attachment_image( $logo_image, 'thumbnail' ); ?>
+              <?php echo wp_get_attachment_image( $logo_image, 'site_logo' ); ?>
             </a>
+          <?php endif; ?>
 
-            <button class="hamburger" type="button" aria-label="Menu" aria-controls="navbar-menu" aria-expanded="false">
-              <span class="hamburger-label">Menu</span>
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-              </span>
-            </button>
-
+              <button class="hamburger" type="button" aria-label="Menu" aria-controls="navbar-menu" aria-expanded="false">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
             </div>
 
             <div id="navbar-menu" class="navbar-menu">

@@ -2773,7 +2773,7 @@ input:checked + .checkbox__control {
     margin: 0; }
     .navbar-menu li a {
       font-family: var(--nav_font);
-      font-size: 1em;
+      font-size: 1.875em;
       font-weight: 700;
       display: block;
       position: relative;
@@ -2826,7 +2826,7 @@ input:checked + .checkbox__control {
   flex-shrink: 0; }
 
 .navbar-item {
-  font-size: 1em;
+  font-size: 1.875em;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -2870,7 +2870,7 @@ input:checked + .checkbox__control {
 
 .hamburger-label {
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1.875em;
   text-transform: uppercase;
   margin: 0 12px 0 0; }
 
@@ -3162,6 +3162,16 @@ a:hover .icon__snapchat, a:focus .icon__snapchat, a:active .icon__snapchat {
 
 body.admin-bar #masthead {
   margin-top: 32px !important; }
+
+@media (min-width: 56.25em) {
+  .navbar > .container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px; } }
+
+@media (min-width: 56.25em) {
+  .navbar-menu li a {
+    font-size: 1.125em; } }
 
 .pagination {
   list-style-type: none;
