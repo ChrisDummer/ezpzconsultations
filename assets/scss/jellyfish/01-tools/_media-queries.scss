@@ -4,6 +4,9 @@
   @if map-has-key($breakpoints, $min) {
       $bp-min: map-deep-get($breakpoints, $min, 'breakpoint');
   }
+  @else if (str-index(#{$min}, 'var(--')) {
+    // Do nothing, move to next step
+  }
   @else if (str-index(#{$min}, 'px')) {
     // Do nothing, move to next step
   }
@@ -19,6 +22,9 @@
   @if map-has-key($breakpoints, $min) {
       $bp-min: map-deep-get($breakpoints, $min, 'breakpoint');
   }
+  @else if (str-index(#{$min}, 'var(--')) {
+    // Do nothing, move to next step
+  }
   @else if (str-index(#{$min}, 'px')) {
     // Do nothing, move to next step
   }
@@ -28,6 +34,9 @@
   $bp-max: $max;
   @if map-has-key($breakpoints, $max) {
       $bp-max: map-deep-get($breakpoints, $max, 'breakpoint');
+  }
+  @else if (str-index(#{$max}, 'var(--')) {
+    // Do nothing, move to next step
   }
   @else if (str-index(#{$max}, 'px')) {
     // Do nothing, move to next step
@@ -43,6 +52,9 @@
   $bp-max: $max;
   @if map-has-key($breakpoints, $max) {
       $bp-max: map-deep-get($breakpoints, $max, 'breakpoint');
+  }
+  @else if (str-index(#{$max}, 'var(--')) {
+    // Do nothing, move to next step
   }
   @else if (str-index(#{$max}, 'px')) {
     // Do nothing, move to next step
