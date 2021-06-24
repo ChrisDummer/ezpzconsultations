@@ -4,22 +4,23 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dunhamco
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
 ?>
-<header class="block hero hero-404 bg-white">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <header class="page-header">
-          <h1 class="page-title"><?php esc_html_e( 'Page not found', 'dunhamco' ); ?></h1>
-        </header>
+<header class="block hero hero-404 bg-neutral-200 hero__small">
+  <div class="hero-main">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="col md-10 lg-8">
+          <header class="page-header">
+            <h1 class="page-title"><?php esc_html_e( 'Page not found', 'ezpzconsultations' ); ?></h1>
+          </header>
+        </div>
       </div>
     </div>
   </div>
 </header>
-

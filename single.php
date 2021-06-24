@@ -24,7 +24,7 @@ get_header();
         get_template_part( 'template-parts/layout/content/content', get_post_type() );
         ezpzconsultations_show_password_form();
         get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
-        ezpzconsultations_entry_footer(); // Call function from template-tags
+       // ezpzconsultations_entry_footer(); // Call function from template-tags
         ?>
     </article>
         <?php

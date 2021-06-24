@@ -114,36 +114,3 @@ if ( ! function_exists( 'ezpzconsultations_get_full_url' ) ) :
     return $url;
   }
 endif;
-
-/**
- * Calculates the approximate reading time for a string.
- * Sanitizes and removes tags to give an accurate read out.
- *
- * @param string $string = text to count
- * @param integer $wpm = Words Per Minute
- * @return integer Approximate reading time in minutes
- */
-if ( ! function_exists( 'ezpzconsultations_calculate_reading_time' ) ) :
-  function ezpzconsultations_calculate_reading_time($string, $wpm = 265) {
-    $text_content = strip_shortcodes($string);    // Remove shortcodes
-    $str_content = strip_tags( $text_content );   // Remove tags
-    $word_count = str_word_count( $str_content ); // Count Words
-
-    $reading_time = ceil( $word_count / $wpm );
-    return $reading_time;
-  }
-endif;
-
-if ( ! function_exists( 'dunhamco_bracket_tag_replace' ) ) {
-  function dunhamco_bracket_tag_replace($text) {
-    if (preg_match("~\[\[(.*?)\]\]~",$text,$m)) {
-      $find = ['(\[\[)', '(\]\])'];
-      $replace = ['<span class="text-accent">', '</span>'];
-      return preg_replace($find, $replace,  $text);
-    }
-    else {
-      return $text;
-    }
-  }
-}
-

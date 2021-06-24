@@ -5,46 +5,63 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package dunhamco
+ * @package ezpzconsultations
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+  // Get all ACF field meta into a single array
+  $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/group_5ff5b93d03614.json" ), true );
+  $hero_data = get_all_custom_field_meta( $id, $field_group_array );
+  //var_dump($hero_data);
+
+  $hero_background = $hero_data['background_type'];
+  $hero_subhead = $hero_data['subhead'];
+
   $hero_class = '';
   $hero_main_class = 'hero-main';
 
-  if('post' === get_post_type() || 'crb_research' === get_post_type()) {
-    $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/group_60228bab3a12f.json" ), true );
-    $hero_data = get_all_custom_field_meta( $id, $field_group_array );
-  }
-
-  //var_dump($hero_data);
   if($hero_height = $hero_data['hero_height']) $hero_class .= ' hero__'. $hero_height;
   else $hero_class .= ' hero__small';
 
+  if($hero_background == 'image' || $hero_background == 'video') $hero_main_class .= ' bg-'. $hero_background;
 
-  if(has_post_thumbnail()) {
-    $background_image_id = get_post_thumbnail_id();
-    $hero_class .= ' bg-image';
-    $hero_class .= ' has-overlay';
-    $overlay_color = $hero_data['hero_overlay_color'];
-    if($overlay_color) {
-      $hero_class .= ' overlay-'.$overlay_color;
-      $hero_class .= ' overlay-opacity-'.$hero_data['overlay_opacity'];
-    }
+  if($hero_background == 'image') {
+    $background_image = $hero_data['hero_image'];
   }
-  else {
-    $hero_class .= ' bg-dark';
+  elseif($hero_background == 'color') {
+    $bg_color = $hero_data['background_color'];
+    $hero_main_class .= ' bg-'. $bg_color;
   }
-
-
+  elseif(!$hero_background) {
+    $hero_main_class .= ' bg-neutral-900';
+  }
+  $title_image = $hero_data['title_image'];
 
 ?>
-<header class="block hero hero-<?php echo get_post_type() . $hero_class;?>" <?php if($background_image_id) { echo 'style="background-image:url('.wp_get_attachment_image_url($background_image_id, 'hero').')"';}?>>
-  <div class="<?php echo $hero_main_class;?>">
+<header class="block hero hero-<?php echo get_post_type() . $hero_class;?>">
+  <?php
+    echo '<div class="'.$hero_main_class.'" style="background-image:url('.wp_get_attachment_image_url($background_image, 'hero').')">';
+  ?>
 
-      <div class="container">
+  <?php if($hero_background == 'video') :
+  $video_array = $hero_data['background_video'];
+    $poster = $video_array['video_poster'];
+    ?>
+    <video playsinline autoplay muted loop poster="<?php echo wp_get_attachment_image_url($poster, 'large');?>" class="hero-video">
+      <?php
+        foreach($video_array['video_sources'] as $video_source):
+          $video_file_id = $video_source['video_source'];
+          $video_file_url = wp_get_attachment_url($video_file_id);
+          $video_ext = pathinfo($video_file_url, PATHINFO_EXTENSION);
+          echo '<source src="'.$video_file_url.'" type="video/'.$video_ext.'">';
+        endforeach;
+      ?>
+    </video>
+  <?php endif; ?>
+
+    <div class="container">
 
       <?php
       $header_col_class = 'col md-10';
@@ -56,28 +73,41 @@ defined( 'ABSPATH' ) || exit;
         <div class="<?php echo $header_col_class;?>">
             <?php
             echo '<h1 class="page-title">';
+            if($title_image) :
+              echo wp_get_attachment_image( $title_image, 'large' );
+              the_title('<span class="text-hide">','</span>');
+            else:
               the_title();
+            endif;
             echo '</h1>';
-            echo '<div class="entry-meta-wrapper"><div class="entry-meta">';
-            if('post' === get_post_type()) if($post_author = get_field('post_author')) echo '<span class="byline"><a href="#author">' .dunhamco_icon('pencil') .  ucwords(strtolower(get_the_title($post_author))) . '</a></span>';
-            dunhamco_posted_on();
-            dunhamco_categories();
-            if('post' === get_post_type()) {
-              if(!$reading_time = get_field('reading_time')) $reading_time = dunhamco_calculate_reading_time(get_the_content());
-              if ($reading_time == 1) $postfix = __(' minute', 'dunhamco');
-              else $postfix = __(' minutes', 'dunhamco');
-
-              $reading_time = $reading_time . $postfix;
-              echo '<span class="reading-time">'.dunhamco_icon('clock').$reading_time.__(' read', 'dunhamco').'</span>';
-            }
-            elseif('crb_research' === get_post_type()) {
-
+            if($hero_subhead):
+              echo '<p class="hero-subhead text-center">' . ezpzconsultations_bracket_tag_replace($hero_subhead) . '</p>';
+            endif;
+            if(get_post_type() === 'post') {
+              echo '<div class="text-center">';
+              ezpzconsultations_posted_on();
+              echo '</div>';
             }
 
-            echo '</div></div>'; // .entry-meta
-             ?>
-        </div>
+            if($external_video_link = $video_array['external_video_link']) { ?>
+              <div class="text-center">
+                <a class="button play-button outline" id="hero-modal-open" href="#modal-video-hero"><?php echo __('Play Video', 'ezpzconsultations'); ?></a>
+                <div id="modal-video-hero" class="modal modal-video is-transparent no-padding mfp-hide">
+                  <?php ezpzconsultations_embed_video($external_video_link, $video_array['aspect_ratio']); ?>
+                </div>
+              </div>
+            <?php } ?>
+      </div>
       </div>
     </div>
   </div>
 </header>
+
+
+<?php
+if($external_video_link) :
+  // Initialize modals
+  $func = ezpzconsultations_modal_init('#hero-modal-open', null, false, 'inline', 'false', 'video');
+  add_action('wp_footer', $func, 30); // 30 priority ensures it is placed below the enqueued scripts (priority 20)
+endif;
+?>
