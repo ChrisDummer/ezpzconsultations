@@ -12,7 +12,7 @@ add_action( 'init', 'ezpzconsultations_change_post_object_labels', 0 );
 
 add_action('init', 'ezpzconsultations_post_type_supports_post');
 if (! function_exists('ezpzconsultations_post_type_supports_post') ) :
-  function ezpzconsultations_post_type_supports_page() {
+  function ezpzconsultations_post_type_supports_post() {
     remove_post_type_support( 'post', 'editor' );
     add_post_type_support( 'post', 'excerpt' );
   }
