@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
     'li.has-children > a:not(".clicked"), li.menu-item-has-children > a:not(".clicked")',
     function (e) {
       // ...and the window width is smaller than the breakPoints.navBar
-      if ($(window).width() < navBarBreakPoint) {
+      if ($(window).width() < breakPoints.navBar) {
         // add .clicked class to the anchor element
         $(this).addClass("clicked");
         // prevent the link from firing
@@ -76,7 +76,7 @@ jQuery(document).ready(function ($) {
     }
 
     if (
-      $(window).width() < navBarBreakPoint &&
+      $(window).width() < breakPoints.navBar &&
       $(".hamburger").attr("aria-expanded") == "true"
     ) {
       // This heavily assumes we only have one .hamburger element on the page. If you have more - this will break
@@ -104,5 +104,3 @@ jQuery(document).ready(function ($) {
     hasScrolled(); // FIXME: This isn't working on load.
   });
 })(jQuery);
-
-// TODO: We need to fix the padding as it is leaving a chasm of space at the moment.

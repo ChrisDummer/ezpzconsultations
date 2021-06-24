@@ -477,27 +477,6 @@
       "maxlength": ""
     },
     {
-      "key": "field_60d2e9be55af6",
-      "label": "Navbar Break point",
-      "name": "navbar_break_point",
-      "type": "number",
-      "instructions": "Enter the screen point that you would like the hamburger menu to be showing for the px value",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "33.3",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "min": "",
-      "max": "",
-      "step": ""
-    },
-    {
       "key": "field_60ca16912ff09",
       "label": "Navbar Link Colour",
       "name": "nav_link_colour",
@@ -891,5 +870,5 @@
   "hide_on_screen": "",
   "active": true,
   "description": "",
-  "modified": 1624547958
+  "modified": 1624548740
 }
