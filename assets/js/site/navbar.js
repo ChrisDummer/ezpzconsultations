@@ -101,6 +101,6 @@ jQuery(document).ready(function ($) {
     $(".hero").css("padding-top", navHeight); //65px == $block-padding-small
   }
   $(document).ready(function () {
-    hasScrolled(); // FIXME: This isn't working on load.
+    hasScrolled();
   });
 })(jQuery);
