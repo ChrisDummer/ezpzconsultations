@@ -80,7 +80,8 @@
       pointer-events: none;
       height: 12px;
       width: 12px;
-      border: $hamburger-layer-height solid rgba($navbar-link-color, 0.6);
+      border: $hamburger-layer-height solid $navbar-link-color;
+      opacity: 0.8;
       border-left: 0;
       border-top: 0;
       top: 50%;

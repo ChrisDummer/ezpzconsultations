@@ -1,9 +1,6 @@
 /* EPLS Consultations Wordpress Theme 1.0.0
  * © 2021-06 EPLS Design - https://epls.design */
 
-/* EPLS Consultations Wordpress Theme 1.0.0
- * © 2021-06 EPLS Design - https://epls.design */
-
 /**
  * Calculate the luminance for a color.
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
@@ -19,7 +16,7 @@
  */
 .acf-fc-layout-handle {
   padding-left: 24px !important;
-  background: #1f2933 !important;
+  background: #191a1a !important;
   color: white !important;
   font-weight: bold; }
   .acf-fc-layout-handle .swatch {
@@ -65,7 +62,7 @@
   .acf-fc-layout-controls .acf-icon.-plus:hover {
     background-color: #7bb027 !important;
     border-color: #7bb027;
-    color: #1f2933; }
+    color: #191a1a; }
 
 .acf-input label {
   font-size: 1em; }
@@ -255,10 +252,16 @@
   background-color: #fff; }
 
 .bg-dark {
-  background-color: #1f2933; }
+  background-color: #191a1a; }
 
 .bg-black {
   background-color: #000; }
+
+.bg-neutral-900 {
+  background-color: #191a1a; }
+
+.bg-neutral-200 {
+  background-color: #e8e8e9; }
 
 .bg-primary {
   background-color: var(--primary_colour); }
@@ -277,9 +280,6 @@
 
 .bg-secondary-light {
   background-color: var(--secondary_colour_light); }
-
-.bg-text-colour {
-  background-color: var(--text_colour); }
 
 .dev-flag {
   position: fixed;

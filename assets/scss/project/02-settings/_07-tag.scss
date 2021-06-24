@@ -6,4 +6,4 @@
 // $tag-font-weight: $weight-normal;
 // $tag-base-font-size: font-size(-1);
 // $tag-text-color-light: get-color(neutral,000);
-// $tag-text-color-dark: $color-text;
+ $tag-text-color-dark: get-color(neutral,900); // This is a fallback as the css var will not work with the mixin

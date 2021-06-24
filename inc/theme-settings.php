@@ -12,12 +12,12 @@ if (! function_exists('ezpz_get_contrast_color') ) :
 
   function ezpz_get_contrast_color(
     $hexColor,
-    $blackColor = 'default', // We have to do this because we can't use a function as an arg
+    $blackColor = null, // We have to do this because we can't use a function as an arg
     $lightColor = "#ffffff") {
     // TODO: We may need to come back to this function after testing on the front end.
 
-    if($blackColor == 'default') {
-      $blackColor = get_field('text_colour', 'option') ? get_field('text_colour', 'option') : '#1f2933';
+    if($blackColor == null) {
+      $blackColor = get_field('text_colour', 'option') ? get_field('text_colour', 'option') : '#191a1a'; // Same as neutral, 900
     }
 
     // hexColor RGB
@@ -41,13 +41,14 @@ if (! function_exists('ezpz_get_contrast_color') ) :
 
     $contrastRatio = 0;
     if ($L1 > $L2) {
-        $contrastRatio = (int)(($L1 + 0.05) / ($L2 + 0.05));
+      $contrastRatio = (int)(($L1 + 0.05) / ($L2 + 0.05));
     } else {
-        $contrastRatio = (int)(($L2 + 0.05) / ($L1 + 0.05));
+      $contrastRatio = (int)(($L2 + 0.05) / ($L1 + 0.05));
     }
 
+    //echo 'contrast ratio is . ' . $contrastRatio;
     // If contrast is more than 5, return black color
-    if ($contrastRatio > 2) {
+    if ($contrastRatio > 5) {
         return $blackColor;
     } else {
         // if not, return white color.
@@ -71,54 +72,57 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
     endif;
 
     // Main colours
-    $theme_primary_colour = $colour_options_data['primary_colour'] ? $colour_options_data['primary_colour'] : '#ffffff';
-    $theme_primary_dark = $colour_options_data['primary_colour_dark'] ? $colour_options_data['primary_colour_dark'] : '#fffffe';
-    $theme_primary_light = $colour_options_data['primary_colour_light'] ? $colour_options_data['primary_colour_light'] : '#fffffd';
-    $theme_secondary_colour = $colour_options_data['secondary_colour'] ? $colour_options_data['secondary_colour'] : '#fffffc';
-    $theme_secondary_dark = $colour_options_data['secondary_colour_dark'] ? $colour_options_data['secondary_colour_dark'] : '#fffffb';
-    $theme_secondary_light = $colour_options_data['secondary_colour_light'] ? $colour_options_data['secondary_colour_light'] : '#fffffa';
-    $theme_text_colour = $colour_options_data['text_colour'] ? $colour_options_data['text_colour'] : '#1f2933';
+    $theme_primary_colour = $colour_options_data['primary_colour'] ? $colour_options_data['primary_colour'] : '#7B91B0';
+    $theme_primary_dark = $colour_options_data['primary_colour_dark'] ? $colour_options_data['primary_colour_dark'] : '#3c4e67';
+    $theme_primary_light = $colour_options_data['primary_colour_light'] ? $colour_options_data['primary_colour_light'] : '#d2dae5';
+
+    $theme_secondary_colour = $colour_options_data['secondary_colour'] ? $colour_options_data['secondary_colour'] : '#af8a41';
+    $theme_secondary_dark = $colour_options_data['secondary_colour_dark'] ? $colour_options_data['secondary_colour_dark'] : '#4a3b1c';
+    $theme_secondary_light = $colour_options_data['secondary_colour_light'] ? $colour_options_data['secondary_colour_light'] : '#dbc79e';
 
     //Text Colours
-    $theme_h1_colour = $colour_options_data['h1'] ? $colour_options_data['h1'] : '#1f2933';
-    $theme_h2_colour = $colour_options_data['h2'] ? $colour_options_data['h2'] : '#1f2933';
-    $theme_h3_colour = $colour_options_data['h3'] ? $colour_options_data['h3'] : '#1f2933';
-    $theme_h4_colour = $colour_options_data['h4'] ? $colour_options_data['h4'] : '#1f2933';
-    $theme_h5_colour = $colour_options_data['h5'] ? $colour_options_data['h5'] : '#1f2933';
-    $theme_h6_colour = $colour_options_data['h6'] ? $colour_options_data['h6'] : '#1f2933';
-    $theme_link_colour = $colour_options_data['link_colour'] ? $colour_options_data['link_colour'] : '#fffffa';
-    $theme_link_active_colour = $colour_options_data['link_active_colour'] ? $colour_options_data['link_active_colour'] : '#fffffa';
-    $theme_link_visited_colour = $colour_options_data['link_visited_colour'] ? $colour_options_data['link_visited_colour'] : '#fffffa';
+    $theme_text_colour = $colour_options_data['text_colour'] ? $colour_options_data['text_colour'] : '#191a1a'; // Same as neutral, 900
+    $theme_h1_colour = $colour_options_data['h1'] ? $colour_options_data['h1'] : '#3e4041'; // Same as neutral, 800
+    $theme_h2_colour = $colour_options_data['h2'] ? $colour_options_data['h2'] : '#3e4041'; // Same as neutral, 800
+    $theme_h3_colour = $colour_options_data['h3'] ? $colour_options_data['h3'] : '#3e4041'; // Same as neutral, 800
+    $theme_h4_colour = $colour_options_data['h4'] ? $colour_options_data['h4'] : '#3e4041'; // Same as neutral, 800
+    $theme_h5_colour = $colour_options_data['h5'] ? $colour_options_data['h5'] : '#3e4041'; // Same as neutral, 800
+    $theme_h6_colour = $colour_options_data['h6'] ? $colour_options_data['h6'] : '#3e4041'; // Same as neutral, 800
+
+    $theme_link_colour = $colour_options_data['link_colour'] ? $colour_options_data['link_colour'] : '#2F2BAC';
+    $theme_link_active_colour = $colour_options_data['link_active_colour'] ? $colour_options_data['link_active_colour'] : '#7337AC';
+    $theme_link_visited_colour = $colour_options_data['link_visited_colour'] ? $colour_options_data['link_visited_colour'] : '#A246AC';
 
     //Fonts
-    $theme_body_font = $colour_options_data['body_font'] ? $colour_options_data['body_font'] : 'arial';
-    $theme_h1_font = $colour_options_data['h1_font'] ? $colour_options_data['h1_font'] : 'arial';
-    $theme_h2_font = $colour_options_data['h2_font'] ? $colour_options_data['h2_font'] : 'arial';
-    $theme_h3_font = $colour_options_data['h3_font'] ? $colour_options_data['h3_font'] : 'arial';
-    $theme_h4_font = $colour_options_data['h4_font'] ? $colour_options_data['h4_font'] : 'arial';
-    $theme_h5_font = $colour_options_data['h5_font'] ? $colour_options_data['h5_font'] : 'arial';
-    $theme_h6_font = $colour_options_data['h6_font'] ? $colour_options_data['h6_font'] : 'arial';
+    $default_font = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"'; // Use System Font
+    $theme_body_font = $colour_options_data['body_font'] ? $colour_options_data['body_font'] : $default_font;
+    $theme_h1_font = $colour_options_data['h1_font'] ? $colour_options_data['h1_font'] : $default_font;
+    $theme_h2_font = $colour_options_data['h2_font'] ? $colour_options_data['h2_font'] : $default_font;
+    $theme_h3_font = $colour_options_data['h3_font'] ? $colour_options_data['h3_font'] : $default_font;
+    $theme_h4_font = $colour_options_data['h4_font'] ? $colour_options_data['h4_font'] : $default_font;
+    $theme_h5_font = $colour_options_data['h5_font'] ? $colour_options_data['h5_font'] : $default_font;
+    $theme_h6_font = $colour_options_data['h6_font'] ? $colour_options_data['h6_font'] : $default_font;
 
     // Navigation Elements
-    $theme_nav_background_colour = $colour_options_data['nav_background_colour'] ? $colour_options_data['nav_background_colour'] : '#fffffa';
-    $theme_nav_font = $colour_options_data['nav_font'] ? $colour_options_data['nav_font'] : 'arial';
-    $theme_nav_link_colour = $colour_options_data['nav_link_colour'] ? $colour_options_data['nav_link_colour'] : '#fffffa';
-    $theme_nav_link_hover_colour = $colour_options_data['nav_link_hover_colour'] ? $colour_options_data['nav_link_hover_colour'] : '#fffffa';
-    $theme_nav_link_hover_background_color = $colour_options_data['nav_link_hover_background_color'] ? $colour_options_data['nav_link_hover_background_color'] : '#fffffa';
-    $theme_nav_sublink_colour = $colour_options_data['nav_sublink_colour'] ? $colour_options_data['nav_sublink_colour'] : '#fffffa';
-    $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'] ? $colour_options_data['nav_sublink_hover_colour'] : '#fffffa';
-    $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#fffffa';
-    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#fffffa';
+    $theme_nav_background_colour = $colour_options_data['nav_background_colour'] ? $colour_options_data['nav_background_colour'] : '#2F71B3';
+    $theme_nav_font = $colour_options_data['nav_font'] ? $colour_options_data['nav_font'] : $default_font;
+    $theme_nav_link_colour = $colour_options_data['nav_link_colour'] ? $colour_options_data['nav_link_colour'] : '#ffffff';
+    $theme_nav_link_hover_colour = $colour_options_data['nav_link_hover_colour'] ? $colour_options_data['nav_link_hover_colour'] : '#ffffff';
+    $theme_nav_link_hover_background_color = $colour_options_data['nav_link_hover_background_color'] ? $colour_options_data['nav_link_hover_background_color'] : '#24578A';
+    $theme_nav_sublink_colour = $colour_options_data['nav_sublink_colour'] ? $colour_options_data['nav_sublink_colour'] : '#2F71B3';
+    $theme_nav_sublink_hover_colour = $colour_options_data['nav_sublink_hover_colour'] ? $colour_options_data['nav_sublink_hover_colour'] : '#24578A';
+    $theme_nav_sublink_background_colour = $colour_options_data['nav_sublink_background_colour'] ? $colour_options_data['nav_sublink_background_colour'] : '#ffffff';
+    $theme_nav_sublink_hover_background_colour = $colour_options_data['nav_sublink_hover_background_colour'] ? $colour_options_data['nav_sublink_hover_background_colour'] : '#ffffff';
     $theme_navbar_break_point = $colour_options_data['navbar_break_point'] ? $colour_options_data['navbar_break_point'] : '900';
 
     //Button Elements
     $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2';
-    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10';
-    $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : 'arial';
+    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '4';
+    $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : $default_font;
 
     //Card Elements
-    $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '10';
-    $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '2';
+    $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '4';
+    $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '1';
 
     //Using the functions to convert to em or rem
     ezpzconsultations_px_convert($theme_button_border_width);
@@ -128,7 +132,7 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
 
     //ezpzconsultations_px_convert($theme_navbar_break_point, 'em'); // FIXME - The SCSS fails to compile if it is passed a css var
 
-    echo '<style>'; ?>
+    echo '<style type="text/css">'; ?>
 
     :root {
       --primary_colour: <?php echo $theme_primary_colour; ?>;
@@ -190,11 +194,17 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
           '.bg-secondary-colour' => $theme_secondary_colour,
           '.bg-secondary-dark' => $theme_secondary_dark,
           '.bg-secondary-light' => $theme_secondary_light,
+          '.bg-neutral-900' => '#191a1a',
+          '.bg-neutral-200' => '#e8e8e9',
         );
 
       foreach($theme_bg_colors as $css_class => $bg_color ){
 
-        // TODO: We need to add back in the code to determine font color for the different bg-* colors.
+        ?>
+        <?php echo $css_class; ?> {
+          color: <?php echo ezpz_get_contrast_color($bg_color); ?>;
+        }
+        <?php
 
           if($theme_h1_colour) { ?>
             <?php echo $css_class; ?> h1 {
@@ -233,19 +243,19 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
 
         if($theme_link_colour) { ?>
           <?php echo $css_class; ?> a {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_colour); ?>
+            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_colour, '#eeeeee' ); ?>
           }
         <?php }
 
         if($theme_link_active_colour) { ?>
-          <?php echo $css_class; ?> a:active {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_active_colour); ?>
+          <?php echo $css_class; ?> a:hover, <?php echo $css_class; ?> a:focus  {
+            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_active_colour, '#cccccc' ); ?>
           }
         <?php }
 
         if($theme_link_visited_colour) { ?>
           <?php echo $css_class; ?> a:visited {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_visited_colour); ?>
+            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_visited_colour, '#cccccc' ); ?>
           }
         <?php }
 

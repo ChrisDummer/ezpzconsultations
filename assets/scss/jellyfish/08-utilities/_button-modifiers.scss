@@ -8,6 +8,10 @@
 }
 
 .button, a.button {
+  body &, body &:visited, body &:hover, body &:focus {
+    // CSS hack fix to prevent the button color from inheriting the inline declaration on .bg-* elements
+    color: white;
+  }
     &.ghost {
         border-color: transparent !important;
         background-color: transparent !important;

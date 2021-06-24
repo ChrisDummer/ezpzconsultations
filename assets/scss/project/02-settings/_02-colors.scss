@@ -24,15 +24,15 @@ $colors: (
 //    100: hsl(171, 82%, 96%)
 //  ),
   neutral: (
-    900: hsl(210, 24%, 16%),
-    800: hsl(209, 20%, 25%),
-    700: hsl(209, 18%, 30%),
-    600: hsl(209, 14%, 37%),
-    500: hsl(211, 12%, 49%),
-    400: hsl(211, 13%, 65%),
-    300: hsl(210, 16%, 82%),
-    200: hsl(214, 15%, 91%),
-    100: hsl(216, 33%, 97%),
+    900: hsl(210, 2%, 10%), // #191a1a
+    800: hsl(210, 2%, 25%), // #3e4041
+    700: hsl(210, 2%, 30%), // #4b4d4e
+    600: hsl(210, 2%, 37%), // #5c5e60
+    500: hsl(210, 2%, 49%), // #7a7d7f
+    400: hsl(210, 2%, 65%), // #a4a6a8
+    300: hsl(210, 2%, 82%), // #d0d1d2
+    200: hsl(210, 2%, 91%), // #e8e8e9
+    100: hsl(210, 2%, 97%), // #f7f7f8
     000: hsl(0, 0%, 100%)
   ),
 //  success: (
@@ -84,15 +84,15 @@ $theme-colors: (
 $background-colors: (
   "white": #fff,
   "black": #000,
+  "neutral-900": get-color(neutral,900),
+  "neutral-200": get-color(neutral,200),
   "primary": var(--primary_colour),
   "primary-dark": var(--primary_colour_dark),
   "primary-light": var(--primary_colour_light),
   "secondary": var(--secondary_colour),
   "secondary-dark": var(--secondary_colour_dark),
   "secondary-light": var(--secondary_colour_light),
-  "text-colour": var(--text_colour),
-
 );
 
-// $color-text: get-color(neutral, 900);
+ $color-text: var(--text_colour);
 // $color-headings-preferred: get-color(neutral, 800);
