@@ -78,14 +78,16 @@ if ( class_exists( 'woocommerce' ) ) {
 if(!function_exists('ezpzconsultations_fav')) {
   function ezpzconsultations_fav($key, $default = null)
   {
-    $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-    $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-    $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+    if(function_exists('get_all_custom_field_meta')):
+      $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+      $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
 
-    ?>
-    <link rel="shortcut icon" type="image/jpg" href="<?php echo $theme_options['favicon']; ?>"/>
+      ?>
+      <link rel="shortcut icon" type="image/jpg" href="<?php echo $theme_options['favicon']; ?>"/>
 
-    <?php
+      <?php
+    endif;
   }
 }
 
@@ -103,14 +105,15 @@ if (! function_exists('ezpzconsultations_add_favicon') ) {
   // Add favicon to admin areas
   function ezpzconsultations_add_favicon()
   {
-    $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-    $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-    $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
-    // TODO; IF FWVICON EXISTS - get url of it
+    if(function_exists('get_all_custom_field_meta')):
+      $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+      $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+      // TODO; IF FWVICON EXISTS - get url of it
 
-    $favicon = wp_get_attachment_image_src( $theme_options['favicon'], $size  = 'Thumbnail');  $favicon[0];
-      echo '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '" />';
-
+      $favicon = wp_get_attachment_image_src( $theme_options['favicon'], $size  = 'Thumbnail');  $favicon[0];
+        echo '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '" />';
+    endif;
   }
 }
 add_action('login_head', 'ezpzconsultations_add_favicon');
