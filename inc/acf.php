@@ -109,13 +109,13 @@ if(function_exists('acf_add_options_page') ) {
   );
   acf_add_options_sub_page(
     array(
-    'page_title'     => __('Theme Settings', 'ezpzconsultations'),
-    'menu_title'    => __('Theme Settings', 'ezpzconsultations'),
-    'menu_slug'     => 'theme-settings',
+    'page_title'     => __('Theme Designer', 'ezpzconsultations'),
+    'menu_title'    => __('Theme Designer', 'ezpzconsultations'),
+    'menu_slug'     => 'theme-designer',
     'parent_slug' => 'theme-options',
     'capability'    => 'edit_posts',
     'autoload' => true, // Speeds up load times
-    'updated_message' => __("Successfully updated Theme Settings", 'ezpzconsultations'),
+    'updated_message' => __("Successfully updated Theme Design Settings", 'ezpzconsultations'),
     )
   );
 

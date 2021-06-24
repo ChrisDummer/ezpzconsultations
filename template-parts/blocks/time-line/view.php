@@ -26,8 +26,6 @@ $i = 0;
 
 <?php
 
-var_dump($block);
-
   foreach ($time_lines as $time_line):
 
     $date = $time_line['date'];

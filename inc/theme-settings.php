@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions which add features to the WYSIWIG editor
+ * Functions which get the user's design settings from ACF and use them on the front-end
  *
  * @package ezpzconsultations
  */
@@ -8,12 +8,17 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-
-
-
 if (! function_exists('ezpz_get_contrast_color') ) :
 
-  function ezpz_get_contrast_color($hexColor, $blackColor = "#000000", $lightColor = "#ffffff") { //get-thed_field(text-color)
+  function ezpz_get_contrast_color(
+    $hexColor,
+    $blackColor = 'default', // We have to do this because we can't use a function as an arg
+    $lightColor = "#ffffff") {
+    // TODO: We may need to come back to this function after testing on the front end.
+
+    if($blackColor == 'default') {
+      $blackColor = get_field('text_colour', 'option') ? get_field('text_colour', 'option') : '#1f2933';
+    }
 
     // hexColor RGB
     $R1 = hexdec(substr($hexColor, 1, 2));
@@ -51,20 +56,13 @@ if (! function_exists('ezpz_get_contrast_color') ) :
   }
 endif;
 
-add_action( 'admin_head', 'ezpzconsultations_get_theme_colours' );
-add_action( 'wp_head', 'ezpzconsultations_get_theme_colours' );
+add_action( 'admin_head', 'ezpz_get_theme_design_options' );
+add_action( 'wp_head', 'ezpz_get_theme_design_options' );
 
 
-function getContrast50($hexcolor){
-  return (hexdec($hexcolor) > 0xffffff/2) ? 'green':'green';
-}
+if (! function_exists('ezpz_get_theme_design_options') ) :
 
-
-
-
-if (! function_exists('ezpzconsultations_get_theme_colours') ) :
-
-  function ezpzconsultations_get_theme_colours() {
+  function ezpz_get_theme_design_options() {
 
     if(function_exists('get_all_custom_field_meta')):
       $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
@@ -79,19 +77,18 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_secondary_colour = $colour_options_data['secondary_colour'] ? $colour_options_data['secondary_colour'] : '#fffffc';
     $theme_secondary_dark = $colour_options_data['secondary_colour_dark'] ? $colour_options_data['secondary_colour_dark'] : '#fffffb';
     $theme_secondary_light = $colour_options_data['secondary_colour_light'] ? $colour_options_data['secondary_colour_light'] : '#fffffa';
-    $theme_text_colour = $colour_options_data['text_colour'] ? $colour_options_data['text_colour'] : '#fffffa';
+    $theme_text_colour = $colour_options_data['text_colour'] ? $colour_options_data['text_colour'] : '#1f2933';
 
     //Text Colours
-    $theme_h1_colour = $colour_options_data['h1'] ? $colour_options_data['h1'] : '#fffffa';
-    $theme_h2_colour = $colour_options_data['h2'] ? $colour_options_data['h2'] : '#fffffa';
-    $theme_h3_colour = $colour_options_data['h3'] ? $colour_options_data['h3'] : '#fffffa';
-    $theme_h4_colour = $colour_options_data['h4'] ? $colour_options_data['h4'] : '#fffffa';
-    $theme_h5_colour = $colour_options_data['h5'] ? $colour_options_data['h5'] : '#fffffa';
-    $theme_h6_colour = $colour_options_data['h6'] ? $colour_options_data['h6'] : '#fffffa';
+    $theme_h1_colour = $colour_options_data['h1'] ? $colour_options_data['h1'] : '#1f2933';
+    $theme_h2_colour = $colour_options_data['h2'] ? $colour_options_data['h2'] : '#1f2933';
+    $theme_h3_colour = $colour_options_data['h3'] ? $colour_options_data['h3'] : '#1f2933';
+    $theme_h4_colour = $colour_options_data['h4'] ? $colour_options_data['h4'] : '#1f2933';
+    $theme_h5_colour = $colour_options_data['h5'] ? $colour_options_data['h5'] : '#1f2933';
+    $theme_h6_colour = $colour_options_data['h6'] ? $colour_options_data['h6'] : '#1f2933';
     $theme_link_colour = $colour_options_data['link_colour'] ? $colour_options_data['link_colour'] : '#fffffa';
     $theme_link_active_colour = $colour_options_data['link_active_colour'] ? $colour_options_data['link_active_colour'] : '#fffffa';
     $theme_link_visited_colour = $colour_options_data['link_visited_colour'] ? $colour_options_data['link_visited_colour'] : '#fffffa';
-
 
     //Fonts
     $theme_body_font = $colour_options_data['body_font'] ? $colour_options_data['body_font'] : 'arial';
@@ -119,33 +116,17 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '10';
     $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : 'arial';
 
-
     //Card Elements
     $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '10';
     $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '2';
 
     //Using the functions to convert to em or rem
-    ?>
-    <script>
-      var navBarBreakPoint = <?php echo $theme_navbar_break_point ; ?>;
-    </script>
-    <?php
-    //ezpzconsultations_px_convert($theme_navbar_break_point, 'em');
     ezpzconsultations_px_convert($theme_button_border_width);
     ezpzconsultations_px_convert($theme_button_border_radius);
     ezpzconsultations_px_convert($theme_card_border_radius);
     ezpzconsultations_px_convert($theme_card_border_width);
 
-
-
-    $theme_bg_colors = array(
-      '.bg-primary-colour' => $theme_primary_colour,
-      '.bg-primary-dark' => $theme_primary_dark,
-      '.bg-primary-light' => $theme_primary_light,
-      '.bg-secondary-colour' => $theme_secondary_colour,
-      '.bg-secondary-dark' => $theme_secondary_dark,
-      '.bg-secondary-light' => $theme_secondary_light,
-    );
+    //ezpzconsultations_px_convert($theme_navbar_break_point, 'em'); // FIXME - The SCSS fails to compile if it is passed a css var
 
     echo '<style>'; ?>
 
@@ -195,18 +176,29 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
       --card_border_radius: <?php echo $theme_card_border_radius; ?>;
       --card_border_width: <?php echo $theme_card_border_width; ?>;
 
-
-
+      // TODO: I Don't think these are used anywhere. Can we remove them?
       --light: #ffffff;
       --dark: #000000;
       }
 
       <?php
+
+        $theme_bg_colors = array(
+          '.bg-primary-colour' => $theme_primary_colour,
+          '.bg-primary-dark' => $theme_primary_dark,
+          '.bg-primary-light' => $theme_primary_light,
+          '.bg-secondary-colour' => $theme_secondary_colour,
+          '.bg-secondary-dark' => $theme_secondary_dark,
+          '.bg-secondary-light' => $theme_secondary_light,
+        );
+
       foreach($theme_bg_colors as $css_class => $bg_color ){
+
+        // TODO: We need to add back in the code to determine font color for the different bg-* colors.
 
           if($theme_h1_colour) { ?>
             <?php echo $css_class; ?> h1 {
-              color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h1_colour); ?>
+              color: <?php echo ezpz_get_contrast_color($bg_color); ?>
             }
 
           <?php if($theme_h2_colour) { ?>
@@ -263,7 +255,9 @@ if (! function_exists('ezpzconsultations_get_theme_colours') ) :
     echo '</style>';
 
     ?>
-
+    <script>
+      var navBarBreakPoint = <?php echo $theme_navbar_break_point; ?>;
+    </script>
   <?php
   }
 endif;

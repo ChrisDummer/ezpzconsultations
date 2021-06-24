@@ -54,7 +54,7 @@ $ezpzconsultations_includes = array(
   'inc/countdown.php',               // Initialize countdowns
   'inc/charts.php',                  // Functions which work with charts.js library
   'inc/compare.php',                 // Functions which work with TwentyTwenty Image Comparison
-  'inc/theme_settings.php',                 // Functions for theme settings
+  'inc/theme-settings.php',                 // Functions for theme settings
 
   //~~~~~ CUSTOM POST TYPES
   'inc/post_types/post.php',
