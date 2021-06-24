@@ -102,7 +102,4 @@ if( !post_password_required()):
   endif; // if ($blocks)
 
 endif;
-
-
-
 ?>

@@ -19,10 +19,9 @@ defined( 'ABSPATH' ) || exit;
 
 <head>
   <?php
-  $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+    $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
     $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
     $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
-
   ?>
 
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -30,26 +29,14 @@ defined( 'ABSPATH' ) || exit;
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="profile" href="https://gmpg.org/xfn/11">
 
- <?php
-
-  //For the logo
-
-
-  $logo_image = $theme_options['main_logo'];
-  $custom_css = $theme_options['custom_css'];
-
-  $font_links = $theme_options['font_links'];
-  ?>
-  <style>
-    <?php
-      echo $custom_css;
-    ?>
-  </style>
-
   <?php
-  echo $font_links;
-
-   wp_head(); ?>
+  // TODO: these are better hooking into wp_head. Can you add them to the theme-settings function?
+  $custom_css = $theme_options['custom_css'];
+  $font_links = $theme_options['font_links'];
+  if($custom_css) echo '<style>'.$custom_css.'</style>';
+  if($font_links) echo $font_links;
+   wp_head();
+  ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -65,7 +52,7 @@ defined( 'ABSPATH' ) || exit;
         <div class="container">
           <div class="navbar-brand site-branding">
             
-          <?php if($logo_image): ?>
+          <?php if($logo_image = $theme_options['main_logo']): ?>
             <a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php echo wp_get_attachment_image( $logo_image, 'site_logo' ); ?>
             </a>

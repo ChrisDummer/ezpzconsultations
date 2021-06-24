@@ -2,14 +2,13 @@
   "name": "ezpzconsultations-wordpress-theme",
   "friendly_name": "EPLS Consultations",
   "text_domain": "ezpzconsultations",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "author": {
     "name": "EPLS Design",
     "email": "theteam@epls.design",
     "url": "https://epls.design"
   },
   "description": "Theme boilerplate for Consultation websites",
-  "homepage": "http://consultations.local",
   "main": "Gruntfile.js",
   "scripts": {
     "build": "grunt build",

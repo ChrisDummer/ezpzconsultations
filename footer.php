@@ -47,10 +47,7 @@ $footer_selector = $footer_options_data['footer_selector'];
     </div>
   </div>
   </footer>
-
-  <?php
-
- endif; ?>
+<?php endif; ?>
 
 </div>
 <?php wp_footer(); ?>

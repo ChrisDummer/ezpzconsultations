@@ -146,32 +146,3 @@
 .hero .play-button {
   margin-top: get-size(2);
 }
-
-.has-overlay::before {
-  @include pseudo;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  background-color: black;
-  top: 0;
-}
-.overlay-dark::before {
-  background-color: black;
-}
-.overlay-white {
-  &::before {
-    background-color: white;
-  }
-  color: $color-text;
-  h1 {
-    color: $color-text;
-  }
-}
-
-@for $i from 0 through 100 {
-  @if $i % 10 == 0 {
-    .overlay-opacity-#{$i}::before {
-      opacity: $i/100;
-    }
-  }
-}
