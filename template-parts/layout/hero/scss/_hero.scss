@@ -1,3 +1,18 @@
+.bg-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
 .hero {
   &.block {
     padding: 0;
@@ -6,7 +21,6 @@
     @include above(md) {
     &__large {
       .hero-main {
-      //  height: get-size(56);
         min-height: 85vh;
       }
     }
@@ -55,7 +69,6 @@
   h1 {
     margin: 0 auto;
     line-height: 1.1;
-    //@include track-and-tighten(1.1, 0.05em);
     text-align: center;
     font-weight: $weight-light;
     @include smooth(font-size);
@@ -66,8 +79,18 @@
   }
   .bg-image {
     @include above(md){
-      background-attachment: fixed;
+      //background-attachment: fixed;
     }
+  }
+}
+
+.hero-subhead {
+  @extend h1;
+  margin-bottom: $element-margin !important;
+  margin-top: get-size(0.5) !important;
+  font-size: font-size(3);
+  @include above(lg) {
+    font-size: font-size(4)
   }
 }
 
@@ -151,14 +174,4 @@
       opacity: $i/100;
     }
   }
-}
-
-.h1-small {
-    @include above(sm) {
-      //text-align: left;
-    }
-    font-size: font-size(5);
-    @include above(lg) {
-     font-size: font-size(6);
-    }
 }

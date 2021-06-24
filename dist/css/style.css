@@ -29,7 +29,8 @@ html {
    License: none (public domain)
 */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, p.wp-block-subhead, h6, p, blockquote, pre,
+h1,
+.hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small,
@@ -380,20 +381,26 @@ thead th {
 tfoot th {
   border-top: 2px solid #d0d1d2; }
 
-h1, h2, h3, h4, h5, p.wp-block-subhead, h6 {
+
+h1,
+.hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6 {
   font-family: var(--body_font);
   margin: 0 0 24px 0;
   line-height: 1.2;
   color: #3e4041; }
-  h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), p.wp-block-subhead:not(:first-child), h6:not(:first-child) {
+  h1:not(:first-child), .hero-subhead:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), p.wp-block-subhead:not(:first-child), h6:not(:first-child) {
     margin-top: 24px; }
 
-h1 {
+
+h1,
+.hero-subhead {
   font-size: 2.25em;
   color: var(--h1_colour);
   font-family: var(--h1_font); }
   @media (min-width: 56.25em) {
-    h1 {
+    
+    h1,
+    .hero-subhead {
       font-size: 3em; } }
 
 h2 {
@@ -423,7 +430,9 @@ h5, p.wp-block-subhead {
 h6 {
   font-size: 1.25em; }
 
-p, li, h1, h2, h3, h4, h5, p.wp-block-subhead, h6 {
+p, li,
+h1,
+.hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6 {
   word-break: break-word; }
 
 /* TEXT TRANSFORM */
@@ -502,20 +511,26 @@ sub {
 sup {
   top: -.75em; }
 
-h1, h2, h3, h4, h5, p.wp-block-subhead, h6 {
+
+h1,
+.hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6 {
   font-family: var(--body_font);
   margin: 0 0 24px 0;
   line-height: 1.2;
   color: #3e4041; }
-  h1:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), p.wp-block-subhead:not(:first-child), h6:not(:first-child) {
+  h1:not(:first-child), .hero-subhead:not(:first-child), h2:not(:first-child), h3:not(:first-child), h4:not(:first-child), h5:not(:first-child), p.wp-block-subhead:not(:first-child), h6:not(:first-child) {
     margin-top: 24px; }
 
-h1 {
+
+h1,
+.hero-subhead {
   font-size: 2.25em;
   color: var(--h1_colour);
   font-family: var(--h1_font); }
   @media (min-width: 56.25em) {
-    h1 {
+    
+    h1,
+    .hero-subhead {
       font-size: 3em; } }
 
 h2 {
@@ -555,7 +570,9 @@ h6 {
   color: var(--h6_colour);
   font-family: var(--h6_font); }
 
-p, li, h1, h2, h3, h4, h5, p.wp-block-subhead, h6 {
+p, li,
+h1,
+.hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6 {
   word-break: break-word; }
 
 /* TEXT TRANSFORM */
@@ -1130,6 +1147,19 @@ p.has-background {
   100% {
     transform: scale(1); } }
 
+.bg-image {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0; }
+
 .hero.block {
   padding: 0; }
 
@@ -1159,16 +1189,20 @@ p.has-background {
     height: 512px;
     max-height: 70vh; } }
 
-.hero h1 {
+.hero h1, .hero .hero-subhead {
   margin: 0 auto;
   line-height: 1.1;
   text-align: center;
   font-weight: 300;
   transition: font-size 0.2s ease; }
 
-@media (min-width: 56.25em) {
-  .hero .bg-image {
-    background-attachment: fixed; } }
+.hero-subhead {
+  margin-bottom: 24px !important;
+  margin-top: 8px !important;
+  font-size: 1.5em; }
+  @media (min-width: 75em) {
+    .hero-subhead {
+      font-size: 1.875em; } }
 
 .hero-main {
   display: flex;
@@ -1222,7 +1256,7 @@ p.has-background {
   color: var(--text_colour); }
   .overlay-white::before {
     background-color: white; }
-  .overlay-white h1 {
+  .overlay-white h1, .overlay-white .hero-subhead {
     color: var(--text_colour); }
 
 .overlay-opacity-0::before {
@@ -1257,31 +1291,6 @@ p.has-background {
 
 .overlay-opacity-100::before {
   opacity: 1; }
-
-.h1-small {
-  font-size: 2.25em; }
-  @media (min-width: 75em) {
-    .h1-small {
-      font-size: 3em; } }
-
-.hero-subhead {
-  padding-top: 32px;
-  padding-bottom: 32px; }
-  .hero-subhead p {
-    margin-bottom: 0;
-    color: #d0d1d2;
-    font-family: var(--body_font);
-    transition: font-size 0.2s ease;
-    font-size: 1.25em; }
-    @media (min-width: 75em) {
-      .hero-subhead p {
-        font-size: 1.5em; } }
-  .hero-subhead .text-accent {
-    color: white;
-    font-style: normal; }
-    @media (min-width: 37.5em) {
-      .hero-subhead .text-accent {
-        display: block; } }
 
 .block {
   padding-top: 32px;
@@ -2697,7 +2706,7 @@ input:checked + .checkbox__control {
   border-color: #e8e8e9;
   background-color: #e8e8e9;
   color: #191a1a; }
-  h1 .tag, h2 .tag, h3 .tag, h4 .tag, h5 .tag, p.wp-block-subhead .tag, h6 .tag, p .tag {
+  h1 .tag, .hero-subhead .tag, h2 .tag, h3 .tag, h4 .tag, h5 .tag, p.wp-block-subhead .tag, h6 .tag, p .tag {
     font-size: 0.6em;
     top: -.2em; }
   .tag .tag {
@@ -2717,9 +2726,9 @@ input:checked + .checkbox__control {
     margin-bottom: -var(--button_border_width); }
   .tag-list .tag-group .tag {
     margin: 0; }
-  h1 .tag-list, h2 .tag-list, h3 .tag-list, h4 .tag-list, h5 .tag-list, p.wp-block-subhead .tag-list, h6 .tag-list, p .tag-list {
+  h1 .tag-list, .hero-subhead .tag-list, h2 .tag-list, h3 .tag-list, h4 .tag-list, h5 .tag-list, p.wp-block-subhead .tag-list, h6 .tag-list, p .tag-list {
     display: inline-flex; }
-    h1 .tag-list .tag, h1 .tag-list .tag-group, h2 .tag-list .tag, h2 .tag-list .tag-group, h3 .tag-list .tag, h3 .tag-list .tag-group, h4 .tag-list .tag, h4 .tag-list .tag-group, h5 .tag-list .tag, p.wp-block-subhead .tag-list .tag, h5 .tag-list .tag-group, p.wp-block-subhead .tag-list .tag-group, h6 .tag-list .tag, h6 .tag-list .tag-group, p .tag-list .tag, p .tag-list .tag-group {
+    h1 .tag-list .tag, .hero-subhead .tag-list .tag, h1 .tag-list .tag-group, .hero-subhead .tag-list .tag-group, h2 .tag-list .tag, h2 .tag-list .tag-group, h3 .tag-list .tag, h3 .tag-list .tag-group, h4 .tag-list .tag, h4 .tag-list .tag-group, h5 .tag-list .tag, p.wp-block-subhead .tag-list .tag, h5 .tag-list .tag-group, p.wp-block-subhead .tag-list .tag-group, h6 .tag-list .tag, h6 .tag-list .tag-group, p .tag-list .tag, p .tag-list .tag-group {
       margin-bottom: 0; }
 
 .tag-group {
@@ -4312,7 +4321,7 @@ body .button, body .button:visited, body .button:hover, body .button:focus, body
 .callout.primary {
   border-color: #c32c78;
   background-color: #ffebf5; }
-  .callout.primary h1, .callout.primary h2, .callout.primary h3, .callout.primary h4, .callout.primary h5, .callout.primary p.wp-block-subhead, .callout.primary h6 {
+  .callout.primary h1, .callout.primary .hero-subhead, .callout.primary h2, .callout.primary h3, .callout.primary h4, .callout.primary h5, .callout.primary p.wp-block-subhead, .callout.primary h6 {
     color: #5b0b33; }
   .callout.primary a.callout-link {
     color: #9c1c5c; }
@@ -4322,7 +4331,7 @@ body .button, body .button:visited, body .button:hover, body .button:focus, body
 .callout.secondary {
   border-color: #1cd4d4;
   background-color: #ecfdfb; }
-  .callout.secondary h1, .callout.secondary h2, .callout.secondary h3, .callout.secondary h4, .callout.secondary h5, .callout.secondary p.wp-block-subhead, .callout.secondary h6 {
+  .callout.secondary h1, .callout.secondary .hero-subhead, .callout.secondary h2, .callout.secondary h3, .callout.secondary h4, .callout.secondary h5, .callout.secondary p.wp-block-subhead, .callout.secondary h6 {
     color: #056270; }
   .callout.secondary a.callout-link {
     color: #099aa5; }
@@ -4332,7 +4341,7 @@ body .button, body .button:visited, body .button:hover, body .button:focus, body
 .callout.success {
   border-color: #7bb027;
   background-color: #f3fde2; }
-  .callout.success h1, .callout.success h2, .callout.success h3, .callout.success h4, .callout.success h5, .callout.success p.wp-block-subhead, .callout.success h6 {
+  .callout.success h1, .callout.success .hero-subhead, .callout.success h2, .callout.success h3, .callout.success h4, .callout.success h5, .callout.success p.wp-block-subhead, .callout.success h6 {
     color: #2d4205; }
   .callout.success a.callout-link {
     color: #517812; }
@@ -4342,7 +4351,7 @@ body .button, body .button:visited, body .button:hover, body .button:focus, body
 .callout.warning {
   border-color: #e9b949;
   background-color: #fffaeb; }
-  .callout.warning h1, .callout.warning h2, .callout.warning h3, .callout.warning h4, .callout.warning h5, .callout.warning p.wp-block-subhead, .callout.warning h6 {
+  .callout.warning h1, .callout.warning .hero-subhead, .callout.warning h2, .callout.warning h3, .callout.warning h4, .callout.warning h5, .callout.warning p.wp-block-subhead, .callout.warning h6 {
     color: #513c06; }
   .callout.warning a.callout-link {
     color: #a27c1a; }
@@ -4352,7 +4361,7 @@ body .button, body .button:visited, body .button:hover, body .button:focus, body
 .callout.error {
   border-color: #bb2525;
   background-color: #fff0f0; }
-  .callout.error h1, .callout.error h2, .callout.error h3, .callout.error h4, .callout.error h5, .callout.error p.wp-block-subhead, .callout.error h6 {
+  .callout.error h1, .callout.error .hero-subhead, .callout.error h2, .callout.error h3, .callout.error h4, .callout.error h5, .callout.error p.wp-block-subhead, .callout.error h6 {
     color: #620404; }
   .callout.error a.callout-link {
     color: #921111; }
@@ -5290,10 +5299,14 @@ img.align-left, img.alignleft, img.align-right, img.alignright, img.align-none, 
     font-size: 9pt;
     line-height: 1.2;
     font-family: Arial; }
-  h1, h2, h3, h4, h5, p.wp-block-subhead, h6 {
+  
+  h1,
+  .hero-subhead, h2, h3, h4, h5, p.wp-block-subhead, h6 {
     font-weight: 700;
     margin-bottom: .2em; }
-  h1 {
+  
+  h1,
+  .hero-subhead {
     font-size: 1.6em; }
   h2 {
     font-size: 1.4em; }

@@ -53,7 +53,7 @@ defined( 'ABSPATH' ) || exit;
 
       <div class="<?php echo $header_row_class;?>">
 
-        <div class="<?php echo $header_col_class;?>" data-aos="fade-up" data-aos-duration="600">
+        <div class="<?php echo $header_col_class;?>">
             <?php
             echo '<h1 class="page-title">';
               the_title();
