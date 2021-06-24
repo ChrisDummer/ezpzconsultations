@@ -790,7 +790,7 @@
     },
     {
       "key": "field_60cb7776730ab",
-      "label": "Logo",
+      "label": "Branding",
       "name": "",
       "type": "tab",
       "instructions": "",
@@ -809,7 +809,7 @@
       "label": "Main Logo",
       "name": "main_logo",
       "type": "image",
-      "instructions": "",
+      "instructions": "Used in the Navbar",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -820,7 +820,7 @@
       "return_format": "array",
       "preview_size": "medium",
       "library": "all",
-      "min_width": "",
+      "min_width": "180",
       "min_height": "",
       "min_size": "",
       "max_width": "",
@@ -833,7 +833,7 @@
       "label": "Favicon",
       "name": "favicon",
       "type": "image",
-      "instructions": "",
+      "instructions": "A small 80x80 graphic shown in the browser tab",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -844,8 +844,8 @@
       "return_format": "array",
       "preview_size": "medium",
       "library": "all",
-      "min_width": "",
-      "min_height": "",
+      "min_width": "80",
+      "min_height": "80",
       "min_size": "",
       "max_width": "",
       "max_height": "",
@@ -870,5 +870,5 @@
   "hide_on_screen": "",
   "active": true,
   "description": "",
-  "modified": 1624549091
+  "modified": 1624550077
 }
