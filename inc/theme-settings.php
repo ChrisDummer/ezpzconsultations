@@ -117,7 +117,7 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
 
     //Button Elements
     $theme_button_border_width = $colour_options_data['button_border_width'] ? $colour_options_data['button_border_width'] : '2';
-    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_width'] : '4';
+    $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_radius'] : '4';
     $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : $default_font;
 
     //Card Elements

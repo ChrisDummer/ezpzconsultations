@@ -175,25 +175,8 @@ if ( ! function_exists( 'ezpzconsultations_copyright' ) ) :
    * @link https://www.wpbeginner.com/wp-tutorials/how-to-add-a-dynamic-copyright-date-in-wordpress-footer/
    */
   function ezpzconsultations_copyright() {
-    global $wpdb;
-    $copyright_dates = $wpdb->get_results("
-    SELECT
-    YEAR(min(post_date_gmt)) AS firstdate,
-    YEAR(max(post_date_gmt)) AS lastdate
-    FROM
-    $wpdb->posts
-    WHERE
-    post_status = 'publish'
-    ");
-    $output = '';
-    if($copyright_dates) {
-    $copyright = "&copy; " . get_bloginfo( 'name' ) . ' ' . $copyright_dates[0]->firstdate;
-    if($copyright_dates[0]->firstdate != $copyright_dates[0]->lastdate) {
-    $copyright .= '-' . $copyright_dates[0]->lastdate;
-    }
-    $output = $copyright;
-    }
-    return $output;
+    $copyright = "&copy; " . get_bloginfo( 'name' ) . ' ' . date('Y');
+    return $copyright;
     }
 endif;
 

@@ -13,10 +13,10 @@
 defined( 'ABSPATH' ) || exit;
 
 $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-      $footer_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+$field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+$footer_options_data = get_all_custom_field_meta( 'option', $field_group_array );
 
-$footer_selecter = $footer_options_data['footer_selecter'];
+$footer_selector = $footer_options_data['footer_selector'];
 
 ?>
   </div><?php //#content .site-content ?>
@@ -24,14 +24,14 @@ $footer_selecter = $footer_options_data['footer_selecter'];
 <?php if ( !is_page_template( 'page-simple.php' ) ) : ?>
 
 	<footer class="site-footer">
-  <?php $post = $footer_selecter; // Set $post global variable to the current post object
+  <?php $post = $footer_selector; // Set $post global variable to the current post object
   setup_postdata( $post ); // Set up "environment" for template tags
-
     get_template_part( 'template-parts/blocks/acf-flexible-content/view'); // Get flexible content from ACF
-    wp_reset_postdata();?>
+  wp_reset_postdata();?>
+  <div class="bg-neutral-200">
     <div class="container">
-      <div class="row">
-        <div class="site-info col" id="colophon">
+      <div class="row justify-center">
+        <div class="site-info col md-10 lg-8" id="colophon">
           <p class="small">
             <?php echo ezpzconsultations_copyright();?>
             <span class="sep"> | </span>
@@ -45,6 +45,7 @@ $footer_selecter = $footer_options_data['footer_selecter'];
         </div>
       </div>
     </div>
+  </div>
   </footer>
 
   <?php

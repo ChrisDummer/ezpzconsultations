@@ -444,14 +444,14 @@
     },
     {
       "key": "field_60ca16432ff07",
-      "label": "Nav Background Colour",
+      "label": "Navbar Background Colour",
       "name": "nav_background_colour",
       "type": "color_picker",
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "25",
+        "width": "33.3",
         "class": "",
         "id": ""
       },
@@ -459,14 +459,14 @@
     },
     {
       "key": "field_60ca16702ff08",
-      "label": "Nav Font",
+      "label": "Navbar Font",
       "name": "nav_font",
       "type": "text",
       "instructions": "",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "25",
+        "width": "33.3",
         "class": "",
         "id": ""
       },
@@ -477,111 +477,6 @@
       "maxlength": ""
     },
     {
-      "key": "field_60ca16912ff09",
-      "label": "Nav Link Colour",
-      "name": "nav_link_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca16b52ff0a",
-      "label": "Nav Link Hover Colour",
-      "name": "nav_link_hover_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca16d12ff0b",
-      "label": "Nav Link Hover Background Color",
-      "name": "nav_link_hover_background_color",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca193c2ff0c",
-      "label": "Nav Sublink Colour",
-      "name": "nav_sublink_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca19a82ff0e",
-      "label": "Nav Sublink Hover Colour",
-      "name": "nav_sublink_hover_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca19722ff0d",
-      "label": "Nav Sublink Background Colour",
-      "name": "nav_sublink_background_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
-      "key": "field_60ca19c72ff0f",
-      "label": "Nav Sublink Hover Background Colour",
-      "name": "nav_sublink_hover_background_colour",
-      "type": "color_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "25",
-        "class": "",
-        "id": ""
-      },
-      "default_value": ""
-    },
-    {
       "key": "field_60d2e9be55af6",
       "label": "Navbar Break point",
       "name": "navbar_break_point",
@@ -590,7 +485,7 @@
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
-        "width": "50",
+        "width": "33.3",
         "class": "",
         "id": ""
       },
@@ -603,8 +498,113 @@
       "step": ""
     },
     {
+      "key": "field_60ca16912ff09",
+      "label": "Navbar Link Colour",
+      "name": "nav_link_colour",
+      "type": "color_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33.3",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca16b52ff0a",
+      "label": "Navbar Link Hover Colour",
+      "name": "nav_link_hover_colour",
+      "type": "color_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33.3",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca16d12ff0b",
+      "label": "Navbar Link Hover Background Color",
+      "name": "nav_link_hover_background_color",
+      "type": "color_picker",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "33.3",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca193c2ff0c",
+      "label": "Navbar Sublink Colour",
+      "name": "nav_sublink_colour",
+      "type": "color_picker",
+      "instructions": "Only applies on larger screens (when the drop down is active)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca19a82ff0e",
+      "label": "Navbar Sublink Hover Colour",
+      "name": "nav_sublink_hover_colour",
+      "type": "color_picker",
+      "instructions": "Only applies on larger screens (when the drop down is active)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca19722ff0d",
+      "label": "Navbar Sublink Background Colour",
+      "name": "nav_sublink_background_colour",
+      "type": "color_picker",
+      "instructions": "Only applies on larger screens (when the drop down is active)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
+      "key": "field_60ca19c72ff0f",
+      "label": "Navbar Sublink Hover Background Colour",
+      "name": "nav_sublink_hover_background_colour",
+      "type": "color_picker",
+      "instructions": "Only applies on larger screens (when the drop down is active)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "25",
+        "class": "",
+        "id": ""
+      },
+      "default_value": ""
+    },
+    {
       "key": "field_60ca1a0ef479c",
-      "label": "Button",
+      "label": "Buttons",
       "name": "",
       "type": "tab",
       "instructions": "",
@@ -681,7 +681,7 @@
     },
     {
       "key": "field_60ca1aabf47a0",
-      "label": "Card",
+      "label": "Cards",
       "name": "",
       "type": "tab",
       "instructions": "",
@@ -790,10 +790,10 @@
     },
     {
       "key": "field_60cb6f9e5f914",
-      "label": "Footer Selecter",
-      "name": "footer_selecter",
+      "label": "Footer Stack",
+      "name": "footer_selector",
       "type": "page_link",
-      "instructions": "",
+      "instructions": "Please select the stack you would like to use as the site-wide footer",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -802,11 +802,11 @@
         "id": ""
       },
       "post_type": [
-        "campaign"
+        "stack"
       ],
       "taxonomy": "",
       "allow_null": 0,
-      "allow_archives": 1,
+      "allow_archives": 0,
       "multiple": 0
     },
     {
@@ -891,5 +891,5 @@
   "hide_on_screen": "",
   "active": true,
   "description": "",
-  "modified": 1624544871
+  "modified": 1624547958
 }

@@ -10,12 +10,13 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! function_exists( 'ezpzconsultations_create_campaign_cpt' ) ) :
+
+if ( ! function_exists( 'ezpzconsultations_create_stack_cpt' ) ) :
 
   /**
    * Register a CPT Stack
    */
-  function ezpzconsultations_create_campaign_cpt() {
+  function ezpzconsultations_create_stack_cpt() {
 
     $labels = array(
       'name' => _x( 'Stacks', 'Post Type General Name', 'ezpzconsultations' ),
@@ -48,23 +49,23 @@ if ( ! function_exists( 'ezpzconsultations_create_campaign_cpt' ) ) :
     );
     $args = array(
       'label' => __( 'Stack', 'ezpzconsultations' ),
-      'description' => __( 'This is an example file which can be edited or duplicated to quickly create a CPT. Do not forget to include it in functions.php', 'ezpzconsultations' ),
+      'description' => __( 'Footer', 'ezpzconsultations' ),
       'labels' => $labels,
-      'menu_icon' => 'dashicons-admin-customizer',
+      'menu_icon' => 'dashicons-layout',
       'supports' => array(
                     'title',
-                    'editor',
-                    'excerpt',
-                    'thumbnail',
-                    'revisions',
-                    'author',
+                    //'editor',
+                    //'excerpt',
+                    //'thumbnail',
+                    //'revisions',
+                    //'author',
                     //'comments',
                     //'trackbacks',
                     //'page-attributes',
                     //'post-formats',
                     //'custom-fields'
                   ), // Core feature(s) the post type supports.
-      //'taxonomies' => array('campaign-tag'), // An array of taxonomy identifiers that will be registered for the post type. Taxonomies can be registered later with register_taxonomy()
+      //'taxonomies' => array('stack-tag'), // An array of taxonomy identifiers that will be registered for the post type. Taxonomies can be registered later with register_taxonomy()
       'public' => true, // Controls how the type is visible to authors (show_in_nav_menus, show_ui) and readers (exclude_from_search, publicly_queryable).
       'show_ui' => true, // Whether to generate a default UI for managing this post type in the admin.
       'show_in_menu' => true, // Where to show the post type in the admin menu. show_ui must be true.
@@ -75,13 +76,13 @@ if ( ! function_exists( 'ezpzconsultations_create_campaign_cpt' ) ) :
       'has_archive' => true, // Whether there should be post type archives, or if a string, the archive slug to use. Will generate the proper rewrite rules if $rewrite is enabled.
       'hierarchical' => false, // Whether the post type is hierarchical (e.g. page)
       'exclude_from_search' => false, // Whether to exclude posts with this post type from front end search results. Default is the opposite value of $public.
-      'show_in_rest' => true, // Whether to expose this post type in the REST API. Must be true to enable Gutenberg.
+      'show_in_rest' => false, // Whether to expose this post type in the REST API. Must be true to enable Gutenberg.
       'publicly_queryable' => true, // Whether queries can be performed on the front end for the post type as part of parse_request().
       'capability_type' => 'page', // The string to use to build the read, edit, and delete capabilities.
     );
-    register_post_type( 'campaign', $args );
+    register_post_type( 'stack', $args );
 
   }
 endif;
 
-add_action( 'init', 'ezpzconsultations_create_campaign_cpt', 0 );
+add_action( 'init', 'ezpzconsultations_create_stack_cpt', 0 );
