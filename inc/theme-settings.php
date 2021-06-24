@@ -46,7 +46,6 @@ if (! function_exists('ezpz_get_contrast_color') ) :
       $contrastRatio = (int)(($L2 + 0.05) / ($L1 + 0.05));
     }
 
-    //echo 'contrast ratio is . ' . $contrastRatio;
     // If contrast is more than 5, return black color
     if ($contrastRatio > 5) {
         return $blackColor;

@@ -345,13 +345,13 @@ if (! function_exists('ezpzconsultations_kses_acf') ) :
     function ezpzconsultations_kses_acf( $data, $post_id, $field )
     {
         if (!is_array($data)) {
+          $allowed_fields = ['unfiltered_html', 'font_links', 'custom_css'];
             // If it's not an array, sanitize
-            if($field['_name'] != 'unfiltered_html') {
-              return wp_kses_post($data);
+            if(in_array($field['_name'], $allowed_fields)) {
+              return $data;
             }
             else {
-              // if fieldName = 'unfiltered_html' don't sanitize
-              return $data;
+              return wp_kses_post($data);
             }
         }
         $return = array();
