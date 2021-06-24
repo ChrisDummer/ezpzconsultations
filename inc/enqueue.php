@@ -8,9 +8,23 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if (! defined('FAVICON_DIR') ) {
-    define('FAVICON_DIR', get_template_directory_uri() . '/dist/favicon');
+if (! function_exists('ezpzconsultations_add_favicon') ) {
+  // Add favicon to admin areas
+  function ezpzconsultations_add_favicon()
+  {
+    if(function_exists('get_all_custom_field_meta')):
+      $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
+      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
+      $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+
+      if($favicon = wp_get_attachment_image_src( $theme_options['favicon'], 'icon'))
+        echo '<link rel="shortcut icon" type="image/png" href="' . $favicon[0] . '" />';
+    endif;
+  }
 }
+add_action('login_head', 'ezpzconsultations_add_favicon', 10, 0);
+add_action('admin_head', 'ezpzconsultations_add_favicon', 10, 0);
+add_action('wp_head', 'ezpzconsultations_add_favicon', 10, 0);
 
 if (! function_exists('ezpzconsultations_scripts') ) {
     /**
@@ -137,4 +151,3 @@ if (! function_exists('ezpzconsultations_scripts') ) {
     }
 }
 add_action('wp_enqueue_scripts', 'ezpzconsultations_scripts');
-

@@ -29,7 +29,6 @@ defined( 'ABSPATH' ) || exit;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="profile" href="https://gmpg.org/xfn/11">
-  <link rel="shortcut icon" type="image/jpg" href="<?php echo $theme_options['favicon']; ?>"/>
 
  <?php
 

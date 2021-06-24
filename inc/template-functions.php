@@ -221,3 +221,11 @@ if (! function_exists('ezpzconsultations_filter_wpseo_excerpt') ) :
     return $replacements;
   }
 endif;
+
+if (! function_exists('ezpzconsultations_px_convert') ) {
+  // Convert PX to em
+  function ezpzconsultations_px_convert(&$px_variable, $unit_measurement = 'rem'){
+    $px_variable = $px_variable /= 16;
+    $px_variable = $px_variable . $unit_measurement;
+  }
+}
