@@ -53,14 +53,11 @@ $row_class = 'align-'.$block['row_vertical_align'];
             echo ezpzconsultations_content($column['text']);
             if($column['buttons']) ezpzconsultations_display_cta_buttons($column['buttons']);
           }
-          // elseif column ty;pe is images and text - do that stuff. need to loop through foreach text or image and ghen output
 
           elseif ($column_type == 'text_and_image'){
             foreach ($column['text_and_images'] as $row):
-
               if ($row['text']) echo ezpzconsultations_content($row['text']);
               if ($row['image']) echo wp_get_attachment_image( $row['image'], 'medium', '',  array( "class" => "w-100" ) );
-
             endforeach;
 
           }

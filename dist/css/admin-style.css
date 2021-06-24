@@ -315,4 +315,7 @@
   #mceu_71 .mce-txt {
     font-size: 13px; }
 
+body#tinymce {
+  font-family: var(--body_font); }
+
 /*# sourceMappingURL=admin-style.css.map */
