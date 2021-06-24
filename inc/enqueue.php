@@ -37,8 +37,8 @@ if (! function_exists('ezpzconsultations_scripts') ) {
         $js_version = $theme_version . ':' . filemtime(get_template_directory() . '/dist/js/site.min.js'); // Appends time stamp to help with cache busting
 
         // NOTE: Not using Gutenberg in this theme? Then remove these comments
-        //wp_dequeue_style('wp-block-library');
-        //wp_dequeue_style('wc-block-style'); // WooCommerce - you can remove this if you don't use Woocommerce
+        wp_dequeue_style('wp-block-library');
+        wp_dequeue_style('wc-block-style'); // WooCommerce - you can remove this if you don't use Woocommerce
 
         // Enqueue Stylesheets
         wp_enqueue_style('ezpzconsultations-styles', get_stylesheet_uri(), array(), $css_version);

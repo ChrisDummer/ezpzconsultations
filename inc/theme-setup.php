@@ -101,7 +101,7 @@ if (! function_exists('ezpzconsultations_setup') ) :
          */
 
         // Add theme support for Gutenberg wide blocks
-        add_theme_support('align-wide');
+       // add_theme_support('align-wide');
 
         // Prevent the user from being able to edit font-sizes
         add_theme_support('disable-custom-font-sizes');

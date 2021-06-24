@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) || exit;
  * Remove support for WP Editor if you are using ACF exclusively for content
  */
 
-//add_action('init', 'ezpzconsultations_post_type_supports_page');
+add_action('init', 'ezpzconsultations_post_type_supports_page');
 if (! function_exists('ezpzconsultations_post_type_supports_page') ) :
   function ezpzconsultations_post_type_supports_page() {
     remove_post_type_support( 'page', 'editor' );
@@ -79,4 +79,3 @@ if ( ! function_exists( 'ezpzconsultations_create_page_taxonomies' ) ) :
   }
 endif;
 add_action( 'init', 'ezpzconsultations_create_page_taxonomies', 0 );
-
