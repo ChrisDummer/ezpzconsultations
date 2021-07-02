@@ -1,5 +1,5 @@
 {
-  "DEV_URL": "https://ezpz-consultations.local",
+  "DEV_URL": "https://consultations.local",
   "STAGING_URL": "https://ezpz-consultations.staging",
   "PROD_URL": "https://ezpz-consultations.live"
 }

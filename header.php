@@ -19,9 +19,11 @@ defined( 'ABSPATH' ) || exit;
 
 <head>
   <?php
+  if (function_exists('get_all_custom_field_meta')):
     $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
     $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
     $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
+  endif ;
   ?>
 
   <meta charset="<?php bloginfo( 'charset' ); ?>">

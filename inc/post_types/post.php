@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 // Change "Posts" to "News". Customise as you wish.
-add_action( 'init', 'ezpzconsultations_change_post_object_labels', 0 );
+//add_action( 'init', 'ezpzconsultations_change_post_object_labels', 0 );
 
 /**
  * Remove support for WP Editor if you are using ACF exclusively for content
