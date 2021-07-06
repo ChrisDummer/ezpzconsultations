@@ -26,6 +26,27 @@ if(!function_exists('ezpzconsultations_env')) {
   }
 }
 
+if(!function_exists('ezpzconsultations_header_option_one')) {
+  function ezpzconsultations_magic_coumn_time()
+  {
+    echo '<style>
+    .block__magic-columns .time-container{
+      width: 100%;
+    }
+
+    .block__magic-columns .timeline:after{
+      left: 0;
+    }
+
+    .block__magic-columns .right{
+      left: 0;
+    }
+  </style>
+
+  <div class=" right time-container">';
+  }
+}
+
 if (! defined('DEV_URL') ) define('DEV_URL', ezpzconsultations_env('DEV_URL'));
 if (! defined('STAGING_URL') ) define('STAGING_URL', ezpzconsultations_env('STAGING_URL'));
 if (! defined('PROD_URL') ) define('PROD_URL', ezpzconsultations_env('PROD_URL'));

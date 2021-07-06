@@ -16,7 +16,7 @@ $date_now = time();
 $magic = $args['magic_columns'];
 
 $date_formatted = date_i18n(get_option( 'date_format' ), $date_unixtime); // Format for WP
-$time_class = 'time-container';
+$time_class = '';
 
 //Creating the week diffrence
 // TODO: See if you can make this a bit neater and avoid repetition
@@ -58,24 +58,14 @@ elseif ($two_week_date >= $date_unixtime)
 elseif ($date_now >= $date_unixtime)
   $time_class = $time_class . ' opacityNine';
 
+else
+  $time_class = $time_class . ' opacityNine';
+
+
+echo'   <div class="' . $time_class . '">';
+
 if($magic):
-  // TODO: Remove this please - avoid inline styles wherever possible
-
-  echo '<style>
-    .block__magic-columns .time-container{
-      width: 100%;
-    }
-
-    .block__magic-columns .timeline:after{
-      left: 0;
-    }
-
-    .block__magic-columns .right{
-      left: 0;
-    }
-  </style>
-
-  <div class="' . $time_class . ' right">';
+  ezpzconsultations_magic_coumn_time();
 
 
 endif;
@@ -83,10 +73,10 @@ endif;
 if(!$magic):
 
   if($count % 2 == 0  ){
-    echo'   <div class="' . $time_class . ' left">';
+    echo'   <div class=" left time-container">';
   }
   else{
-  echo'   <div class="' . $time_class . ' right">';
+  echo'   <div class=" right time-container">';
   }
 
 endif;
@@ -98,4 +88,5 @@ endif;
     <p class="bold mb-0"><?php echo $time_title; ?></p>
     <?php if($time_text) echo ezpzconsultations_content($time_text);?>
   </div>
+</div>
 </div>

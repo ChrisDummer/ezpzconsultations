@@ -66,13 +66,23 @@ defined( 'ABSPATH' ) || exit;
       <?php
       $header_col_class = 'col md-10';
       $header_row_class = 'row justify-center';
+
+      // To make the page title either white or black
+      $page_title = 'page-title';
+      $title_colour = $hero_data['hero_title_colour'];
+
+      if($title_colour == '1'){
+        $page_title = $page_title . ' page-title-light';
+      }
+
+
       ?>
 
       <div class="<?php echo $header_row_class;?>">
 
         <div class="<?php echo $header_col_class;?>">
             <?php
-            echo '<h1 class="page-title">';
+            echo '<h1 class="' . $page_title . '">';
             if($title_image) :
               echo wp_get_attachment_image( $title_image, 'large' );
               the_title('<span class="text-hide">','</span>');

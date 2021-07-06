@@ -302,6 +302,25 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_60e42b7a52064",
+            "label": "Hero Title Colour",
+            "name": "hero_title_colour",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Light",
+            "ui_off_text": "Dark"
         }
     ],
     "location": [
@@ -328,5 +347,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624553562
+    "modified": 1625566155
 }

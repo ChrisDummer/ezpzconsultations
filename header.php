@@ -35,9 +35,25 @@ defined( 'ABSPATH' ) || exit;
   // TODO: these are better hooking into wp_head. Can you add them to the theme-settings function?
   $custom_css = $theme_options['custom_css'];
   $font_links = $theme_options['font_links'];
+  $header_picker = $theme_options['header_picker'];
+
   if($custom_css) echo '<style>'.$custom_css.'</style>';
   if($font_links) echo $font_links;
    wp_head();
+
+   //Changing the look of the header depending on what option they select
+
+  $nav_logo = 'site-logo navbar-item';
+  $nav_menu = 'navbar-menu';
+  $nav_brand = 'navbar-brand site-branding';
+
+
+  if($header_picker == 'Option 2'){
+    $nav_logo = $nav_logo . ' center-logo';
+    $nav_menu = $nav_menu . ' center-menu';
+    $nav_brand = $nav_brand . ' center-brand';
+
+   }
   ?>
 </head>
 
@@ -52,10 +68,10 @@ defined( 'ABSPATH' ) || exit;
     <header id="masthead" class="site-header">
       <nav id="site-navigation" class="navbar main-navigation">
         <div class="container">
-          <div class="navbar-brand site-branding">
+          <div class="<?php echo $nav_brand ?>">
             
           <?php if($logo_image = $theme_options['main_logo']): ?>
-            <a class="site-logo navbar-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <a class="<?php echo $nav_logo ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php echo wp_get_attachment_image( $logo_image, 'site_logo' ); ?>
             </a>
           <?php endif; ?>
@@ -67,7 +83,7 @@ defined( 'ABSPATH' ) || exit;
               </button>
             </div>
 
-            <div id="navbar-menu" class="navbar-menu">
+            <div id="navbar-menu" class="<?php echo $nav_menu ?>">
 
               <div class="navbar-end">
                 <?php
