@@ -3113,6 +3113,10 @@ input:checked + .checkbox__control {
     display: flex;
     align-items: center; } }
 
+.wpcf7-submit {
+  background: #475b6c !important;
+  color: white; }
+
 .postal-address {
   display: inline-flex;
   margin-bottom: 24px; }

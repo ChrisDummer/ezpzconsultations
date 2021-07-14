@@ -344,4 +344,8 @@ $handle_color: get-color(neutral,900);
     @extend %flexible-content-description;
     content: "The Video block allows you to embed a video from YouTube / Vimeo onto the page."
   }
+  &[data-layout="time-line"] .acf-fc-layout-controls+.acf-fields::before {
+    @extend %flexible-content-description;
+    content: "The Time Line to add diffrent time points"
+  }
 }
