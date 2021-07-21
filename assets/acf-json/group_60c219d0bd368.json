@@ -892,6 +892,31 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_60eed918d4008",
+            "label": "Mobile Picker",
+            "name": "mobile_picker",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Option 1": "Option 1",
+                "Option 2": "Option 2"
+            },
+            "default_value": "Option 1",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -911,5 +936,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625559452
+    "modified": 1626265909
 }
