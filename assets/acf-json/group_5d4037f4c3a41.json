@@ -160,7 +160,7 @@
                                     "key": "field_602150c58c179",
                                     "label": "Button Color",
                                     "name": "button_color",
-                                    "type": "select",
+                                    "type": "button_group",
                                     "instructions": "Please select a color for the button.",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -170,17 +170,20 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "white": "White",
-                                        "primary": "Primary",
-                                        "secondary": "Secondary"
+                                        "white": "<span class=\"swatch bg-white\"><\/span>",
+                                        "neutral-200": "<span class=\"swatch bg-neutral-200\"><\/span>",
+                                        "neutral-900": "<span class=\"swatch bg-neutral-900\"><\/span>",
+                                        "primary-dark": "<span class=\"swatch bg-primary-dark\"><\/span>",
+                                        "primary": "<span class=\"swatch bg-primary\"><\/span>",
+                                        "primary-light": "<span class=\"swatch bg-primary-light\"><\/span>",
+                                        "secondary-dark": "<span class=\"swatch bg-secondary-dark\"><\/span>",
+                                        "secondary": "<span class=\"swatch bg-secondary\"><\/span>",
+                                        "secondary-light": "<span class=\"swatch bg-secondary-light\"><\/span>"
                                     },
-                                    "default_value": false,
                                     "allow_null": 0,
-                                    "multiple": 0,
-                                    "ui": 0,
-                                    "return_format": "value",
-                                    "ajax": 0,
-                                    "placeholder": ""
+                                    "default_value": "default",
+                                    "layout": "horizontal",
+                                    "return_format": "value"
                                 },
                                 {
                                     "key": "field_602151818c17a",
@@ -2174,9 +2177,9 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_60d05414e48ce",
-                            "label": "Clone Content Tab Only",
-                            "name": "clone_content_tab_only",
+                            "key": "field_611131ab60ab7",
+                            "label": "Clone Preamble",
+                            "name": "clone_preamble",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -2187,12 +2190,28 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_5d76995ba449c"
+                                "field_5f6facb5b7c07"
                             ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_611131fd46479",
+                            "label": "<span class=\"dashicons dashicons-clock\"><\/span> Timeline",
+                            "name": "",
+                            "type": "tab",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "placement": "top",
+                            "endpoint": 0
                         },
                         {
                             "key": "field_60d05414e48cf",
@@ -5500,5 +5519,5 @@
     ],
     "active": true,
     "description": "This flexible content field group allows the editor to create dynamic layouts with ease using ACF flexible content blocks.",
-    "modified": 1628598749
+    "modified": 1628516883
 }
