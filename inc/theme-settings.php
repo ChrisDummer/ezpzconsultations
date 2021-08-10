@@ -118,6 +118,18 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
     $theme_button_border_radius = $colour_options_data['button_border_radius'] ? $colour_options_data['button_border_radius'] : '4';
     $theme_button_font_family = $colour_options_data['button_font_family'] ? $colour_options_data['button_font_family'] : $default_font;
 
+    $theme_button_primary_colour = $colour_options_data['button_primary_colour'] ? $colour_options_data['button_primary_colour'] : '#7B91B0';
+    $theme_button_primary_hover_colour = $colour_options_data['button_primary_hover_colour'] ? $colour_options_data['button_primary_hover_colour'] : '#3c4e67';
+    $theme_button_primary_hover_text_colour = $colour_options_data['button_primary_hover_text_colour'] ? $colour_options_data['button_primary_hover_text_colour'] : '#ffffff';
+    $theme_button_primary_text_colour = $colour_options_data['button_primary_text_colour'] ? $colour_options_data['button_primary_text_colour'] : '#000000';
+
+    $theme_button_secondary_colour = $colour_options_data['button_secondary_colour'] ? $colour_options_data['button_secondary_colour'] : '#af8a41';
+    $theme_button_secondary_text_colour = $colour_options_data['button_secondary_text_colour'] ? $colour_options_data['button_secondary_text_colour'] :  '#ffffff';
+    $theme_button_secondary_hover_colour = $colour_options_data['button_secondary_hover_colour'] ? $colour_options_data['button_secondary_hover_colour'] : '#4a3b1c' ;
+    $theme_button_secondary_hover_text_colour = $colour_options_data['button_secondary_hover_text_colour'] ? $colour_options_data['button_secondary_hover_text_colour'] : '#000000';
+
+
+
     //Card Elements
     $theme_card_border_radius = $colour_options_data['card_border_radius'] ? $colour_options_data['card_border_radius'] : '4';
     $theme_card_border_width = $colour_options_data['card_border_width'] ? $colour_options_data['card_border_width'] : '1';
@@ -171,6 +183,19 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
       --button_border_width: <?php echo $theme_button_border_width; ?>;
       --button_border_radius: <?php echo $theme_button_border_radius; ?>;
       --button_font_family: <?php echo $theme_button_font_family; ?>;
+
+      --button_primary_text_colour: <?php echo $theme_button_primary_text_colour; ?>;
+      --button_primary_hover_colour: <?php echo $theme_button_primary_hover_colour; ?>;
+      --button_primary_hover_text_colour: <?php echo $theme_button_primary_hover_text_colour; ?>;
+      --button_primary_colour: <?php echo $theme_button_primary_colour; ?>;
+
+      --button_secondary_colour: <?php echo $theme_button_secondary_colour; ?>;
+      --button_secondary_text_colour: <?php echo $theme_button_secondary_text_colour; ?>;
+      --button_secondary_hover_colour: <?php echo $theme_button_secondary_hover_colour; ?>;
+      --button_secondary_hover_text_colour: <?php echo $theme_button_secondary_hover_text_colour; ?>;
+
+
+
 
       --card_border_radius: <?php echo $theme_card_border_radius; ?>;
       --card_border_width: <?php echo $theme_card_border_width; ?>;

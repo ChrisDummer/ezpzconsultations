@@ -176,6 +176,9 @@
 .opacityFour{
    & .content{
     background: get-color(neutral, 400);
+    & h3, & p{
+      color: #2b2a2a;
+    }
   }
   & .left::before{
     border: medium solid get-color(neutral, 400);
@@ -193,6 +196,10 @@
 .opacityThree{
   & .content{
     background: get-color(neutral, 300);
+
+    & h3, & p{
+      color: #2b2a2a;
+    }
   }
 
 

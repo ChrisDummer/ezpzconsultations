@@ -160,7 +160,7 @@
                                     "key": "field_602150c58c179",
                                     "label": "Button Color",
                                     "name": "button_color",
-                                    "type": "button_group",
+                                    "type": "select",
                                     "instructions": "Please select a color for the button.",
                                     "required": 1,
                                     "conditional_logic": 0,
@@ -170,20 +170,17 @@
                                         "id": ""
                                     },
                                     "choices": {
-                                        "white": "<span class=\"swatch bg-white\"><\/span>",
-                                        "neutral-200": "<span class=\"swatch bg-neutral-200\"><\/span>",
-                                        "neutral-900": "<span class=\"swatch bg-neutral-900\"><\/span>",
-                                        "primary-dark": "<span class=\"swatch bg-primary-dark\"><\/span>",
-                                        "primary": "<span class=\"swatch bg-primary\"><\/span>",
-                                        "primary-light": "<span class=\"swatch bg-primary-light\"><\/span>",
-                                        "secondary-dark": "<span class=\"swatch bg-secondary-dark\"><\/span>",
-                                        "secondary": "<span class=\"swatch bg-secondary\"><\/span>",
-                                        "secondary-light": "<span class=\"swatch bg-secondary-light\"><\/span>"
+                                        "white": "White",
+                                        "primary": "Primary",
+                                        "secondary": "Secondary"
                                     },
+                                    "default_value": false,
                                     "allow_null": 0,
-                                    "default_value": "default",
-                                    "layout": "horizontal",
-                                    "return_format": "value"
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
                                 },
                                 {
                                     "key": "field_602151818c17a",
@@ -5503,5 +5500,5 @@
     ],
     "active": true,
     "description": "This flexible content field group allows the editor to create dynamic layouts with ease using ACF flexible content blocks.",
-    "modified": 1625472584
+    "modified": 1628598749
 }

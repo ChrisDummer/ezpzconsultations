@@ -1,5 +1,5 @@
 /* EPLS Consultations Wordpress Theme 1.2.0
- * © 2021-07 EPLS Design - https://epls.design */
+ * © 2021-08 EPLS Design - https://epls.design */
 
 /**
  * Calculate the luminance for a color.
@@ -2014,6 +2014,8 @@ blockquote.testimonial {
 
 .opacityFour .content {
   background: #a4a6a8; }
+  .opacityFour .content h3, .opacityFour .content p {
+    color: #2b2a2a; }
 
 .opacityFour .left::before {
   border: medium solid #a4a6a8;
@@ -2027,6 +2029,8 @@ blockquote.testimonial {
 
 .opacityThree .content {
   background: #d0d1d2; }
+  .opacityThree .content h3, .opacityThree .content p {
+    color: #2b2a2a; }
 
 .opacityThree .left::before {
   border: medium solid #d0d1d2;
@@ -3112,6 +3116,10 @@ input:checked + .checkbox__control {
     margin-left: auto;
     display: flex;
     align-items: center; } }
+
+#colophon {
+  padding-top: 12px;
+  padding-bottom: 12px; }
 
 .wpcf7-submit {
   background: #475b6c !important;

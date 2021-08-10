@@ -24,6 +24,8 @@ defined( 'ABSPATH' ) || exit;
     $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
     $theme_options = get_all_custom_field_meta( 'option', $field_group_array );
   endif ;
+
+
   ?>
 
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -69,7 +71,7 @@ defined( 'ABSPATH' ) || exit;
       <nav id="site-navigation" class="navbar main-navigation">
         <div class="container">
           <div class="<?php echo $nav_brand ?>">
-            
+
           <?php if($logo_image = $theme_options['main_logo']): ?>
             <a class="<?php echo $nav_logo ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
               <?php echo wp_get_attachment_image( $logo_image, 'site_logo' ); ?>
@@ -82,6 +84,14 @@ defined( 'ABSPATH' ) || exit;
                 </span>
               </button>
             </div>
+
+          <?php
+            ?>
+
+
+            <?php
+
+          ?>
 
             <div id="navbar-menu" class="<?php echo $nav_menu ?>">
 
