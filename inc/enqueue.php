@@ -123,6 +123,13 @@ if (! function_exists('ezpzconsultations_scripts') ) {
           true
         );
 
+        wp_register_script( 'favicon',
+          get_template_directory_uri() . '/lib/favicon.js',
+          array('charts'),
+          $js_version,
+          true
+        );
+
         $get_gmaps_api = get_global_option('google_maps_api_key');
         if ($get_gmaps_api) {
           wp_register_script(

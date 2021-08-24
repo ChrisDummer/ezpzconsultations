@@ -30,7 +30,7 @@ $icons = $block['icon'];
  * - Once this is working add to magic columns
  *
  */
-
+wp_enqueue_script('favicon');
 
 ?>
 
@@ -42,7 +42,7 @@ $icons = $block['icon'];
         <ul class="icon-list fa-ul">
           <?php
           foreach ($icons as $icon) {
-            var_dump($icon);
+            //var_dump($icon);
             echo '<li style="font-size: ' . $icon['size'] . 'px"><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li>';
           }
 
