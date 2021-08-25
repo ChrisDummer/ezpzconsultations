@@ -3364,6 +3364,21 @@ a:hover .icon__snapchat, a:focus .icon__snapchat, a:active .icon__snapchat {
   .icon-list .icon {
     margin-right: 0.5em; }
 
+.icon-list-size-sm {
+  font-size: 0.8em; }
+
+.icon-list-size-md {
+  font-size: 1.2em; }
+
+.icon-list-size-lg {
+  font-size: 1.6em; }
+
+.icon-list-size-xl {
+  font-size: 2.2em; }
+
+.icon-list-size-xxl {
+  font-size: 2.6em; }
+
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
   STICKY NAV
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/

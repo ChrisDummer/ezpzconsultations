@@ -30,7 +30,7 @@ $icons = $block['icon'];
  * - Once this is working add to magic columns
  *
  */
-wp_enqueue_script('favicon');
+wp_enqueue_style('favicon');
 
 ?>
 

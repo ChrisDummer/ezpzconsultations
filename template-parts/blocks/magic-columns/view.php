@@ -62,6 +62,19 @@ $row_class = 'align-'.$block['row_vertical_align'];
 
           }
 
+          elseif ($column_type == 'icon_list'){
+            wp_enqueue_style('favicon');
+            var_dump($column);
+            $icon_size = 'icon-list-size-' . $column['icon_size'];
+            echo $icon_size;
+              foreach ($column['icon_list'] as $icon) {
+                //var_dump($icon);
+                echo '<ul class="' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon_selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
+              }
+          }
+
+
+
           elseif ($column_type == 'time_lines'){
             $magic = true;
             ?>
