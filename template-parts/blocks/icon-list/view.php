@@ -39,15 +39,14 @@ wp_enqueue_style('favicon');
 
     <div class="row">
       <div class="col">
-        <ul class="icon-list fa-ul">
           <?php
+          $icon_size = 'icon-list-size-' . $block['icon_size'];
           foreach ($icons as $icon) {
-            //var_dump($icon);
-            echo '<li style="font-size: ' . $icon['size'] . 'px"><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li>';
+            var_dump($icon);
+            echo '<ul class="icon-list-section-ul ' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
           }
 
           ?>
-        </ul>
       </div>
     </div>
 
