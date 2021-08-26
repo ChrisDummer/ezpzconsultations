@@ -66,10 +66,12 @@ $row_class = 'align-'.$block['row_vertical_align'];
             wp_enqueue_style('favicon');
             //var_dump($column);
             $icon_size = 'icon-list-size-' . $column['icon_size'];
-              foreach ($column['icon_list'] as $icon) {
-                //var_dump($icon);
-                echo '<ul class="icon-list-section-ul ' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon_selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
-              }
+            echo '<ul class="icon-list-section-ul ' . $icon_size . '">';
+            foreach ($column['icon_list'] as $icon) {
+              //var_dump($icon);
+              echo '<li><span class="fa-li"><i style="color: ' . $column['colour'] . ' " class="' . $icon['icon_selector'] . '"></i></span>' . $icon['text'] . '</li>';
+            }
+            echo '</ul>';
           }
 
 

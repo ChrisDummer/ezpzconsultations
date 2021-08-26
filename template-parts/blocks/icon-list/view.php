@@ -41,11 +41,12 @@ wp_enqueue_style('favicon');
       <div class="col">
           <?php
           $icon_size = 'icon-list-size-' . $block['icon_size'];
+          echo '<ul class="icon-list-section-ul ' . $icon_size . '">';
           foreach ($icons as $icon) {
-            var_dump($icon);
-            echo '<ul class="icon-list-section-ul ' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
+            //var_dump($icon);
+            echo '<li><span class="fa-li"><i style="color: ' . $block['colour'] . ' " class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li>';
           }
-
+          echo '</ul>';
           ?>
       </div>
     </div>

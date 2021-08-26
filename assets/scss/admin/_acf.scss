@@ -346,6 +346,10 @@ $handle_color: get-color(neutral,900);
   }
   &[data-layout="time-line"] .acf-fc-layout-controls+.acf-fields::before {
     @extend %flexible-content-description;
-    content: "The Time Line to add diffrent time points"
+    content: "The Time Line to add different time points"
+  }
+  &[data-layout="icon-list"] .acf-fc-layout-controls+.acf-fields::before {
+    @extend %flexible-content-description;
+    content: "The Icon List to add icon lists"
   }
 }
