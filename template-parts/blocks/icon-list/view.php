@@ -19,18 +19,7 @@ $container_class = 'container';
 
 $icons = $block['icon'];
 
-
-
-/**
- * TODO:
- * - Icons are not showing for me. Could be an issue with the plugin not enqueuing the css?
- * - Don't use px sizing here. Instead create some utility classes, based on the font sizes defined in font-size() map and use these
- * - Tidy up the ACF settings, they are in lower case. Need descriptions -- "Belts and Braces"
- * - Add in Block Title and Preamble (clone)
- * - Once this is working add to magic columns
- *
- */
-wp_enqueue_style('favicon');
+wp_enqueue_style('font-awesome');
 
 ?>
 
@@ -39,14 +28,13 @@ wp_enqueue_style('favicon');
 
     <div class="row">
       <div class="col">
-          <?php
-          $icon_size = 'icon-list-size-' . $block['icon_size'];
-          foreach ($icons as $icon) {
-            var_dump($icon);
-            echo '<ul class="icon-list-section-ul ' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
-          }
+        <?php
+        $icon_size = 'icon-list-size-' . $block['icon_size'];
+        foreach ($icons as $icon) {
+          echo '<ul class="icon-list-section-ul ' . $icon_size . '"><li><span class="fa-li"><i class="' . $icon['icon-selector'] . '"></i></span>' . $icon['text'] . '</li></ul>';
+        }
 
-          ?>
+        ?>
       </div>
     </div>
 
