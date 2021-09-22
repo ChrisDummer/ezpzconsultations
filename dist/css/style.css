@@ -3365,23 +3365,26 @@ a:hover .icon__snapchat, a:focus .icon__snapchat, a:active .icon__snapchat {
     margin-right: 0.5em; }
 
 .icon-list-size-sm {
-  font-size: 0.8em; }
+  font-size: 16px; }
 
 .icon-list-size-md {
-  font-size: 1.2em; }
+  font-size: 24px; }
 
 .icon-list-size-lg {
-  font-size: 1.6em; }
+  font-size: 32px; }
 
 .icon-list-size-xl {
-  font-size: 2.2em; }
+  font-size: 48px; }
 
 .icon-list-size-xxl {
-  font-size: 2.6em; }
+  font-size: 64px; }
 
 .icon-list-section-ul {
   margin: 0px;
   list-style: none; }
+
+.icon-list-section-ul li {
+  margin-bottom: 8px; }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
   STICKY NAV
