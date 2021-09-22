@@ -49,7 +49,6 @@ defined('ABSPATH') || exit;
   $nav_menu = 'navbar-menu';
   $nav_brand = 'navbar-brand site-branding';
 
-
   if ($header_picker == 'Option 2') {
     $nav_logo = $nav_logo . ' center-logo';
     $nav_menu = $nav_menu . ' center-menu';
@@ -69,7 +68,7 @@ defined('ABSPATH') || exit;
       <header id="masthead" class="site-header">
         <nav id="site-navigation" class="navbar main-navigation">
           <div class="container">
-            <div class="<?php echo $nav_brand ?>">
+            <div class="<?php echo $nav_brand; ?>">
 
               <?php if ($logo_image = $theme_options['main_logo']) : ?>
                 <a class="<?php echo $nav_logo ?>" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
@@ -84,15 +83,7 @@ defined('ABSPATH') || exit;
               </button>
             </div>
 
-            <?php
-            ?>
-
-
-            <?php
-
-            ?>
-
-            <div id="navbar-menu" class="<?php echo $nav_menu ?>">
+            <div id="navbar-menu" class="<?php echo $nav_menu; ?>">
 
               <div class="navbar-end">
                 <?php
