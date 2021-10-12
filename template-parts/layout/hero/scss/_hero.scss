@@ -18,7 +18,7 @@
     padding: 0;
   }
 
-    @include above(md) {
+  @include above(md) {
     &__large {
       .hero-main {
         min-height: 85vh;
@@ -36,10 +36,14 @@
     }
   }
 
+  .hero-button-container {
+    margin-top: get-size(3);
+  }
+
   @include below(md) {
     &__large {
       .hero-main {
-      //  height: get-size(56);
+        //  height: get-size(56);
         min-height: get-size(24);
       }
     }
@@ -73,12 +77,11 @@
     font-weight: $weight-light;
     @include smooth(font-size);
     @include above(sm) {
-     //max-width: 90%
+      //max-width: 90%
     }
-
   }
   .bg-image {
-    @include above(md){
+    @include above(md) {
       //background-attachment: fixed;
     }
   }
@@ -90,7 +93,7 @@
   margin-top: get-size(0.5) !important;
   font-size: font-size(3);
   @include above(lg) {
-    font-size: font-size(4)
+    font-size: font-size(4);
   }
 }
 
@@ -99,7 +102,8 @@
   align-items: center;
 }
 
-.hero-main.bg-image, .hero-main.bg-video {
+.hero-main.bg-image,
+.hero-main.bg-video {
   position: relative;
   &:before {
     @include pseudo;
@@ -135,18 +139,17 @@
   //}
   position: absolute;
   @include above(md) {
-
   }
   z-index: -1;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .hero .play-button {
   margin-top: get-size(2);
 }
 
-.page-title-light{
+.page-title-light {
   color: white;
 }

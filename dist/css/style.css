@@ -1,5 +1,5 @@
 /* EPLS Consultations Wordpress Theme 1.2.0
- * © 2021-08 EPLS Design - https://epls.design */
+ * © 2021-10 EPLS Design - https://epls.design */
 
 /**
  * Calculate the luminance for a color.
@@ -1067,6 +1067,9 @@ p.has-background {
   .hero__small .hero-main {
     min-height: 384px; } }
 
+.hero .hero-button-container {
+  margin-top: 48px; }
+
 @media (max-width: 56.1875em) {
   .hero__large .hero-main {
     min-height: 384px; }
@@ -1104,9 +1107,11 @@ p.has-background {
   display: flex;
   align-items: center; }
 
-.hero-main.bg-image, .hero-main.bg-video {
+.hero-main.bg-image,
+.hero-main.bg-video {
   position: relative; }
-  .hero-main.bg-image:before, .hero-main.bg-video:before {
+  .hero-main.bg-image:before,
+  .hero-main.bg-video:before {
     content: "";
     display: block;
     position: absolute;
@@ -1116,7 +1121,8 @@ p.has-background {
     background: black;
     opacity: 0.4;
     z-index: 1; }
-  .hero-main.bg-image .container, .hero-main.bg-video .container {
+  .hero-main.bg-image .container,
+  .hero-main.bg-video .container {
     z-index: 2; }
 
 .hero-main.bg-video {

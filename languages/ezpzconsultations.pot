@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: EPLS Consultations 1.2.0\n"
 "Report-Msgid-Bugs-To: "
 "https://github.com/ChrisDummer/ezpzconsultations/ezpzconsultations/issues\n"
-"POT-Creation-Date: 2021-08-25 10:18:52+00:00\n"
+"POT-Creation-Date: 2021-10-12 09:04:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -448,7 +448,7 @@ msgstr ""
 msgid "Staging Site"
 msgstr ""
 
-#: inc/video-embed.php:95 template-parts/layout/hero/hero.php:104
+#: inc/video-embed.php:95 template-parts/layout/hero/hero.php:103
 msgid "Play Video"
 msgstr ""
 
@@ -516,7 +516,7 @@ msgstr ""
 msgid "No posts matched your criteria."
 msgstr ""
 
-#: template-parts/blocks/magic-columns/view.php:142
+#: template-parts/blocks/magic-columns/view.php:146
 #: template-parts/blocks/map/view.php:61
 #. translators: %s link to theme options page.
 msgid ""
