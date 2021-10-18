@@ -47,6 +47,12 @@ if (!function_exists('ezpzconsultations_scripts')) {
     //wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap', null, null, 'all');
 
     /**
+     * SVG4everybody gives SVG spritesheets background compatibility with polyfills
+     */
+    wp_enqueue_script('svg4everybody', 'https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js');
+    wp_add_inline_script('svg4everybody', 'svg4everybody();'); // Init
+
+    /**
      * Register Scripts but don't enqueue them until they are required.
      */
 
