@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions which get the user's design settings from ACF and use them on the front-end
  *
@@ -6,17 +7,18 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-if (! function_exists('ezpz_get_contrast_color') ) :
+if (!function_exists('ezpz_get_contrast_color')) :
 
   function ezpz_get_contrast_color(
     $hexColor,
     $blackColor = null, // We have to do this because we can't use a function as an arg
-    $lightColor = "#ffffff") {
+    $lightColor = "#ffffff"
+  ) {
     // TODO: We may need to come back to this function after testing on the front end.
 
-    if($blackColor == null) {
+    if ($blackColor == null) {
       $blackColor = get_field('text_colour', 'option') ? get_field('text_colour', 'option') : '#191a1a'; // Same as neutral, 900
     }
 
@@ -32,12 +34,12 @@ if (! function_exists('ezpz_get_contrast_color') ) :
 
     // Calc contrast ratio
     $L1 = 0.2126 * pow($R1 / 255, 2.2) +
-          0.7152 * pow($G1 / 255, 2.2) +
-          0.0722 * pow($B1 / 255, 2.2);
+      0.7152 * pow($G1 / 255, 2.2) +
+      0.0722 * pow($B1 / 255, 2.2);
 
     $L2 = 0.2126 * pow($R2BlackColor / 255, 2.2) +
-          0.7152 * pow($G2BlackColor / 255, 2.2) +
-          0.0722 * pow($B2BlackColor / 255, 2.2);
+      0.7152 * pow($G2BlackColor / 255, 2.2) +
+      0.0722 * pow($B2BlackColor / 255, 2.2);
 
     $contrastRatio = 0;
     if ($L1 > $L2) {
@@ -48,26 +50,27 @@ if (! function_exists('ezpz_get_contrast_color') ) :
 
     // If contrast is more than 5, return black color
     if ($contrastRatio > 5) {
-        return $blackColor;
+      return $blackColor;
     } else {
-        // if not, return white color.
-        return $lightColor;
+      // if not, return white color.
+      return $lightColor;
     }
   }
 endif;
 
-add_action( 'admin_head', 'ezpz_get_theme_design_options' );
-add_action( 'wp_head', 'ezpz_get_theme_design_options' );
+add_action('admin_head', 'ezpz_get_theme_design_options');
+add_action('wp_head', 'ezpz_get_theme_design_options');
 
 
-if (! function_exists('ezpz_get_theme_design_options') ) :
+if (!function_exists('ezpz_get_theme_design_options')) :
 
-  function ezpz_get_theme_design_options() {
+  function ezpz_get_theme_design_options()
+  {
 
-    if(function_exists('get_all_custom_field_meta')):
+    if (function_exists('get_all_custom_field_meta')) :
       $field_group_json = 'group_60c219d0bd368.json'; // Replace with the name of your field group JSON.
-      $field_group_array = json_decode( file_get_contents( get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}" ), true );
-      $colour_options_data = get_all_custom_field_meta( 'option', $field_group_array );
+      $field_group_array = json_decode(file_get_contents(get_stylesheet_directory() . "/assets/acf-json/{$field_group_json}"), true);
+      $colour_options_data = get_all_custom_field_meta('option', $field_group_array);
     endif;
 
     // Main colours
@@ -125,7 +128,7 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
 
     $theme_button_secondary_colour = $colour_options_data['button_secondary_colour'] ? $colour_options_data['button_secondary_colour'] : '#af8a41';
     $theme_button_secondary_text_colour = $colour_options_data['button_secondary_text_colour'] ? $colour_options_data['button_secondary_text_colour'] :  '#ffffff';
-    $theme_button_secondary_hover_colour = $colour_options_data['button_secondary_hover_colour'] ? $colour_options_data['button_secondary_hover_colour'] : '#4a3b1c' ;
+    $theme_button_secondary_hover_colour = $colour_options_data['button_secondary_hover_colour'] ? $colour_options_data['button_secondary_hover_colour'] : '#4a3b1c';
     $theme_button_secondary_hover_text_colour = $colour_options_data['button_secondary_hover_text_colour'] ? $colour_options_data['button_secondary_hover_text_colour'] : '#000000';
 
 
@@ -143,148 +146,147 @@ if (! function_exists('ezpz_get_theme_design_options') ) :
     echo '<style type="text/css">'; ?>
 
     :root {
-      --primary_colour: <?php echo $theme_primary_colour; ?>;
-      --primary_colour_dark: <?php echo $theme_primary_dark; ?>;
-      --primary_colour_light: <?php echo $theme_primary_light; ?>;
-      --secondary_colour: <?php echo $theme_secondary_colour; ?>;
-      --secondary_colour_dark: <?php echo $theme_secondary_dark; ?>;
-      --secondary_colour_light: <?php echo $theme_secondary_light; ?>;
+    --primary_colour: <?php echo $theme_primary_colour; ?>;
+    --primary_colour_dark: <?php echo $theme_primary_dark; ?>;
+    --primary_colour_light: <?php echo $theme_primary_light; ?>;
+    --secondary_colour: <?php echo $theme_secondary_colour; ?>;
+    --secondary_colour_dark: <?php echo $theme_secondary_dark; ?>;
+    --secondary_colour_light: <?php echo $theme_secondary_light; ?>;
 
-      --text_colour: <?php echo $theme_text_colour; ?>;
-      --h1_colour: <?php echo $theme_h1_colour; ?>;
-      --h2_colour: <?php echo $theme_h2_colour; ?>;
-      --h3_colour: <?php echo $theme_h3_colour; ?>;
-      --h4_colour: <?php echo $theme_h4_colour; ?>;
-      --h5_colour: <?php echo $theme_h5_colour; ?>;
-      --h6_colour: <?php echo $theme_h6_colour; ?>;
+    --text_colour: <?php echo $theme_text_colour; ?>;
+    --h1_colour: <?php echo $theme_h1_colour; ?>;
+    --h2_colour: <?php echo $theme_h2_colour; ?>;
+    --h3_colour: <?php echo $theme_h3_colour; ?>;
+    --h4_colour: <?php echo $theme_h4_colour; ?>;
+    --h5_colour: <?php echo $theme_h5_colour; ?>;
+    --h6_colour: <?php echo $theme_h6_colour; ?>;
 
-      --link_colour: <?php echo $theme_link_colour; ?>;
-      --link_active_colour: <?php echo $theme_link_active_colour; ?>;
-      --link_visited_colour: <?php echo $theme_link_visited_colour; ?>;
+    --link_colour: <?php echo $theme_link_colour; ?>;
+    --link_active_colour: <?php echo $theme_link_active_colour; ?>;
+    --link_visited_colour: <?php echo $theme_link_visited_colour; ?>;
 
-      --body_font: <?php echo $theme_body_font; ?>;
-      --h1_font: <?php echo $theme_h1_font; ?>;
-      --h2_font: <?php echo $theme_h2_font; ?>;
-      --h3_font: <?php echo $theme_h3_font; ?>;
-      --h4_font: <?php echo $theme_h4_font; ?>;
-      --h5_font: <?php echo $theme_h5_font; ?>;
-      --h6_font: <?php echo $theme_h6_font; ?>;
+    --body_font: <?php echo $theme_body_font; ?>;
+    --h1_font: <?php echo $theme_h1_font; ?>;
+    --h2_font: <?php echo $theme_h2_font; ?>;
+    --h3_font: <?php echo $theme_h3_font; ?>;
+    --h4_font: <?php echo $theme_h4_font; ?>;
+    --h5_font: <?php echo $theme_h5_font; ?>;
+    --h6_font: <?php echo $theme_h6_font; ?>;
 
-      --nav_background_colour: <?php echo $theme_nav_background_colour; ?>;
-      --nav_font: <?php echo $theme_nav_font; ?>;
-      --nav_link_colour: <?php echo $theme_nav_link_colour; ?>;
-      --nav_link_hover_colour: <?php echo $theme_nav_link_hover_colour; ?>;
-      --nav_link_hover_background_color: <?php echo $theme_nav_link_hover_background_color; ?>;
-      --nav_sublink_colour: <?php echo $theme_nav_sublink_colour; ?>;
-      --nav_sublink_hover_colour: <?php echo $theme_nav_sublink_hover_colour; ?>;
-      --nav_sublink_background_colour: <?php echo $theme_nav_sublink_background_colour; ?>;
-      --nav_sublink_hover_background_colour: <?php echo $theme_nav_sublink_hover_background_colour; ?>;
+    --nav_background_colour: <?php echo $theme_nav_background_colour; ?>;
+    --nav_font: <?php echo $theme_nav_font; ?>;
+    --nav_link_colour: <?php echo $theme_nav_link_colour; ?>;
+    --nav_link_hover_colour: <?php echo $theme_nav_link_hover_colour; ?>;
+    --nav_link_hover_background_color: <?php echo $theme_nav_link_hover_background_color; ?>;
+    --nav_sublink_colour: <?php echo $theme_nav_sublink_colour; ?>;
+    --nav_sublink_hover_colour: <?php echo $theme_nav_sublink_hover_colour; ?>;
+    --nav_sublink_background_colour: <?php echo $theme_nav_sublink_background_colour; ?>;
+    --nav_sublink_hover_background_colour: <?php echo $theme_nav_sublink_hover_background_colour; ?>;
 
-      --button_border_width: <?php echo $theme_button_border_width; ?>;
-      --button_border_radius: <?php echo $theme_button_border_radius; ?>;
-      --button_font_family: <?php echo $theme_button_font_family; ?>;
+    --button_border_width: <?php echo $theme_button_border_width; ?>;
+    --button_border_radius: <?php echo $theme_button_border_radius; ?>;
+    --button_font_family: <?php echo $theme_button_font_family; ?>;
 
-      --button_primary_text_colour: <?php echo $theme_button_primary_text_colour; ?>;
-      --button_primary_hover_colour: <?php echo $theme_button_primary_hover_colour; ?>;
-      --button_primary_hover_text_colour: <?php echo $theme_button_primary_hover_text_colour; ?>;
-      --button_primary_colour: <?php echo $theme_button_primary_colour; ?>;
+    --button_primary_text_colour: <?php echo $theme_button_primary_text_colour; ?>;
+    --button_primary_hover_colour: <?php echo $theme_button_primary_hover_colour; ?>;
+    --button_primary_hover_text_colour: <?php echo $theme_button_primary_hover_text_colour; ?>;
+    --button_primary_colour: <?php echo $theme_button_primary_colour; ?>;
 
-      --button_secondary_colour: <?php echo $theme_button_secondary_colour; ?>;
-      --button_secondary_text_colour: <?php echo $theme_button_secondary_text_colour; ?>;
-      --button_secondary_hover_colour: <?php echo $theme_button_secondary_hover_colour; ?>;
-      --button_secondary_hover_text_colour: <?php echo $theme_button_secondary_hover_text_colour; ?>;
-
-
+    --button_secondary_colour: <?php echo $theme_button_secondary_colour; ?>;
+    --button_secondary_text_colour: <?php echo $theme_button_secondary_text_colour; ?>;
+    --button_secondary_hover_colour: <?php echo $theme_button_secondary_hover_colour; ?>;
+    --button_secondary_hover_text_colour: <?php echo $theme_button_secondary_hover_text_colour; ?>;
 
 
-      --card_border_radius: <?php echo $theme_card_border_radius; ?>;
-      --card_border_width: <?php echo $theme_card_border_width; ?>;
 
-      // TODO: I Don't think these are used anywhere. Can we remove them?
-      --light: #ffffff;
-      --dark: #000000;
+
+    --card_border_radius: <?php echo $theme_card_border_radius; ?>;
+    --card_border_width: <?php echo $theme_card_border_width; ?>;
+
+    // TODO: I Don't think these are used anywhere. Can we remove them?
+    --light: #ffffff;
+    --dark: #000000;
+    }
+
+    <?php
+
+    $theme_bg_colors = array(
+      '.bg-primary' => $theme_primary_colour,
+      '.bg-primary-dark' => $theme_primary_dark,
+      '.bg-primary-light' => $theme_primary_light,
+      '.bg-secondary' => $theme_secondary_colour,
+      '.bg-secondary-dark' => $theme_secondary_dark,
+      '.bg-secondary-light' => $theme_secondary_light,
+      '.bg-neutral-900' => '#191a1a',
+      '.bg-neutral-200' => '#e8e8e9',
+    );
+
+    foreach ($theme_bg_colors as $css_class => $bg_color) {
+
+    ?>
+      <?php echo $css_class; ?> {
+      color: <?php echo ezpz_get_contrast_color($bg_color); ?>;
       }
-
       <?php
 
-        $theme_bg_colors = array(
-          '.bg-primary-colour' => $theme_primary_colour,
-          '.bg-primary-dark' => $theme_primary_dark,
-          '.bg-primary-light' => $theme_primary_light,
-          '.bg-secondary-colour' => $theme_secondary_colour,
-          '.bg-secondary-dark' => $theme_secondary_dark,
-          '.bg-secondary-light' => $theme_secondary_light,
-          '.bg-neutral-900' => '#191a1a',
-          '.bg-neutral-200' => '#e8e8e9',
-        );
-
-      foreach($theme_bg_colors as $css_class => $bg_color ){
-
-        ?>
-        <?php echo $css_class; ?> {
-          color: <?php echo ezpz_get_contrast_color($bg_color); ?>;
+      if ($theme_h1_colour) { ?>
+        <?php echo $css_class; ?> h1 {
+        color: <?php echo ezpz_get_contrast_color($bg_color); ?>
         }
-        <?php
 
-          if($theme_h1_colour) { ?>
-            <?php echo $css_class; ?> h1 {
-              color: <?php echo ezpz_get_contrast_color($bg_color); ?>
-            }
+        <?php if ($theme_h2_colour) { ?>
+          <?php echo $css_class; ?> h2 {
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h2_colour); ?>
+          }
+        <?php }
 
-          <?php if($theme_h2_colour) { ?>
-            <?php echo $css_class; ?> h2 {
-              color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h2_colour); ?>
-            }
-          <?php }
+        if ($theme_h3_colour) { ?>
+          <?php echo $css_class; ?> h3 {
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h3_colour); ?>
+          }
+        <?php }
 
-          if($theme_h3_colour) { ?>
-            <?php echo $css_class; ?> h3 {
-              color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h3_colour); ?>
-            }
-          <?php }
-
-        if($theme_h4_colour) { ?>
+        if ($theme_h4_colour) { ?>
           <?php echo $css_class; ?> h4 {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h4_colour); ?>
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h4_colour); ?>
           }
         <?php }
 
-        if($theme_h5_colour) { ?>
+        if ($theme_h5_colour) { ?>
           <?php echo $css_class; ?> h5 {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h5_colour); ?>
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h5_colour); ?>
           }
         <?php }
 
-        if($theme_h6_colour) { ?>
+        if ($theme_h6_colour) { ?>
           <?php echo $css_class; ?> h6 {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h6_colour); ?>
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_h6_colour); ?>
           }
         <?php }
 
-        if($theme_link_colour) { ?>
+        if ($theme_link_colour) { ?>
           <?php echo $css_class; ?> a {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_colour, '#eeeeee' ); ?>
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_colour, '#eeeeee'); ?>
           }
         <?php }
 
-        if($theme_link_active_colour) { ?>
-          <?php echo $css_class; ?> a:hover, <?php echo $css_class; ?> a:focus  {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_active_colour, '#cccccc' ); ?>
+        if ($theme_link_active_colour) { ?>
+          <?php echo $css_class; ?> a:hover, <?php echo $css_class; ?> a:focus {
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_active_colour, '#cccccc'); ?>
           }
         <?php }
 
-        if($theme_link_visited_colour) { ?>
+        if ($theme_link_visited_colour) { ?>
           <?php echo $css_class; ?> a:visited {
-            color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_visited_colour, '#cccccc' ); ?>
+          color: <?php echo ezpz_get_contrast_color($bg_color, $theme_link_visited_colour, '#cccccc'); ?>
           }
-        <?php }
-
-        }
+    <?php }
       }
+    }
 
     echo '</style>';
 
     ?>
-  <?php
+<?php
   }
 endif;
