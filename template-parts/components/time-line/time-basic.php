@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying a timeline item
  *
@@ -6,8 +7,9 @@
  */
 
 // Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
+$main_title =  $args['main_title'];
 $time_title =  $args['time_title'];
 $time_text =  $args['time_text'];
 $count =  $args['count'];
@@ -15,7 +17,7 @@ $date_unixtime =   strtotime($args['date']);
 $date_now = time();
 $magic = $args['magic_columns'];
 
-$date_formatted = date_i18n(get_option( 'date_format' ), $date_unixtime); // Format for WP
+$date_formatted = date_i18n(get_option('date_format'), $date_unixtime); // Format for WP
 $time_class = '';
 
 //Creating the week diffrence
@@ -62,31 +64,30 @@ else
   $time_class = $time_class . ' opacityNine';
 
 
-echo'   <div class="' . $time_class . '">';
+echo '   <div class="' . $time_class . '">';
 
-if($magic):
+if ($magic) :
   ezpzconsultations_magic_coumn_time();
 
 
 endif;
 
-if(!$magic):
+if (!$magic) :
 
-  if($count % 2 == 0  ){
-    echo'   <div class=" left time-container">';
-  }
-  else{
-  echo'   <div class=" right time-container">';
+  if ($count % 2 == 0) {
+    echo '   <div class=" left time-container">';
+  } else {
+    echo '   <div class=" right time-container">';
   }
 
 endif;
 
 ?>
 
-  <div class="content">
-    <h3><?php echo $date_formatted; ?></h3>
-    <p class="bold mb-0"><?php echo $time_title; ?></p>
-    <?php if($time_text) echo ezpzconsultations_content($time_text);?>
-  </div>
+<div class="content">
+  <h3><?php echo $main_title; ?></h3>
+  <p class="bold mb-0"><?php echo $time_title; ?></p>
+  <?php if ($time_text) echo ezpzconsultations_content($time_text); ?>
+</div>
 </div>
 </div>

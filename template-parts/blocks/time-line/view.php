@@ -49,12 +49,14 @@ $i = 0;
           foreach ($time_lines as $time_line) :
 
             $date = $time_line['date'];
+            $main_title = $time_line['main_title'];
             $time_title = $time_line['time_title'];
             $time_text = $time_line['time_text'];
 
             $time_params = array(
               'block_id' => $block_id,
               'count' => $i,
+              'main_title' => $main_title,
               'time_title' => $time_title,
               'time_text' => $time_text,
               'date' => $date,
