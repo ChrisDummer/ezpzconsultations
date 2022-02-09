@@ -1386,21 +1386,6 @@
                                     "placeholder": ""
                                 },
                                 {
-                                    "key": "field_612795b4b4bcb",
-                                    "label": "Colour",
-                                    "name": "colour",
-                                    "type": "color_picker",
-                                    "instructions": "",
-                                    "required": 1,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "50",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": ""
-                                },
-                                {
                                     "key": "field_6124af0deb240",
                                     "label": "Icon List",
                                     "name": "icon_list",
@@ -2066,7 +2051,7 @@
                             "name": "text",
                             "type": "textarea",
                             "instructions": "Add some text to this block. <strong>Max 280 characters.<\/strong>",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "60",
@@ -5888,5 +5873,5 @@
     ],
     "active": true,
     "description": "This flexible content field group allows the editor to create dynamic layouts with ease using ACF flexible content blocks.",
-    "modified": 1634718058
+    "modified": 1644401725
 }
