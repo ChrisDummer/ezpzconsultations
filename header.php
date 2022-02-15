@@ -56,6 +56,14 @@ defined('ABSPATH') || exit;
   }
   ?>
 </head>
+<?php
+if ($theme_options['translate_check']) {
+?>
+  <div class="translate-container-fixed">
+    <?php echo do_shortcode('[gtranslate]'); ?>
+  </div>
+<?php
+} ?>
 
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>

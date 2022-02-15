@@ -1,6 +1,7 @@
 /* EPLS Consultations Wordpress Theme 1.2.1
- * © 2021-10 EPLS Design - https://epls.design */
+ * © 2022-02 EPLS Design - https://epls.design */
 
+@charset "UTF-8";
 /**
  * Calculate the luminance for a color.
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
@@ -2887,6 +2888,13 @@ input:checked + .checkbox__control {
 
 .standfirst {
   font-size: 1.125em; }
+
+.check-mark-list {
+  list-style: none;
+  margin-left: 0px; }
+
+.check-mark-list li:before {
+  content: "✓"; }
 
 .navbar {
   position: relative;

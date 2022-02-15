@@ -5,3 +5,12 @@
 .small {
   @extend small;
 }
+
+.check-mark-list {
+  list-style: none;
+  margin-left: 0px;
+}
+
+.check-mark-list li:before {
+  content: "✓";
+}
